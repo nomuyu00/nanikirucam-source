@@ -2681,8 +2681,8 @@
   },
   {
     "path": "codemagic.yaml",
-    "bytes": 26162,
-    "sha256": "654ba99a81af55f45bbc8acfa82f622fe2a7ff4b1f6f68653a39559a27226172"
+    "bytes": 26229,
+    "sha256": "82ec71e9a8bbb93aa90bf974af7143456690a2987a03f48435ab03ceb1a9053c"
   },
   {
     "path": "LICENSE",

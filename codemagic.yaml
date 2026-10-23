@@ -358,6 +358,7 @@ definitions:
         [ "$ID" = "$BUNDLE_ID" ] || { echo "Unexpected bundle ID $ID" >&2; exit 1; }
         [ "$VER" = "$APP_VERSION_NAME" ] || { echo "Unexpected version $VER" >&2; exit 1; }
         [ "$BUILD" = "$IOS_BUILD_NUMBER" ] || { echo "Unexpected build number $BUILD" >&2; exit 1; }
+        python3 tool/check_privacy_manifest.py --app-bundle "$APP"
         SIGN=$(codesign -dv --verbose=4 "$APP" 2>&1)
         echo "$SIGN" | grep -E '^Authority=' || true
         echo "$SIGN" | grep -Eq '^Authority=(Apple Distribution|iPhone Distribution):' || { echo "Not signed for distribution" >&2; exit 1; }
