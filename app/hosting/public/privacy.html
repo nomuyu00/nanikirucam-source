@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー | なにきるカム</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/icon-192.png">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<!-- 起案（2026-10-21、版 0.1）。公開前に【要記入】をすべて埋め、実装（SDK・送信項目）と一致しているかを確認し、必要に応じて専門家の確認を受けてから、このコメントを削除する。 -->
+<header class="site-header">
+<a class="brand" href="/"><img src="/assets/icon-192.png" alt="" width="28" height="28">なにきるカム</a>
+</header>
+<main class="legal">
+<h1>プライバシーポリシー</h1>
+<p class="meta">制定日: <span class="todo">【要記入】</span> ／ 最終改定日: <span class="todo">【要記入】</span></p>
+
+<p><span class="todo">【要記入：事業者名】</span>（以下「当社」）は、「なにきるカム」（アプリ・公式サイト・Web 問題ページ。以下「本サービス」）における、お客様の情報の取り扱いを次のとおり定めます。</p>
+
+<h2>1. 基本方針：画像・映像は端末の外に出ません</h2>
+<ul>
+<li>カメラで撮影した写真、ライブナビのカメラ映像、読み込んだ画像は、<strong>端末の中だけで処理</strong>され、当社や第三者のサーバーには送信されません。ライブナビの映像は保存もしません。</li>
+<li>サーバーに送られるのは、お客様が公開を選んだ問題の「<strong>牌のラベル列</strong>（手牌・ドラ表示牌・風・巡目・副露と解析結果）」と、共有のために端末で描画した「<strong>共有カード画像</strong>（牌の描画のみで、写真は含みません）」だけです。</li>
+<li>メールアドレス、氏名、電話番号、位置情報、連絡先は取得しません。</li>
+</ul>
+
+<h2>2. 取得する情報と利用目的</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>情報</th><th>内容</th><th>利用目的</th></tr></thead>
+<tbody>
+<tr><td>匿名 ID</td><td>Firebase Authentication の匿名認証で端末ごとに自動発行される ID</td><td>公開した問題・回答・購入状態・紹介コードの管理、不正利用の防止</td></tr>
+<tr><td>公開した問題</td><td>牌のラベル列、ドラ表示牌、場風・自風、巡目、副露、解析結果（3軸の解・受け入れ・シャンテン数・解析エンジンの版）、ニックネーム、共有カード画像、公開日時</td><td>問題の表示・共有、Web 問題ページ、今日の問題、公式アカウントでの紹介</td></tr>
+<tr><td>回答の記録</td><td>選んだ牌、回答日時、回答元（Web／アプリ）、二重回答防止のための識別子（Web: ブラウザが作るランダム ID のハッシュ。アプリ: 匿名 ID のハッシュ）、匿名 ID（アプリからの回答のみ）</td><td>回答の集計、二重回答の防止、出題者への回答数の通知</td></tr>
+<tr><td>通報</td><td>通報した匿名 ID、通報の理由の種類、日時</td><td>不適切な問題の非表示、同じ人による重複通報の防止</td></tr>
+<tr><td>紹介コード</td><td>お客様の紹介コード、使用回数、紹介元のコード</td><td>紹介特典（Pro 7日間）の付与と不正の防止</td></tr>
+<tr><td>購入状態</td><td>Pro の有効状態・期限・購入元（RevenueCat 経由）</td><td>Pro の機能の提供</td></tr>
+<tr><td>通知トークン</td><td>Firebase Cloud Messaging の端末トークン、通知の設定</td><td>今日の問題・回答数の通知（通知を許可した場合のみ）</td></tr>
+<tr><td>利用状況（任意）</td><td>画面の表示、機能の利用、ライブナビの利用時間・案内の回数など（Firebase Analytics / GA4）。画像・牌の内容・個人を特定する情報は含みません</td><td>機能の改善、利用状況の把握。アプリ初回起動時の同意（任意）に基づきます</td></tr>
+<tr><td>広告に関する情報</td><td>広告 ID、端末情報（Google AdMob）。無料プランのみ</td><td>広告の配信と効果測定。同意管理画面（および iOS のトラッキング許可）での選択に従います</td></tr>
+<tr><td>Web 問題ページ</td><td>ブラウザの localStorage に保存するランダム ID（二重回答防止）、回答した問題の記録、アクセスログ（IP アドレス、User-Agent など。Firebase Hosting / Cloud Functions による）、GA4 の計測（測定 ID が設定されている場合のみ。ブラウザの「Do Not Track」または「Global Privacy Control」が有効なときは計測しません）</td><td>回答の受け付けと集計、不正利用の防止、利用状況の把握</td></tr>
+</tbody>
+</table>
+</div>
+<p>端末内（アプリの中）にだけ保存される情報（解析の履歴、ストリーク、設定、ライブの利用記録など）は、当社のサーバーには送信されません。</p>
+
+<h2>3. 公開される情報</h2>
+<p>公開した問題の内容（牌のラベル列、ドラ表示牌、風、巡目、副露、ニックネーム、共有カード画像）は、アプリ・Web 問題ページ・SNS で、誰でも見られる状態になります。公開するニックネームには、個人を特定できる情報を入れないでください。当社の公式アカウント（Bluesky、Threads、Discord、X など）が、公開された問題を紹介のために投稿することがあります。ユーザーのアカウントで投稿することはありません。</p>
+
+<h2>4. 第三者への提供・委託</h2>
+<p>当社は、法令に基づく場合を除き、お客様の情報を第三者に販売・提供しません。ただし、次の事業者のサービスを利用して、情報の取り扱いを委託・送信しています。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>事業者・サービス</th><th>送信される情報</th><th>目的</th></tr></thead>
+<tbody>
+<tr><td>Google LLC（Firebase: Authentication、Cloud Firestore、Cloud Functions、Hosting、Cloud Storage、Cloud Messaging、Remote Config）</td><td>匿名 ID、公開した問題、回答の記録、共有カード画像、通知トークン、アクセスログ</td><td>サーバー機能の提供</td></tr>
+<tr><td>Google LLC（Firebase Analytics / Google アナリティクス 4）</td><td>アプリ・Web の利用状況、広告 ID・アプリインスタンス ID などの識別子（同意した場合）</td><td>利用状況の分析</td></tr>
+<tr><td>Google LLC（AdMob、ユーザーメッセージングプラットフォーム）</td><td>広告 ID、端末情報、同意の状況</td><td>広告の配信、同意の取得</td></tr>
+<tr><td>RevenueCat, Inc.</td><td>匿名 ID（購入者の識別子）、購入情報、ストアのレシート</td><td>サブスクリプションの管理</td></tr>
+<tr><td>Apple Inc.、Google Play</td><td>購入・決済に関する情報（当社はカード番号等を取得しません）</td><td>課金の決済</td></tr>
+<tr><td>Bluesky、Threads（Meta）、Discord、X</td><td>公開された問題の紹介文と共有カード画像（公式アカウントの投稿）</td><td>問題の紹介・宣伝</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>5. 外部送信について（電気通信事業法に基づく公表）</h2>
+<p>本サービスは、お客様の端末から、次の者へ情報を送信する仕組みを組み込んでいます。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>送信先</th><th>送信される情報</th><th>利用目的</th></tr></thead>
+<tbody>
+<tr><td>Google LLC（Firebase Analytics / GA4）</td><td>端末・アプリの識別子、アプリの利用状況、閲覧した画面、Web ではブラウザの情報と閲覧ページ</td><td>利用状況の分析、機能の改善</td></tr>
+<tr><td>Google LLC（AdMob）</td><td>広告 ID、端末・アプリの情報、広告の表示・操作の履歴</td><td>広告の配信と効果の測定</td></tr>
+<tr><td>RevenueCat, Inc.</td><td>匿名 ID、購入情報</td><td>購入状態の管理</td></tr>
+</tbody>
+</table>
+</div>
+<p>利用状況の分析は、アプリ初回起動時などの同意画面で OFF にできます（設定画面から変更できます）。広告については、同意管理画面と、iOS の「設定」→「プライバシーとセキュリティ」→「トラッキング」で変更できます。</p>
+
+<h2>6. 保存期間と削除</h2>
+<ul>
+<li>サーバー上の情報は、サービスの提供に必要な期間保存します。</li>
+<li>アプリの設定から「データを削除」を実行すると、サーバー上の次の情報を削除します: ユーザー情報、紹介コード、通知トークン、回答・通報の記録、匿名アカウント。出題した問題は非公開にして出題者名を消し、共有カード画像を削除します。集計済みの匿名の統計値（回答数など）は残ります。</li>
+<li>SNS にすでに投稿された内容、第三者が保存したもの、RevenueCat・ストア側の購入記録は、当社のデータ削除では消えません。購読の解約は、各ストアで行ってください。</li>
+<li>端末内の情報は、アプリの削除で消えます。</li>
+</ul>
+
+<h2>7. 子どものプライバシー</h2>
+<p>本サービスは、13歳未満の方を主な対象としていません。未成年の方は、保護者の同意を得て利用してください。</p>
+
+<h2>8. 安全管理</h2>
+<p>当社は、通信の暗号化（HTTPS）、アクセス制御（Firestore・Storage のセキュリティルール、サーバー側の検証）、秘密情報の管理（Secret Manager）などにより、情報の漏えい・滅失・毀損の防止に努めます。</p>
+
+<h2>9. 海外への移転</h2>
+<p>Google、RevenueCat などの事業者は、日本国外（米国など）のサーバーで情報を取り扱うことがあります。これらの事業者は、それぞれのプライバシーポリシーに基づき情報を保護します。</p>
+
+<h2>10. 開示・訂正・削除などのご請求</h2>
+<p>保有個人データの開示・訂正・利用停止・削除などのご請求は、次の窓口へご連絡ください。ご本人確認のうえ、法令に従って対応します。匿名 ID は当社がお客様個人を特定できる情報ではないため、アプリの「データを削除」が最も確実です。</p>
+<ul>
+<li>事業者名: <span class="todo">【要記入】</span></li>
+<li>代表者・責任者: <span class="todo">【要記入】</span></li>
+<li>所在地: <span class="todo">【要記入】</span></li>
+<li>メールアドレス: <span class="todo">【要記入】</span></li>
+</ul>
+
+<h2>11. 改定</h2>
+<p>本ポリシーは、法令の変更やサービスの変更に合わせて改定することがあります。重要な変更は、アプリ内または公式サイトでお知らせします。</p>
+</main>
+<footer class="site-footer">
+<a href="/">トップ</a>
+<a href="/terms">利用規約</a>
+<a href="/privacy">プライバシーポリシー</a>
+<a href="/tokushoho">特定商取引法に基づく表記</a>
+</footer>
+</body>
+</html>

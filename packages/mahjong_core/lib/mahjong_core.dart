@@ -1,0 +1,35 @@
+/// 何切る解析と和了の点数計算（Flutter 非依存）。
+library;
+
+export 'src/daily/daily_generator.dart';
+export 'src/engine/analysis_report.dart';
+export 'src/engine/block.dart';
+export 'src/engine/blocks.dart';
+export 'src/engine/discard_ranker.dart';
+export 'src/engine/engine_version.dart';
+export 'src/engine/explain.dart';
+export 'src/engine/hand_state.dart';
+export 'src/engine/nanikiru_engine.dart';
+export 'src/engine/points.dart';
+export 'src/engine/reason_tag.dart';
+export 'src/engine/riichi_advice.dart';
+export 'src/engine/route_enumerator.dart';
+export 'src/engine/shanten.dart';
+export 'src/engine/thirteen_report.dart';
+export 'src/engine/two_step.dart';
+export 'src/engine/ukeire.dart';
+export 'src/engine/win_ease.dart';
+export 'src/engine/win_evaluator.dart';
+export 'src/engine/yaku.dart';
+export 'src/hand_parser.dart';
+export 'src/models.dart';
+export 'src/quick_context.dart';
+export 'src/scoring/han_yaku.dart';
+export 'src/scoring/hand_analyzer.dart';
+export 'src/scoring/ruleset_support.dart';
+export 'src/scoring/rulesets.dart';
+export 'src/scoring/scoring_engine.dart';
+export 'src/scoring/win_scorer.dart';
+export 'src/scoring/win_types.dart';
+export 'src/tile_utils.dart';
+export 'src/wait_type.dart';

@@ -1,0 +1,37 @@
+rules_version = '2';
+
+// なにきるカム（仮）の Storage ルール（設計書 5.3）。
+//
+// 方式の選択: 「Functions が署名 URL を返す」方式ではなく、
+// 「クライアントが直接アップロードし、ルールで Firestore の問題ドキュメントを参照して本人確認する」方式にした。
+// 理由:
+//  - 署名 URL は Functions の実行サービスアカウントに signBlob 権限（Service Account Token Creator）の
+//    追加設定が要り、アプリ側も URL への PUT を自前で組む必要がある。
+//  - 直接アップロードなら firebase_storage の putData だけで済み、ルールだけで
+//    「publishProblem が作った自分の問題のカードにだけ書ける」を表現できる。
+//    クロスサービスルール（firestore.get）の IAM ロールは firebase deploy 時に自動付与を促される。
+// 注意: 画像の上限は 900KB。Bluesky に画像を添付するときの上限（約 1MB）に収めるため。
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // 共有カード（OGP 用 1080x1080 PNG）。誰でも読める。
+    // 書けるのは、そのカードの問題（problems/{problemId}）の出題者本人だけ。
+    // 更新（作り直し）は許すが、削除は Functions（deleteMyData）だけ。
+    match /cards/{problemId}/{file} {
+      allow read: if true;
+      allow create, update: if request.auth != null
+        && file == '1x1.png'
+        && request.resource.contentType == 'image/png'
+        && request.resource.size > 0
+        && request.resource.size <= 900 * 1024
+        && firestore.get(/databases/(default)/documents/problems/$(problemId)).data.authorUid
+             == request.auth.uid;
+      allow delete: if false;
+    }
+
+    // それ以外はすべて拒否
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

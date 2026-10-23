@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "jp.aile.nanikiru_cam",
+      "sha256_cert_fingerprints": [
+        "TODO:アップロード鍵または Play アプリ署名鍵の SHA-256 フィンガープリント（例 AA:BB:...）"
+      ]
+    }
+  }
+]

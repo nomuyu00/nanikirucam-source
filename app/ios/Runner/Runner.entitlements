@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Universal Links: /p/{problemId}（問題ページ）と /r/{code}（紹介コード）をアプリで開く。
+	     ドメインは AppConfig.webBaseUrl のホスト（仮 nanikiru-cam.web.app）。独自ドメインにしたら
+	     ここと android/app/src/main/AndroidManifest.xml の host、Hosting の
+	     .well-known/apple-app-site-association（Team ID）を合わせて差し替える。
+	     push 通知（aps-environment）を足すときもこのファイルに追記する。 -->
+	<!-- push 通知（FCM。設計書 12 章）。配布ビルドの署名では、プロビジョニングプロファイルの
+	     値（production）が使われる。Apple Developer の App ID で Push Notifications を有効にし、
+	     Firebase コンソールに APNs 認証キー（.p8）を登録する。 -->
+	<key>aps-environment</key>
+	<string>development</string>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:nanikiru-cam.web.app</string>
+	</array>
+</dict>
+</plist>

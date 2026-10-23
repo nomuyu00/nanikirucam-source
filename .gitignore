@@ -1,0 +1,48 @@
+# Flutter / Dart
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/ios/Pods/
+**/android/.gradle/
+# IDE
+.idea/
+*.iml
+.vscode/
+# Python / ML
+ml/.venv/
+ml/.venv-engine/
+ml/.mamba/
+ml/runs/
+ml/out/
+__pycache__/
+# 大きいデータ（Git LFS か別保管にする）
+datasets/
+ml/weights/
+ml/pretrained/
+# Windows
+*:Zone.Identifier
+Thumbs.db
+# IntelliJ が作った空の入れ子プロジェクト（独自の .git を持つ）。リポジトリに入れない。
+/nanikirucam/
+# 元のモデル（app/assets/models と同じもの）。アプリが同梱するのは app/assets/models。
+/assets/models/*.tflite
+# ビルド成果物・OS の一時物
+*.apk
+*.aab
+*.ipa
+.DS_Store
+# 秘密（署名鍵・API キー・Firebase の設定）。Codemagic の環境変数・署名設定で渡す。
+*.keystore
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+key.properties
+google-services.json
+GoogleService-Info.plist
+service-account*.json
+review_access_code.local.txt
+*.review-access.local.txt
+# 配信確認のローカル証跡（コンソール画面、テスターの取込CSV等）。
+/docs/release-evidence/

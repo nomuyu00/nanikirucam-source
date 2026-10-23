@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tool/make_icons.py が生成。Android 12 以降のスプラッシュ（システムが描く）。端末がダークモードのとき。
+     values-night より API レベルの修飾子は優先度が低いので、values-night-v31 にも同じものを置く。
+     アイコンはアダプティブアイコンの前景（意匠は 108dp の中央 66dp に収めてある）。 -->
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+    </style>
+</resources>

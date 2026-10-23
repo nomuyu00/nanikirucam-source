@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tool/make_icons.py が生成。 -->
+<resources>
+    <!-- ブランドの主色（ジェイド）。FCM の通知の色（AndroidManifest の default_notification_color）に使う。
+         アダプティブアイコンの背景は drawable/ic_launcher_gradient.xml のグラデーション。 -->
+    <color name="ic_launcher_background">#0D624A</color>
+    <!-- スプラッシュの背景（launch_background.xml と values-v31 の windowSplashScreenBackground）。 -->
+    <color name="splash_background">#0D624A</color>
+</resources>

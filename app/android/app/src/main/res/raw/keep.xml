@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- リソースの縮小（shrinkResources）で、名前の文字列から実行時に引くリソースを消さない。
+     ic_stat_notify は flutter_local_notifications が getIdentifier("ic_stat_notify") で引く
+     （Dart 側の文字列なので、縮小の解析では参照が見えない）。 -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_stat_notify,@mipmap/ic_launcher*" />

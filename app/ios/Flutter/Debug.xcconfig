@@ -1,0 +1,11 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+
+// google_mobile_ads 9.1 の公開ヘッダーが GMA の Beta ヘッダーを取り込むため必要。
+// Runner がプラグインのモジュールを読み込む際にも、この設定を適用する。
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+
+// AdMob の App ID。既定は Google の公開テスト ID。本番の ID は ios/Flutter/Secrets.xcconfig
+// （Git 管理外。CI が作る）に `ADMOB_APP_ID=ca-app-pub-xxxx~yyyy` と書いて上書きする。
+ADMOB_APP_ID=ca-app-pub-3940256099942544~1458002511
+#include? "Secrets.xcconfig"

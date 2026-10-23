@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- アプリ本体のプライバシー マニフェスト。根拠と見直しの手順は docs/store/privacy_labels.md の 2.3。
+     変えたら tool/check_privacy_manifest.py で確かめる。 -->
+<plist version="1.0">
+<dict>
+	<!-- ATT の許可があるとき AdMob が IDFA を広告に使う（追跡）。アプリ自身のコードは追跡ドメインに接続しない。
+	     AdMob SDK のドメインは SDK 側のマニフェストが持つので、ここは空（2.3 参照）。 -->
+	<key>NSPrivacyTracking</key>
+	<true/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<!-- docs/store/privacy_labels.md 2.2 の申告と同じ。Apple の説明では SDK が集めるものは SDK 側の
+	     マニフェストが担うが、申告の突き合わせのためアプリ側にも同じ内容を書く。 -->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeUserID</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeDeviceID</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+					<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypePurchaseHistory</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeOtherUserContent</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeProductInteraction</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+					<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeAdvertisingData</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeCoarseLocation</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+					<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypeCrashData</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyCollectedDataType</key>
+				<string>NSPrivacyCollectedDataTypePerformanceData</string>
+				<key>NSPrivacyCollectedDataTypeLinked</key>
+				<true/>
+				<key>NSPrivacyCollectedDataTypeTracking</key>
+				<false/>
+				<key>NSPrivacyCollectedDataTypePurposes</key>
+				<array>
+					<string>NSPrivacyCollectedDataTypePurposeAnalytics</string>
+					<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
+				</array>
+			</dict>
+	</array>
+	<!-- アプリ自身のコードは required-reason API を使わない。Flutter.framework・プラグイン・Firebase などは自前の
+	     マニフェストを持つ。マニフェストを持たない静的リンクの TensorFlowLiteC（ファイルのメタデータ、経過時間）の分だけ、
+	     念のためここで申告する。C617.1 = アプリのコンテナ内のファイルのメタデータ、35F9.1 = 経過時間の計測（端末外に送らない）。 -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+			<dict>
+				<key>NSPrivacyAccessedAPIType</key>
+				<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+				<key>NSPrivacyAccessedAPITypeReasons</key>
+				<array>
+					<string>C617.1</string>
+				</array>
+			</dict>
+			<dict>
+				<key>NSPrivacyAccessedAPIType</key>
+				<string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+				<key>NSPrivacyAccessedAPITypeReasons</key>
+				<array>
+					<string>35F9.1</string>
+				</array>
+			</dict>
+	</array>
+</dict>
+</plist>

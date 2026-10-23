@@ -1,0 +1,140 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- カメラ（写真・ライブ）。カメラのない端末でも手入力は使えるので required=false。 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <!-- 音声は録らない（CameraController は enableAudio: false）。camera_android_camerax が足す
+         RECORD_AUDIO を外す。Play の権限・データ セーフティの申告が増えるのを避け、マイクの無い端末にも入れる。 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" tools:node="remove"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <!-- マニフェスト マージャが「暗黙」で足す 2 つの権限を外す（merger の report: `IMPLIED ... reason:`）。
+         READ_EXTERNAL_STORAGE は camera_android_camerax が WRITE_EXTERNAL_STORAGE を要求するための暗黙。
+         READ_PHONE_STATE は litert-gpu-api（tflite_flutter の LiteRT）の manifest に targetSdkVersion が
+         無いための暗黙（古い規則）。どちらもアプリは使わない（写真の取り込みは Photo Picker / ACTION_GET_CONTENT、
+         共有カードの保存は MediaStore。Android 9 以前の保存だけ WRITE_EXTERNAL_STORAGE が要る）。
+         結果: READ_PHONE_STATE は無くなる。READ_EXTERNAL_STORAGE は、aapt2 が WRITE_EXTERNAL_STORAGE（maxSdkVersion=28）の
+         暗黙の組として `maxSdkVersion=28` 付きで足し直す（`uses-implied-permission`）ので、Android 10 以降では要求されない。 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="remove"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/>
+
+    <!-- 広告・Firebase・RevenueCat・問題の公開（release ビルドにも必要）。 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- 通知（FCM・ストリークなどのローカル通知）。 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- 共有カードの写真アプリへの保存（Android 9 以前のみ）。 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+
+    <application
+        android:label="なにきるカム"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <!-- AdMob の App ID。既定は Google のテスト ID（build.gradle.kts の manifestPlaceholders）。 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}"/>
+        <!-- 利用分析は同意するまで送らない。起動直後の自動収集も止め、同意の状態は
+             lib/analytics/app_analytics.dart が setAnalyticsCollectionEnabled で毎回設定する。 -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false"/>
+        <!-- リンク（/p/{id}, /r/{code}）は app_links で受ける。Flutter 標準のルート遷移にはしない。 -->
+        <meta-data
+            android:name="flutter_deeplinking_enabled"
+            android:value="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <!-- Android App Links: 共有された問題ページ・紹介リンクをアプリで開く（設計書 7 章）。
+                 独自ドメインを取ったら host を差し替え、assetlinks.json を Hosting に置く。 -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:host="nanikiru-cam.web.app"/>
+                <data android:pathPrefix="/p/"/>
+                <data android:pathPrefix="/r/"/>
+            </intent-filter>
+        </activity>
+        <!-- ローカル通知（ストリークのリマインド・トライアル終了前日）。flutter_local_notifications の
+             予約通知を鳴らす受信側と、再起動・アップデート後に予約し直す受信側。 -->
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+            android:exported="false"/>
+        <receiver
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <!-- FCM の通知（今日の問題・週間・回答到達）は、ローカル通知と同じチャンネルに出す。
+             チャンネル自体は local_scheduler.dart が初期化時に作る。 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="reminders"/>
+        <!-- 通知の小アイコン（白一色の透過 PNG）と強調色。ローカル通知の初期化
+             （lib/notifications/local_scheduler.dart の AndroidInitializationSettings）と同じ名前。
+             画像は tool/make_icons.py が drawable-*dpi/ic_stat_notify.png に作る。 -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_notify"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/ic_launcher_background"/>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- url_launcher（規約・ストア・プライバシー設定ページを開く）。 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="mailto"/>
+        </intent>
+    </queries>
+</manifest>

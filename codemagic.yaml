@@ -1,0 +1,555 @@
+# なにきるカムの Codemagic ビルド設定。
+#
+# 置き場所: **リポジトリのルート**（Codemagic の決まり）。ビルドするのはモノレポの `app/`
+# （`working_directory: app`）で、`packages/mahjong_core` を `path:` 依存で使う。
+# `artifacts` は working_directory の解釈に依存させず、$CM_BUILD_DIR からの絶対パスで指定する。
+#
+# ワークフロー（どれも手動で起動する。Codemagic の「Start new build」でブランチとワークフローを選ぶ）:
+#   android-build    署名済み AAB を作るだけ（Google Play への初回の手動アップロード用・署名の確認用）
+#   android-release  AAB を作って Google Play の internal トラックに上げる
+#   ios-release      IPA を作って TestFlight に上げる
+#   android-store-candidate / ios-store-candidate
+#                    本番広告の候補を作る（配信先は internal / TestFlight。審査提出は Console で行う）
+# 自動で起動したいときは各ワークフローに `triggering:`（push・tag など）を足す。
+#
+# 版の固定: Flutter 3.44.6（`stable` は 3.47 系になる）、Xcode 26.6（2026-04-28 以降の App Store は
+# Xcode 26 / iOS 26 SDK 以降が必須）。
+#
+# Codemagic の UI で用意するもの（手順は docs/codemagic-setup.md）:
+#   - Team integrations > Developer Portal: App Store Connect API キー（名前を "App Store Connect Key" に）
+#   - Code signing identities > iOS: 配布証明書（Apple Distribution）と App Store 用プロファイル
+#     （jp.aile.nanikiruCam）。「Fetch」で App Store Connect から作れる
+#   - Code signing identities > Android keystores: ワンコシリーズ共通のアップロード鍵（参照名 "agari_android_keystore"）
+#   - 環境変数グループ（Secret にする）:
+#       google_play:         GOOGLE_PLAY_SERVICE_ACCOUNT_CREDENTIALS（サービス アカウントの JSON そのまま）
+#       nanikiru_secrets:    FIREBASE_ANDROID_CONFIG_BASE64 / FIREBASE_IOS_CONFIG_BASE64
+#                            REVENUECAT_API_KEY_IOS / REVENUECAT_API_KEY_ANDROID
+#                            ADMOB_APP_ID_IOS / ADMOB_APP_ID_ANDROID
+#                            ADMOB_{HOME,RESULT,HISTORY}_BANNER_{IOS,ANDROID}
+#                            ADMOB_NEXT_HAND_INTERSTITIAL_{IOS,ANDROID}
+#                            ADMOB_{QUOTA,EXPLANATION}_REWARD_{IOS,ANDROID}
+#                            ADMOB_LIVE_TRIAL_REWARD_{IOS,ANDROID}（任意。未設定なら ADMOB_QUOTA_REWARD_* の広告枠で出る。
+#                              作ると、ライブ延長の動画の収益を AdMob で分けて見られる）
+#                            WEB_BASE_URL（独自ドメインにしたら）
+#                            LEGAL_TOKUSHOHO_URL（本番の特定商取引法の表記ページ。https:// から。未設定ならテスト版の購入案内ページ）
+#                            APP_STORE_APPLE_ID（App Store Connect の「アプリ情報」の数字の Apple ID。秘密ではない）
+#     未設定の項目は AppConfig の既定値（AdMob は Google のテスト ID、RevenueCat は未設定モード、
+#     Firebase なし）でビルドされる。本番の提出前に全部入れること（scripts の「Check release
+#     configuration」が警告を出す）。
+#
+# 広告: 既定は ADMOB_USE_TEST_ADS=true（テスト広告。TestFlight・内部テスト用）。本番の広告でビルドするときは
+#   ADMOB_USE_TEST_ADS=false を環境変数に足す。そのとき「Check release configuration」が、必須の広告 ID
+#   （App ID 2つと、各 OS のバナー 3・全画面・quota / explanation のリワード）が空か Google のテスト ID
+#   （ca-app-pub-3940256099942544）ならビルドを失敗させる（本番のつもりでテスト広告を出す取り違えの防止）。
+#   ADMOB_LIVE_TRIAL_REWARD_* は任意（空なら quota の枠を使う）だが、入れるならテスト ID は不可。
+
+definitions:
+  instance_mac: &instance_mac
+    # 個人アカウントは macOS M2 が月 500 分まで無料。Android も同じマシンで組める。
+    # 課金を有効にしているなら android-* は linux_x2（安い）でもよい。
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+
+  scripts:
+    - &store_config
+      name: Select production candidate configuration
+      script: |
+        set -euo pipefail
+        # 本番候補では設定不足のままビルドを進めず、無料サーバーなし構成を保つ。
+        for NAME in $REQUIRED_FOR_STORE; do
+          [ -n "${!NAME:-}" ] || { echo "Missing production configuration: $NAME" >&2; exit 1; }
+        done
+        if [ -n "${PACKAGE_NAME:-}" ]; then
+          [ -n "${REVIEW_ACCESS_CODE_SHA256:-}" ] && [ -n "${REVIEW_ACCESS_EXPIRES_AT:-}" ] || {
+            echo "Android store candidate requires configured review access" >&2; exit 1;
+          }
+        fi
+        printf '%s\n' 'ADMOB_USE_TEST_ADS=false' 'FIREBASE_ENABLED=true' >> "$CM_ENV"
+        echo "Production ads selected; Firebase backend remains disabled"
+
+    - &git_lfs
+      name: Git LFS (only when the repository uses it)
+      script: |
+        set -euo pipefail
+        # モデルを Git LFS に置いた場合だけ実体を取る（今は LFS を使わない設定）。
+        if grep -qs "filter=lfs" "$CM_BUILD_DIR/.gitattributes"; then
+          git lfs install --skip-smudge
+          git -C "$CM_BUILD_DIR" lfs pull
+        else
+          echo "Git LFS not used"
+        fi
+
+    - &check_assets
+      name: Check ML assets
+      script: |
+        set -euo pipefail
+        for f in assets/labels/tiles_labels.txt \
+                 assets/models/mahjong_yolo_int8.tflite \
+                 assets/models/mahjong_yolo_fp32.tflite \
+                 assets/models/mahjong_yolo_live_s_int8.tflite \
+                 assets/models/mahjong_yolo_live_n_int8.tflite \
+                 assets/models/mahjong_yolo_live_n480_int8.tflite; do
+          test -s "$f" || { echo "missing: $f" >&2; exit 1; }
+        done
+        # Git LFS のポインタ（数百バイトのテキスト）のままになっていないこと。
+        for f in assets/models/*.tflite; do
+          size=$(wc -c < "$f" | tr -d ' ')
+          if [ "$size" -lt 1000000 ]; then
+            echo "$f is only $size bytes (a Git LFS pointer?)" >&2
+            exit 1
+          fi
+        done
+        echo "OK: ML assets"
+
+    - &app_version
+      name: Read the app version
+      script: |
+        set -euo pipefail
+        # pubspec.yaml の version（+ より前）を表示用のバージョン名にする。ビルド番号は各ストアで決める。
+        APP_VERSION_NAME=$(sed -nE 's/^version:[[:space:]]*([0-9]+\.[0-9]+\.[0-9]+).*/\1/p' pubspec.yaml | tr -d '\r')
+        if [ -z "$APP_VERSION_NAME" ]; then
+          echo "Could not read version x.y.z from app/pubspec.yaml" >&2
+          exit 1
+        fi
+        echo "APP_VERSION_NAME=$APP_VERSION_NAME" >> "$CM_ENV"
+        echo "Version: $APP_VERSION_NAME"
+
+    - &dart_defines
+      name: Compose --dart-define options
+      script: |
+        set -euo pipefail
+        # テスト配信では、本番の広告枠を登録済みでも Google のテスト広告を表示する。
+        python3 "$CM_BUILD_DIR/tool/check_review_access_config.py"
+        DEFINES="--dart-define=FIREBASE_ENABLED=${FIREBASE_ENABLED:-false} --dart-define=FIREBASE_BACKEND_ENABLED=false --dart-define=ADMOB_USE_TEST_ADS=${ADMOB_USE_TEST_ADS:-true}"
+        case "${REVENUECAT_API_KEY_IOS:-}" in
+          ""|appl_*) ;;
+          *) echo "REVENUECAT_API_KEY_IOS must be an appl_ public SDK key" >&2; exit 1 ;;
+        esac
+        case "${REVENUECAT_API_KEY_ANDROID:-}" in
+          ""|goog_*) ;;
+          *) echo "REVENUECAT_API_KEY_ANDROID must be a goog_ public SDK key" >&2; exit 1 ;;
+        esac
+        # 特定商取引法の表記ページの URL は https:// から始まり、空白を含まないこと
+        # （空ならアプリがテスト版の購入案内ページを開く）。
+        case "${LEGAL_TOKUSHOHO_URL:-}" in
+          "") ;;
+          *[[:space:]]*) echo "LEGAL_TOKUSHOHO_URL must not contain whitespace" >&2; exit 1 ;;
+          https://*) ;;
+          *) echo "LEGAL_TOKUSHOHO_URL must start with https://" >&2; exit 1 ;;
+        esac
+        # 値があるものだけ渡す（無いものは AppConfig の既定値）。値はログに出さない。
+        for NAME in \
+          REVENUECAT_API_KEY_IOS REVENUECAT_API_KEY_ANDROID \
+          ADMOB_APP_ID_IOS ADMOB_APP_ID_ANDROID \
+          ADMOB_HOME_BANNER_IOS ADMOB_HOME_BANNER_ANDROID \
+          ADMOB_RESULT_BANNER_IOS ADMOB_RESULT_BANNER_ANDROID \
+          ADMOB_HISTORY_BANNER_IOS ADMOB_HISTORY_BANNER_ANDROID \
+          ADMOB_NEXT_HAND_INTERSTITIAL_IOS ADMOB_NEXT_HAND_INTERSTITIAL_ANDROID \
+          ADMOB_QUOTA_REWARD_IOS ADMOB_QUOTA_REWARD_ANDROID \
+          ADMOB_LIVE_TRIAL_REWARD_IOS ADMOB_LIVE_TRIAL_REWARD_ANDROID \
+          ADMOB_EXPLANATION_REWARD_IOS ADMOB_EXPLANATION_REWARD_ANDROID \
+          WEB_BASE_URL LEGAL_TOKUSHOHO_URL \
+          REVIEW_ACCESS_CODE_SHA256 REVIEW_ACCESS_EXPIRES_AT; do
+          VALUE="${!NAME:-}"
+          if [ -n "$VALUE" ]; then DEFINES="$DEFINES --dart-define=$NAME=$VALUE"; fi
+        done
+        echo "DART_DEFINES=$DEFINES" >> "$CM_ENV"
+
+    - &check_release_config
+      name: Check release configuration
+      script: |
+        set -euo pipefail
+        # 本番の設定が入っているかを一覧にする（無くてもビルドは続ける。TestFlight・内部テストでの
+        # 動作確認はテスト ID のままでよい。ストア提出の前には全部 OK にすること）。
+        missing=0
+        for NAME in $REQUIRED_FOR_STORE; do
+          if [ -z "${!NAME:-}" ]; then
+            echo "WARNING: $NAME is not set (the build uses the default/test value)"
+            missing=$((missing + 1))
+          else
+            echo "OK: $NAME"
+          fi
+        done
+        echo "Missing for the store release: $missing"
+
+        # 本番の広告（ADMOB_USE_TEST_ADS が "true" 以外。Dart の bool.fromEnvironment も "true" だけを
+        # 真とする）でビルドするときは、広告 ID が空か Google のテスト ID なら失敗させる。
+        # 未設定（= テスト広告）のときは何もしない。値はログに出さない（名前だけ）。
+        if [ "${ADMOB_USE_TEST_ADS:-true}" != "true" ]; then
+          echo "ADMOB_USE_TEST_ADS=${ADMOB_USE_TEST_ADS}: checking the production AdMob IDs"
+          GOOGLE_TEST_ID="ca-app-pub-3940256099942544"
+          ad_bad=0
+          for NAME in \
+            ADMOB_APP_ID_IOS ADMOB_APP_ID_ANDROID \
+            ADMOB_HOME_BANNER_IOS ADMOB_HOME_BANNER_ANDROID \
+            ADMOB_RESULT_BANNER_IOS ADMOB_RESULT_BANNER_ANDROID \
+            ADMOB_HISTORY_BANNER_IOS ADMOB_HISTORY_BANNER_ANDROID \
+            ADMOB_NEXT_HAND_INTERSTITIAL_IOS ADMOB_NEXT_HAND_INTERSTITIAL_ANDROID \
+            ADMOB_QUOTA_REWARD_IOS ADMOB_QUOTA_REWARD_ANDROID \
+            ADMOB_EXPLANATION_REWARD_IOS ADMOB_EXPLANATION_REWARD_ANDROID; do
+            VALUE="${!NAME:-}"
+            case "$VALUE" in
+              "") echo "ERROR: $NAME is empty (production ads need a real AdMob ID)" >&2; ad_bad=$((ad_bad + 1)) ;;
+              *"$GOOGLE_TEST_ID"*) echo "ERROR: $NAME is Google's test ID" >&2; ad_bad=$((ad_bad + 1)) ;;
+              *) echo "OK: $NAME (production)" ;;
+            esac
+          done
+          # 任意の枠は、空ならよい（quota の枠で出る）が、入れるならテスト ID は不可。
+          for NAME in ADMOB_LIVE_TRIAL_REWARD_IOS ADMOB_LIVE_TRIAL_REWARD_ANDROID; do
+            VALUE="${!NAME:-}"
+            case "$VALUE" in
+              "") echo "OK: $NAME is not set (falls back to the quota reward unit)" ;;
+              *"$GOOGLE_TEST_ID"*) echo "ERROR: $NAME is Google's test ID" >&2; ad_bad=$((ad_bad + 1)) ;;
+              *) echo "OK: $NAME (production)" ;;
+            esac
+          done
+          if [ "$ad_bad" -gt 0 ]; then
+            echo "$ad_bad AdMob ID(s) are not valid for a production-ads build. Fix them, or build with test ads (unset ADMOB_USE_TEST_ADS)." >&2
+            exit 1
+          fi
+        else
+          echo "Test ads build (ADMOB_USE_TEST_ADS is unset or true): skipping the production AdMob ID check"
+        fi
+
+    - &engine_tests
+      name: Test the engine (packages/mahjong_core)
+      script: |
+        set -euo pipefail
+        cd "$CM_BUILD_DIR/packages/mahjong_core"
+        dart pub get
+        dart analyze
+        dart test
+
+    - &app_tests
+      name: Analyze and test the app
+      script: |
+        set -euo pipefail
+        flutter pub get
+        flutter analyze
+        flutter test
+        flutter test tool/test_ads_smoke_test.dart \
+          --dart-define=FIREBASE_ENABLED=true \
+          --dart-define=ADMOB_USE_TEST_ADS=true \
+          --dart-define=ADMOB_HOME_BANNER_ANDROID=ca-app-pub-9864062667468133/6879789955
+
+    - &android_firebase
+      name: Install the Firebase config (Android)
+      script: |
+        set -euo pipefail
+        if [ -n "${FIREBASE_ANDROID_CONFIG_BASE64:-}" ]; then
+          echo "$FIREBASE_ANDROID_CONFIG_BASE64" | base64 --decode > android/app/google-services.json
+          PKG=$(python3 -c 'import json;d=json.load(open("android/app/google-services.json"));print(" ".join(c["client_info"]["android_client_info"]["package_name"] for c in d["client"]))')
+          echo "google-services.json packages: $PKG"
+          case " $PKG " in
+            *" $PACKAGE_NAME "*) ;;
+            *) echo "google-services.json does not contain $PACKAGE_NAME" >&2; exit 1 ;;
+          esac
+          echo "FIREBASE_ENABLED=true" >> "$CM_ENV"
+        else
+          echo "No Firebase config: building with FIREBASE_ENABLED=false"
+          echo "FIREBASE_ENABLED=false" >> "$CM_ENV"
+        fi
+
+    - &android_keystore
+      name: Set up Android release signing
+      script: |
+        set -euo pipefail
+        # android_signing で入る CM_KEYSTORE_* から key.properties を作る。無ければ止める
+        # （android/app/build.gradle.kts は key.properties が無いと debug 署名に落ちるため）。
+        for NAME in CM_KEYSTORE_PATH CM_KEYSTORE_PASSWORD CM_KEY_ALIAS CM_KEY_PASSWORD; do
+          [ -n "${!NAME:-}" ] || { echo "$NAME is empty: add the keystore 'agari_android_keystore' in Codemagic" >&2; exit 1; }
+        done
+        test -f "$CM_KEYSTORE_PATH" || { echo "Keystore file not found" >&2; exit 1; }
+        cat > android/key.properties <<EOF
+        storePassword=$CM_KEYSTORE_PASSWORD
+        keyPassword=$CM_KEY_PASSWORD
+        keyAlias=$CM_KEY_ALIAS
+        storeFile=$CM_KEYSTORE_PATH
+        EOF
+
+    - &android_build
+      name: Build the AAB
+      script: |
+        set -euo pipefail
+        # versionCode: Google Play の最新 + 1。取れない（初回・認証なし）ときは Codemagic の
+        # ワークフローのビルド番号（BUILD_NUMBER）。
+        LATEST=""
+        if [ -n "${GOOGLE_PLAY_SERVICE_ACCOUNT_CREDENTIALS:-}" ]; then
+          LATEST=$(google-play get-latest-build-number --package-name "$PACKAGE_NAME" 2>/dev/null || true)
+        fi
+        if echo "$LATEST" | grep -Eq '^[0-9]+$'; then
+          VERSION_CODE=$((LATEST + 1))
+        else
+          VERSION_CODE="${BUILD_NUMBER:-1}"
+        fi
+        echo "versionName=$APP_VERSION_NAME versionCode=$VERSION_CODE"
+        flutter build appbundle --release \
+          --build-name="$APP_VERSION_NAME" \
+          --build-number="$VERSION_CODE" \
+          $DART_DEFINES
+
+    - &android_verify
+      name: Verify the AAB signature
+      script: |
+        set -euo pipefail
+        AAB=build/app/outputs/bundle/release/app-release.aab
+        test -f "$AAB" || { echo "No AAB" >&2; exit 1; }
+        CERT=$(keytool -printcert -jarfile "$AAB")
+        echo "$CERT" | grep -E "Owner:|SHA256:" || true
+        if echo "$CERT" | grep -q "CN=Android Debug"; then
+          echo "The AAB is signed with the debug key" >&2
+          exit 1
+        fi
+        ls -l "$AAB"
+
+    - &ios_firebase_and_secrets
+      name: Install the Firebase config and AdMob App ID (iOS)
+      script: |
+        set -euo pipefail
+        if [ -n "${FIREBASE_IOS_CONFIG_BASE64:-}" ]; then
+          echo "$FIREBASE_IOS_CONFIG_BASE64" | base64 --decode > ios/Runner/GoogleService-Info.plist
+          ACTUAL=$(/usr/libexec/PlistBuddy -c 'Print :BUNDLE_ID' ios/Runner/GoogleService-Info.plist)
+          [ "$ACTUAL" = "$BUNDLE_ID" ] || { echo "GoogleService-Info.plist is for $ACTUAL, not $BUNDLE_ID" >&2; exit 1; }
+          echo "FIREBASE_ENABLED=true" >> "$CM_ENV"
+        else
+          echo "No Firebase config: building with FIREBASE_ENABLED=false"
+          echo "FIREBASE_ENABLED=false" >> "$CM_ENV"
+        fi
+        # AdMob の App ID は Info.plist（GADApplicationIdentifier = $(ADMOB_APP_ID)）が読む。
+        if [ -n "${ADMOB_APP_ID_IOS:-}" ]; then
+          echo "ADMOB_APP_ID=$ADMOB_APP_ID_IOS" > ios/Flutter/Secrets.xcconfig
+        fi
+
+    - &ios_signing_profiles
+      name: Apply the signing profiles to the Xcode project
+      script: |
+        set -euo pipefail
+        # ios_signing で取得した証明書とプロファイルを Runner に当て、~/export_options.plist を作る。
+        xcode-project use-profiles --project ios/Runner.xcodeproj
+
+    - &ios_build
+      name: Build the IPA
+      script: |
+        set -euo pipefail
+        # CFBundleVersion: TestFlight の最新 + 1。APP_STORE_APPLE_ID が無い・取れない（初回）ときは
+        # Codemagic のワークフローのビルド番号（BUILD_NUMBER）。
+        LATEST=""
+        if [ -n "${APP_STORE_APPLE_ID:-}" ]; then
+          LATEST=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || true)
+        fi
+        if echo "$LATEST" | grep -Eq '^[0-9]+$'; then
+          IOS_BUILD_NUMBER=$((LATEST + 1))
+        else
+          IOS_BUILD_NUMBER="${BUILD_NUMBER:-1}"
+        fi
+        echo "IOS_BUILD_NUMBER=$IOS_BUILD_NUMBER" >> "$CM_ENV"
+        echo "CFBundleShortVersionString=$APP_VERSION_NAME CFBundleVersion=$IOS_BUILD_NUMBER"
+        # pod install は flutter build ipa が行う（app/ios/Podfile は iOS 15・静的リンク）。
+        flutter build ipa --release \
+          --build-name="$APP_VERSION_NAME" \
+          --build-number="$IOS_BUILD_NUMBER" \
+          --export-options-plist="$HOME/export_options.plist" \
+          $DART_DEFINES
+
+    - &ios_verify
+      name: Verify the IPA
+      script: |
+        set -euo pipefail
+        IPA=$(find build/ios/ipa -maxdepth 1 -name '*.ipa' -print -quit)
+        [ -n "$IPA" ] || { echo "No IPA produced" >&2; exit 1; }
+        DIR=$(mktemp -d)
+        unzip -q "$IPA" -d "$DIR"
+        APP=$(find "$DIR/Payload" -maxdepth 1 -type d -name '*.app' -print -quit)
+        PLIST="$APP/Info.plist"
+        ID=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$PLIST")
+        VER=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$PLIST")
+        BUILD=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$PLIST")
+        echo "IPA: $ID $VER ($BUILD)"
+        [ "$ID" = "$BUNDLE_ID" ] || { echo "Unexpected bundle ID $ID" >&2; exit 1; }
+        [ "$VER" = "$APP_VERSION_NAME" ] || { echo "Unexpected version $VER" >&2; exit 1; }
+        [ "$BUILD" = "$IOS_BUILD_NUMBER" ] || { echo "Unexpected build number $BUILD" >&2; exit 1; }
+        SIGN=$(codesign -dv --verbose=4 "$APP" 2>&1)
+        echo "$SIGN" | grep -E '^Authority=' || true
+        echo "$SIGN" | grep -Eq '^Authority=(Apple Distribution|iPhone Distribution):' || { echo "Not signed for distribution" >&2; exit 1; }
+        test -f "$APP/PrivacyInfo.xcprivacy" || { echo "PrivacyInfo.xcprivacy missing" >&2; exit 1; }
+        if [ "${FIREBASE_ENABLED:-false}" = "true" ]; then
+          test -f "$APP/GoogleService-Info.plist" || { echo "GoogleService-Info.plist missing" >&2; exit 1; }
+        fi
+        ASSETS="$APP/Frameworks/App.framework/flutter_assets/assets"
+        for f in models/mahjong_yolo_int8.tflite models/mahjong_yolo_fp32.tflite \
+                 models/mahjong_yolo_live_s_int8.tflite models/mahjong_yolo_live_n_int8.tflite \
+                 models/mahjong_yolo_live_n480_int8.tflite labels/tiles_labels.txt; do
+          test -f "$ASSETS/$f" || { echo "Missing $f in the IPA" >&2; exit 1; }
+        done
+        # FFI が dlsym で引く TFLite の C API が残っていること（STRIP_STYLE = non-global の確認）。
+        # 静的リンクなら Runner 本体、動的なら Frameworks のどれかにある。
+        FOUND=""
+        for BIN in "$APP/Runner" "$APP"/Frameworks/*.framework/*; do
+          [ -f "$BIN" ] || continue
+          # grep -q は一致時にパイプを閉じるため、pipefail 下では nm の SIGPIPE を
+          # 「シンボルなし」と誤判定しうる。nm の全出力を受け取ってから調べる。
+          if ! nm -gU "$BIN" > "$DIR/tflite-symbols.txt" 2>/dev/null; then continue; fi
+          if grep -q "_TfLiteInterpreterCreate$" "$DIR/tflite-symbols.txt"; then FOUND="$BIN"; break; fi
+        done
+        [ -n "$FOUND" ] || { echo "TfLite C API symbols are missing (photo/live recognition would fail)" >&2; exit 1; }
+        echo "TfLite C API found in: ${FOUND#$APP/}"
+        echo "OK: IPA"
+
+workflows:
+  android-build:
+    name: Android build (AAB only, no upload)
+    <<: *instance_mac
+    max_build_duration: 25
+    working_directory: app
+    environment:
+      flutter: 3.44.6
+      java: 17
+      groups:
+        - nanikiru_secrets
+      android_signing:
+        - agari_android_keystore
+      vars:
+        PACKAGE_NAME: jp.aile.nanikiru_cam
+        REQUIRED_FOR_STORE: >-
+          FIREBASE_ANDROID_CONFIG_BASE64 REVENUECAT_API_KEY_ANDROID ADMOB_APP_ID_ANDROID
+          ADMOB_HOME_BANNER_ANDROID ADMOB_RESULT_BANNER_ANDROID ADMOB_HISTORY_BANNER_ANDROID
+          ADMOB_NEXT_HAND_INTERSTITIAL_ANDROID ADMOB_QUOTA_REWARD_ANDROID ADMOB_EXPLANATION_REWARD_ANDROID
+    scripts:
+      - *git_lfs
+      - *check_assets
+      - *app_version
+      - *android_firebase
+      - *dart_defines
+      - *check_release_config
+      - *engine_tests
+      - *app_tests
+      - *android_keystore
+      - *android_build
+      - *android_verify
+    artifacts:
+      - $CM_BUILD_DIR/app/build/app/outputs/bundle/release/*.aab
+      - $CM_BUILD_DIR/app/build/app/outputs/mapping/release/mapping.txt
+
+  android-release: &android_release
+    name: Android release (Google Play internal)
+    <<: *instance_mac
+    max_build_duration: 25
+    working_directory: app
+    environment:
+      flutter: 3.44.6
+      java: 17
+      groups:
+        - google_play
+        - nanikiru_secrets
+      android_signing:
+        - agari_android_keystore
+      vars:
+        PACKAGE_NAME: jp.aile.nanikiru_cam
+        REQUIRED_FOR_STORE: >-
+          FIREBASE_ANDROID_CONFIG_BASE64 REVENUECAT_API_KEY_ANDROID ADMOB_APP_ID_ANDROID
+          ADMOB_HOME_BANNER_ANDROID ADMOB_RESULT_BANNER_ANDROID ADMOB_HISTORY_BANNER_ANDROID
+          ADMOB_NEXT_HAND_INTERSTITIAL_ANDROID ADMOB_QUOTA_REWARD_ANDROID ADMOB_EXPLANATION_REWARD_ANDROID
+    scripts:
+      - *git_lfs
+      - *check_assets
+      - *app_version
+      - *android_firebase
+      - *dart_defines
+      - *check_release_config
+      - *engine_tests
+      - *app_tests
+      - *android_keystore
+      - *android_build
+      - *android_verify
+    artifacts:
+      - $CM_BUILD_DIR/app/build/app/outputs/bundle/release/*.aab
+      - $CM_BUILD_DIR/app/build/app/outputs/mapping/release/mapping.txt
+    publishing:
+      google_play:
+        credentials: $GOOGLE_PLAY_SERVICE_ACCOUNT_CREDENTIALS
+        track: internal
+        # 初回の内部テストは Play Console から公開済み。以降も internal のみに配る。
+
+  ios-release: &ios_release
+    name: iOS release (TestFlight)
+    <<: *instance_mac
+    working_directory: app
+    integrations:
+      app_store_connect: App Store Connect Key
+    environment:
+      flutter: 3.44.6
+      xcode: 26.6
+      cocoapods: default
+      groups:
+        - nanikiru_secrets
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: jp.aile.nanikiruCam
+      vars:
+        BUNDLE_ID: jp.aile.nanikiruCam
+        REQUIRED_FOR_STORE: >-
+          FIREBASE_IOS_CONFIG_BASE64 REVENUECAT_API_KEY_IOS ADMOB_APP_ID_IOS
+          ADMOB_HOME_BANNER_IOS ADMOB_RESULT_BANNER_IOS ADMOB_HISTORY_BANNER_IOS
+          ADMOB_NEXT_HAND_INTERSTITIAL_IOS ADMOB_QUOTA_REWARD_IOS ADMOB_EXPLANATION_REWARD_IOS
+          APP_STORE_APPLE_ID
+    scripts:
+      - *git_lfs
+      - *check_assets
+      - *app_version
+      - *ios_firebase_and_secrets
+      - *dart_defines
+      - *check_release_config
+      - *engine_tests
+      - *app_tests
+      - *ios_signing_profiles
+      - *ios_build
+      - *ios_verify
+    artifacts:
+      - $CM_BUILD_DIR/app/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        auth: integration
+        # IPA をアップロードし、内部グループで配信する。外部向け Beta App Review は自動提出しない。
+        submit_to_testflight: false
+        # 外部テスター用のグループに配るなら、App Store Connect のグループ名と完全一致で書く。
+        # beta_groups:
+        #   - testers
+        submit_to_app_store: false
+
+  android-store-candidate:
+    <<: *android_release
+    name: Android production candidate (Google Play internal)
+    # 継承元の最大25分・同じ署名鍵・internal配信だけを使う。
+    scripts:
+      - *git_lfs
+      - *check_assets
+      - *app_version
+      - *store_config
+      - *android_firebase
+      - *dart_defines
+      - *check_release_config
+      - *engine_tests
+      - *app_tests
+      - *android_keystore
+      - *android_build
+      - *android_verify
+
+  ios-store-candidate:
+    <<: *ios_release
+    name: iOS production candidate (TestFlight upload)
+    # 継承元の最大30分・署名設定・App Store自動提出なしを保つ。
+    scripts:
+      - *git_lfs
+      - *check_assets
+      - *app_version
+      - *store_config
+      - *ios_firebase_and_secrets
+      - *dart_defines
+      - *check_release_config
+      - *engine_tests
+      - *app_tests
+      - *ios_signing_profiles
+      - *ios_build
+      - *ios_verify

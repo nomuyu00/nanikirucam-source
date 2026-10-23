@@ -1,0 +1,75 @@
+# iOS の依存（CocoaPods）。Flutter の雛形（packages/flutter_tools/templates/cocoapods/Podfile-ios）に、
+# あがりかむ（reference/agari_cam）で Codemagic・TestFlight のビルドが通っている設定を足したもの。
+# Flutter が CI でその場で作る雛形に任せず、ここに固定する（iOS 15・静的リンク・TFLite の対策）。
+
+# 仕様 12 章: iOS 15 以上（FlutterFire 4 系も 15 以上が必要）。
+platform :ios, '15.0'
+
+# Firebase Analytics は IDFA を使わない版にする（広告の IDFA は AdMob が ATT の許可を得て使う）。
+$FirebaseAnalyticsWithoutAdIdSupport = true
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  # 静的フレームワーク（FlutterFire の推奨。あがりかむと同じ）。
+  use_frameworks! :linkage => :static
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  # tflite_flutter が使う TensorFlowLiteSwift と同じ版を明示する（あがりかむと同じ）。
+  pod 'TensorFlowLiteSwift/CoreML', '2.12.0'
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      # google_mobile_ads 9.1 の GoogleMobileAds_Beta.h 参照に限った互換設定。
+      # 他の Pod のモジュール検査は変更しない。
+      if target.name == 'google_mobile_ads'
+        config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+      end
+      # ObjC のカテゴリを落とさない。
+      other_ldflags = config.build_settings['OTHER_LDFLAGS'] || ['$(inherited)']
+      other_ldflags = [other_ldflags] unless other_ldflags.is_a?(Array)
+      other_ldflags << '-ObjC' unless other_ldflags.include?('-ObjC')
+      # tflite_flutter は FFI（dlsym）で TFLite の C API を引くので、未参照として捨てられないように
+      # リンカに未定義シンボルとして宣言する（Mach-O では先頭に _ が付く）。
+      %w[_TfLiteVersion _TfLiteInterpreterOptionsCreate _TfLiteModelCreate].each do |sym|
+        flag = "-Wl,-u,#{sym}"
+        other_ldflags << flag unless other_ldflags.include?(flag)
+      end
+      config.build_settings['OTHER_LDFLAGS'] = other_ldflags
+    end
+  end
+end

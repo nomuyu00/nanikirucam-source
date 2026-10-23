@@ -1,0 +1,107 @@
+name: nanikiru_cam
+description: "なにきるカム: 麻雀の何切るをカメラで解くアプリ。"
+# pub.dev への誤公開を防ぐ。
+publish_to: 'none'
+
+# App Store Connect で承認済みのバージョンには追加ビルドを提出できないため、
+# 次のリリースでは + 以降のビルド番号だけでなくバージョン名も更新する。
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # --- 麻雀ロジック（純 Dart。別エージェントが拡張中。編集しない） ---
+  mahjong_core:
+    path: ../packages/mahjong_core
+
+  # --- 状態管理（あがりかむと同じ Riverpod 2 + Hooks。3 系は legacy provider が別 import） ---
+  hooks_riverpod: ^2.6.1
+  flutter_hooks: ^0.21.3+1
+  equatable: ^2.1.0
+  collection: ^1.19.0
+  crypto: ^3.0.7
+  intl: ^0.20.2
+
+  # --- カメラ・推論 ---
+  camera: ^0.12.0+2
+  # 0.10.1 fixes the fatal iPhone 17 high-resolution preview crash.
+  camera_avfoundation: ^0.10.1
+  # Pin the exact version so CI cannot resolve a plugin with different iOS pods.
+  # 0.11.0 does not build with AGP 9 (duplicate AAR namespace); 0.12.1 uses LiteRT and 16KB-aligned libs.
+  tflite_flutter: 0.12.1
+  image_picker: ^1.1.2
+
+  # --- 端末内の保存 ---
+  shared_preferences: ^2.5.6
+  # 履歴が数百件を超えたとき用（設計書 5.1）。v1.0 は SharedPreferences で足りる想定。
+  sqflite: ^2.4.2
+  path_provider: ^2.1.6
+
+  # --- 共有・リンク・レビュー ---
+  share_plus: ^7.2.1
+  # Share cards carry a QR link back to the store listing / problem page.
+  qr_flutter: ^4.1.0
+  # Saves share cards to the photo library.
+  gal: ^2.3.3
+  url_launcher: ^6.3.3
+  in_app_review: ^2.0.12
+  package_info_plus: ^9.0.1
+  # Universal Links / Android App Links（/p/{id}, /r/{code}）。
+  app_links: ^6.4.0
+
+  # --- 広告・同意（6 系は AGP 9 / Gradle 9 でビルドできないため 9 系） ---
+  google_mobile_ads: ^9.1.0
+  app_tracking_transparency: ^2.0.7
+
+  # --- 課金（RevenueCat。in_app_purchase は使わない） ---
+  purchases_flutter: ^10.17.0
+
+  # --- Firebase（firebase_options.dart は未生成。AppConfig.firebaseEnabled で切替） ---
+  firebase_core: ^4.7.0
+  firebase_auth: ^6.4.0
+  cloud_firestore: ^6.3.0
+  cloud_functions: ^6.2.0
+  firebase_storage: ^13.1.0
+  firebase_messaging: ^16.2.0
+  firebase_remote_config: ^6.4.0
+  firebase_analytics: ^12.3.0
+
+  # --- 通知（ストリーク 21:00、トライアル終了前日） ---
+  flutter_local_notifications: ^22.3.2
+  # flutter_local_notifications の zonedSchedule が TZDateTime を受けるため直接参照する。
+  timezone: ^0.11.0
+
+  # --- ライブナビ（画面を消さない・電池残量・明るさ固定） ---
+  wakelock_plus: ^1.4.0
+  battery_plus: ^7.0.0
+  screen_brightness: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  camera_platform_interface: ^2.12.0
+  share_plus_platform_interface: ^3.4.0
+  flutter_lints: ^6.0.0
+
+flutter:
+  # google_mobile_ads still requires CocoaPods. Flutter 3.44 enables SwiftPM
+  # by default, which cannot currently be mixed with this CocoaPods plugin.
+  config:
+    enable-swift-package-manager: false
+
+  uses-material-design: true
+  assets:
+    - assets/licenses/
+    - assets/models/
+    - assets/labels/
+    - assets/tiles/
+    # Home の見出しのロゴ（icon_1024.png を 144px に縮めたもの。branding/ の他の素材は同梱しない）。
+    - assets/branding/app_mark.png

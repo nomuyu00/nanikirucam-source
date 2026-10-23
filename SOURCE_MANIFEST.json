@@ -1,0 +1,3232 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 1125,
+    "sha256": "c00813bc17a81d3787c055ee1a78ceeca715d88108d72d368fb95ed3d59fa3de"
+  },
+  {
+    "path": "app/.firebaserc",
+    "bytes": 54,
+    "sha256": "f49c01c9f7b37816caba618f4dd29f77c56ee06d47947559aa5c465a2337480d"
+  },
+  {
+    "path": "app/.gitignore",
+    "bytes": 871,
+    "sha256": "281c0b549571fc8f92f61ad5cb0f63d9063de8fc71446017290bb2e45b2d3756"
+  },
+  {
+    "path": "app/.metadata",
+    "bytes": 1114,
+    "sha256": "c5ce516b547327aab5b6fa27a523d4c76e66294ada3248b293c54b9595cd3a87"
+  },
+  {
+    "path": "app/analysis_options.yaml",
+    "bytes": 214,
+    "sha256": "561e44857a78b50b8ff309210e5e275e6460a87beeba6336a14d7d53d71db762"
+  },
+  {
+    "path": "app/android/.gitignore",
+    "bytes": 253,
+    "sha256": "b027c9de1011765c015e5819bf857c0d75bfcd0886fb01721c091159012e50f1"
+  },
+  {
+    "path": "app/android/app/build.gradle.kts",
+    "bytes": 3532,
+    "sha256": "f46181c35dd9fd6f68ea01149b07225455fcb309d200ce12b42e962db0ab28fd"
+  },
+  {
+    "path": "app/android/app/proguard-rules.pro",
+    "bytes": 1486,
+    "sha256": "7cb4b1d36787ee24a8a1c7452236d053a04ff6fd168cc3d497393762918991d0"
+  },
+  {
+    "path": "app/android/app/src/debug/AndroidManifest.xml",
+    "bytes": 378,
+    "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+  },
+  {
+    "path": "app/android/app/src/main/AndroidManifest.xml",
+    "bytes": 8928,
+    "sha256": "e330f55777b25e28769fd8087009e33371264aa8a0f507b6adf74e906aa388bf"
+  },
+  {
+    "path": "app/android/app/src/main/kotlin/jp/aile/nanikiru_cam/MainActivity.kt",
+    "bytes": 2908,
+    "sha256": "9eca87496059798c452ecc828eb5c98e1241109f264afa490e94b700c258c7cc"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable/ic_launcher_gradient.xml",
+    "bytes": 435,
+    "sha256": "94189215c806d848e528eed75da7d026475c3b5e662eb1a588897d3e67e3ce5e"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable/launch_background.xml",
+    "bytes": 432,
+    "sha256": "e2f7932fb9debc419e99e762d7cec1c60efaf95ace60e001cb4dd86b2157bf09"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-hdpi/ic_stat_notify.png",
+    "bytes": 1007,
+    "sha256": "36df33c5c4d364e2a6783598921072923ec7cc0716a11e6e6fa0981c1c49dacd"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-hdpi/launch_logo.png",
+    "bytes": 25404,
+    "sha256": "4e609246246abfca538925edccf9b9995b0985cada7bc54ac0028027d1ec69bb"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-mdpi/ic_stat_notify.png",
+    "bytes": 728,
+    "sha256": "3c96bbb1c83bd67cd59f89d7f0017fea3251abfe7cf3e54fd9db223f9fa8a2ae"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-mdpi/launch_logo.png",
+    "bytes": 15602,
+    "sha256": "cc147fa8c5df835838c1a75fecc9851e4b70249b3a1593bc12a8ac31dd6a7709"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-v21/launch_background.xml",
+    "bytes": 432,
+    "sha256": "e2f7932fb9debc419e99e762d7cec1c60efaf95ace60e001cb4dd86b2157bf09"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xhdpi/ic_stat_notify.png",
+    "bytes": 1213,
+    "sha256": "895596e6fddf407c6297ed8c30552249f41399ea3f0f65c0ef60448d365c1944"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xhdpi/launch_logo.png",
+    "bytes": 34881,
+    "sha256": "90515aff2588232fd07899b16e47b6957dd4a7207c9e4d46a28b2138122d0c86"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xxhdpi/ic_stat_notify.png",
+    "bytes": 1665,
+    "sha256": "33ce41ab5d861215ec3dde6e88d6a194f0e7e6a83008bd99e359bcb42f4bd4da"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xxhdpi/launch_logo.png",
+    "bytes": 56519,
+    "sha256": "31343fad2e3c6afd61ad91926db78381e564911870b0df28bce2f212769cbe8d"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xxxhdpi/ic_stat_notify.png",
+    "bytes": 1947,
+    "sha256": "12d34b75f0ec76133219e83eba027f6d9e180cb81663e37548e71f763d33c737"
+  },
+  {
+    "path": "app/android/app/src/main/res/drawable-xxxhdpi/launch_logo.png",
+    "bytes": 80312,
+    "sha256": "87bc6756ecc38fc1ed1b5a5135c8f78f96b7c4e33e794e7aefae6e0bc2237d89"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "bytes": 335,
+    "sha256": "68e72c2737c14eae067ca8ac1f9735338e6e7f638f20ca417a251dba242f8388"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "bytes": 6776,
+    "sha256": "7438fa93ee50a7b30e87272c171885c2dea4914de021c1970dad32a160691437"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png",
+    "bytes": 7183,
+    "sha256": "a883a9067983d422087811dc8cf79fa5af3f6d706012af1c02ea589cd3235f42"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-hdpi/ic_launcher_monochrome.png",
+    "bytes": 2338,
+    "sha256": "53cf210ccf1db15d6c840d335704daa96750a72ea84d30ebf644464b3d1ea227"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "bytes": 3893,
+    "sha256": "eba1506e68595b69637c0b1bb3863b54f03a72817271518f8f51ca3fbb9864cd"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
+    "bytes": 4450,
+    "sha256": "095228d4c1841f5916914d827ddd39c5f8c10f3034e5a705b92d3f83e5c97d66"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-mdpi/ic_launcher_monochrome.png",
+    "bytes": 1632,
+    "sha256": "45156a0bbeaf274408e3efb834a759f7ceaf49296cf72babf482ca861abae083"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "bytes": 9883,
+    "sha256": "37491935249d53a578a08b46e2ec708ab448d52ce38666c5384a56b77d7289f8"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png",
+    "bytes": 10243,
+    "sha256": "3a545c0bfc936b765acec9a3349d1286bc7aa42d0fe63b751559b016ff1ba7a3"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_monochrome.png",
+    "bytes": 2898,
+    "sha256": "e9c071bd384894df4f53cd8f938d147db9e6404fc3c64d3c585d5e7ffece0961"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "bytes": 16697,
+    "sha256": "6fa5ba207ae116337da5f57e66a0c167c11d6a44cdcaf99576117a5fbc437e1a"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+    "bytes": 16809,
+    "sha256": "43fd0dd5c8002b9fa4905fc3bc239be48845831454d90748bb2f151ac9f435ad"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_monochrome.png",
+    "bytes": 4562,
+    "sha256": "0e9d12926a2f7689bc4da993ae769a3a706c83998c8bab1abcf8455358d1e9ff"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "bytes": 23536,
+    "sha256": "11162b889cec4839202e36a7e127b8dcd1f9f6fa6990b19478c8594f05a4eff0"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+    "bytes": 23859,
+    "sha256": "11b9d3953be9a23044391f15d15aa033c06118d658a8d458cfb2b8708e95d63d"
+  },
+  {
+    "path": "app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_monochrome.png",
+    "bytes": 5905,
+    "sha256": "d6a4489f9c3098cbe59f3d7573621b3296c52d799b292c6151bc93b1e689e0f9"
+  },
+  {
+    "path": "app/android/app/src/main/res/raw/keep.xml",
+    "bytes": 480,
+    "sha256": "27921abc0cc4e4e996d10eaebf4b8c9295852c7638754aea282290fdbf84a2fc"
+  },
+  {
+    "path": "app/android/app/src/main/res/values/ic_launcher_background.xml",
+    "bytes": 586,
+    "sha256": "1e453cda9ae4b8a3388a5578a9dd29f692a306add19eefb7ea87746bab53feca"
+  },
+  {
+    "path": "app/android/app/src/main/res/values/styles.xml",
+    "bytes": 996,
+    "sha256": "937d7c82f539c72eb94fd3a3773f29b3d3fef1997213c92cb632298cedf4bda9"
+  },
+  {
+    "path": "app/android/app/src/main/res/values-night/styles.xml",
+    "bytes": 995,
+    "sha256": "8c5bad5152f217e837519f9c15211d19f39bd45f5f67faf6dd81cb4b299e518f"
+  },
+  {
+    "path": "app/android/app/src/main/res/values-night-v31/styles.xml",
+    "bytes": 818,
+    "sha256": "ecdee6dcc3cb1d7d7d7334e5add02b9cf3f10811ad63acfec9d66b2a4f70a879"
+  },
+  {
+    "path": "app/android/app/src/main/res/values-v31/styles.xml",
+    "bytes": 818,
+    "sha256": "5a03cf62722d8594a33d3527e46e0700b85e3d88fb7daad3ce2229e3f6f0caa4"
+  },
+  {
+    "path": "app/android/app/src/profile/AndroidManifest.xml",
+    "bytes": 378,
+    "sha256": "30b0832ed8b92dfbd6ae2abfa939ccf26333d37600056b1572bd4a397a18a74b"
+  },
+  {
+    "path": "app/android/build.gradle.kts",
+    "bytes": 537,
+    "sha256": "6a26dba2cb8dfba1e74f540b0d17a89d96c1301d3c3bfda14348bed257fddcba"
+  },
+  {
+    "path": "app/android/gradle/wrapper/gradle-wrapper.properties",
+    "bytes": 203,
+    "sha256": "9920c662e8c6a5f0bc6ccd77618580e655f30a0cd5e062acd3a3183e54db34fc"
+  },
+  {
+    "path": "app/android/gradle.properties",
+    "bytes": 545,
+    "sha256": "0ef1367b4e6c84a03926dfac5eafc7b7be4ef62a233da7431d5e42c0a631e936"
+  },
+  {
+    "path": "app/android/settings.gradle.kts",
+    "bytes": 949,
+    "sha256": "253530061f3880a5e48b001706fddf5542102d965268fc6513fe16c34074834e"
+  },
+  {
+    "path": "app/assets/branding/app_mark.png",
+    "bytes": 12788,
+    "sha256": "cd865a740b93e292d2e866d5ade4f8dc101fccbd1cf626c7341c1ebb87289f4c"
+  },
+  {
+    "path": "app/assets/branding/feature_graphic_1024x500.png",
+    "bytes": 140911,
+    "sha256": "5741cdb538b8c206875739fb2e2d95d5e708257560fafd804b6d48bc6b5d387f"
+  },
+  {
+    "path": "app/assets/branding/icon_1024.png",
+    "bytes": 143318,
+    "sha256": "6871023aad49952b79513c49015961bba3c41fe7f2c930bbc20cd0e884e7fa3b"
+  },
+  {
+    "path": "app/assets/branding/play_store_icon_512.png",
+    "bytes": 69657,
+    "sha256": "3409800c5d0acec1e59dd0c5e0b8ab2254648a4dd5f931de770530aa0d04a705"
+  },
+  {
+    "path": "app/assets/labels/tiles_labels.txt",
+    "bytes": 114,
+    "sha256": "914f08195f73e5c1bd76498ffb8fa62f025bdbba27367f79d83a7c22618f0c91"
+  },
+  {
+    "path": "app/assets/licenses/ultralytics-AGPL-3.0.txt",
+    "bytes": 34523,
+    "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+  },
+  {
+    "path": "app/assets/models/mahjong_yolo_fp32.tflite",
+    "bytes": 80432352,
+    "sha256": "4905b531ec9655131bda14c39fce15bcb1fcfe2ede695dda7feb103472b86313"
+  },
+  {
+    "path": "app/assets/models/mahjong_yolo_int8.tflite",
+    "bytes": 20606296,
+    "sha256": "c2802766c642ca1030922485369c8bc251477daa6c1118f3635b04563d427503"
+  },
+  {
+    "path": "app/assets/models/mahjong_yolo_live_n480_int8.tflite",
+    "bytes": 2849192,
+    "sha256": "a44d0ea910768b0dfa21df82ebb791261752e97234a677d75f895200bc090e6a"
+  },
+  {
+    "path": "app/assets/models/mahjong_yolo_live_n_int8.tflite",
+    "bytes": 2893296,
+    "sha256": "80bc22c7007244c35aada2323fa80c3e2a810e49e020c1097f83dff48ad88e05"
+  },
+  {
+    "path": "app/assets/models/mahjong_yolo_live_s_int8.tflite",
+    "bytes": 9838160,
+    "sha256": "83a49bde603d30b2563a53f8f8f9d0e931425a8b0700ef5c8ee0675be97c0921"
+  },
+  {
+    "path": "app/assets/tiles/一万点棒.png",
+    "bytes": 21241,
+    "sha256": "7193c80ab61d2cec260609b3709d7b2c4862a0516713e2fbe9e6b1d7b9ac9c34"
+  },
+  {
+    "path": "app/assets/tiles/一筒.png",
+    "bytes": 31328,
+    "sha256": "e32021cd7975ee7ed12bc7ce6e65f674a640db7792a19b5118df5597d89c1bcc"
+  },
+  {
+    "path": "app/assets/tiles/一索.png",
+    "bytes": 32087,
+    "sha256": "071e3b2f8e8cc02a091d11b4362f4ddf73241d44e768520b6eb6d1ade01c019a"
+  },
+  {
+    "path": "app/assets/tiles/一萬.png",
+    "bytes": 8221,
+    "sha256": "9bb5be9274c83270435a724fd2dceb22245855addf91b06b00d06f217f12102a"
+  },
+  {
+    "path": "app/assets/tiles/七筒.png",
+    "bytes": 42369,
+    "sha256": "2836824cff76c5050d5410e54b4d76d17c58148e847e082d6abd7f62cf14a1aa"
+  },
+  {
+    "path": "app/assets/tiles/七索.png",
+    "bytes": 9021,
+    "sha256": "f9258e2df4536f4e731c5007c05f07e7a7a842b158b22254b797100c29a09589"
+  },
+  {
+    "path": "app/assets/tiles/七萬.png",
+    "bytes": 9052,
+    "sha256": "3549bd7b4b62ef82a3abafdb4a7fb84a05aca1fd5beb6d56d750871f368cc2b7"
+  },
+  {
+    "path": "app/assets/tiles/三筒.png",
+    "bytes": 27788,
+    "sha256": "f24be21ba382619e3dda7773845c3c2e579264a933b2e998e39657c9f527cd32"
+  },
+  {
+    "path": "app/assets/tiles/三索.png",
+    "bytes": 6324,
+    "sha256": "4ebb1370a8e2471c57dcc498ef7b9b353e478571fdae69716bc41d0d957eefe0"
+  },
+  {
+    "path": "app/assets/tiles/三萬.png",
+    "bytes": 9035,
+    "sha256": "f5857096df5d186f5e9feee740c6ac9511d7ceb81418fa2bcccb9421db928dce"
+  },
+  {
+    "path": "app/assets/tiles/中.png",
+    "bytes": 4658,
+    "sha256": "85537c7b3053a409d895a1788ce1e3e3d3bb4e42246f1ca9904ad77d2118a297"
+  },
+  {
+    "path": "app/assets/tiles/九筒.png",
+    "bytes": 46648,
+    "sha256": "cdbff16303fd8960f7ca343a88301dcf543ff4eb79d603dec274ce2d15255a32"
+  },
+  {
+    "path": "app/assets/tiles/九索.png",
+    "bytes": 10943,
+    "sha256": "eb96eb95ace8a1739921c614370e9fa05e59b1ca92358c0d54b8d4b609ac353e"
+  },
+  {
+    "path": "app/assets/tiles/九萬.png",
+    "bytes": 10862,
+    "sha256": "eb59496c41be5975cafe5b53491dd82db62682e006fa175f47082360adf0d013"
+  },
+  {
+    "path": "app/assets/tiles/二筒.png",
+    "bytes": 24256,
+    "sha256": "005cc0443110e5ad31693cf4827fedf1186133dfe3d49507c340037c68c3869c"
+  },
+  {
+    "path": "app/assets/tiles/二索.png",
+    "bytes": 5605,
+    "sha256": "4511f1b3f51ffd4bcb6db5a5bb072875eafdf66e261ef6191cb626d73875153c"
+  },
+  {
+    "path": "app/assets/tiles/二萬.png",
+    "bytes": 8648,
+    "sha256": "3939b41bc674090a82cd35972c5b6b3ec5aa66c85f96c53d22bbbd8bdc540374"
+  },
+  {
+    "path": "app/assets/tiles/五千点棒.png",
+    "bytes": 12615,
+    "sha256": "132fe3996f0edf8e921b83a69f7214e8b619b8a6b17cc9e70c46ddf62f4d94ce"
+  },
+  {
+    "path": "app/assets/tiles/五百点棒.png",
+    "bytes": 12355,
+    "sha256": "206d8ae159a764a7de1f54ad7cecc620f9c941181e95548177d92ae1f1902024"
+  },
+  {
+    "path": "app/assets/tiles/五筒.png",
+    "bytes": 38560,
+    "sha256": "c43f136b49442e511f2add0636b5fb04dd630ae7c84cfd84d66dfc1b1773907f"
+  },
+  {
+    "path": "app/assets/tiles/五索.png",
+    "bytes": 8016,
+    "sha256": "6e34a2a032ac08ad5b09ae20fd3bd2836b4449b8d92b80c9b5d4026b6b36886f"
+  },
+  {
+    "path": "app/assets/tiles/五萬.png",
+    "bytes": 11583,
+    "sha256": "1d044589555de8937413a1e4bafc08b1b7d96933932c31b95e1e97714cb0103a"
+  },
+  {
+    "path": "app/assets/tiles/八筒.png",
+    "bytes": 45566,
+    "sha256": "0e6f002c34d3ae0729964cd699ffb1f256d5785a2e3c59f7a9b51850e71c9526"
+  },
+  {
+    "path": "app/assets/tiles/八索.png",
+    "bytes": 14982,
+    "sha256": "2f834366b813354ea45cdf75480aed1b23a3e971fd0c97d0a9d3a90210aea0e0"
+  },
+  {
+    "path": "app/assets/tiles/八萬.png",
+    "bytes": 11949,
+    "sha256": "19c11ed5d3b2d53030a7ff1ee9521b2fb7ed3800b678665b4dbe664df0bec750"
+  },
+  {
+    "path": "app/assets/tiles/六筒.png",
+    "bytes": 41936,
+    "sha256": "92a11d97306899e8ee4914c51b5246b7768aae12bfa0134eb356eb30cd39a7eb"
+  },
+  {
+    "path": "app/assets/tiles/六索.png",
+    "bytes": 8330,
+    "sha256": "b02019a91a0f6e7159d9b6391333e8d817cfe09ed467cfcd58e78341f4b3dca7"
+  },
+  {
+    "path": "app/assets/tiles/六萬.png",
+    "bytes": 11101,
+    "sha256": "8324284f5468587c4bf8e370e13ab71d0b7950dd7810e5f9886db437b8f8fb47"
+  },
+  {
+    "path": "app/assets/tiles/北.png",
+    "bytes": 6840,
+    "sha256": "33e9a795baae2f199fdc2bc972b3aaf18c08e7a0882326e4d7b31fd8a42a2a39"
+  },
+  {
+    "path": "app/assets/tiles/千点棒.png",
+    "bytes": 4988,
+    "sha256": "b3416e6d72b7c16511b4c0cf3c96e007e5f4d5cae0144c4f21a15041715a716d"
+  },
+  {
+    "path": "app/assets/tiles/南.png",
+    "bytes": 8383,
+    "sha256": "713265be7665d440ee161f9f5fe8186c8b9842480af2ebad2473d1be7f5a8741"
+  },
+  {
+    "path": "app/assets/tiles/四筒.png",
+    "bytes": 31322,
+    "sha256": "9c35a7b3d4fb4de256961d2bbdf1a0c77abf41398611d84349b7b35b5903d06e"
+  },
+  {
+    "path": "app/assets/tiles/四索.png",
+    "bytes": 6809,
+    "sha256": "59f92296e1193b7f68610b87c983965368035d2481fd534aedf2606f1b6cf478"
+  },
+  {
+    "path": "app/assets/tiles/四萬.png",
+    "bytes": 9419,
+    "sha256": "264677da74c8f77fadce461f3372ce829f04c4b20fb37e9e9c6b55c5d1a62678"
+  },
+  {
+    "path": "app/assets/tiles/東.png",
+    "bytes": 7799,
+    "sha256": "76cc2e2ee860a48d59980b5e23fc77310c167a754e1992b24ec2a842d59f5239"
+  },
+  {
+    "path": "app/assets/tiles/發.png",
+    "bytes": 16410,
+    "sha256": "b4581c290a3304ef7a4921d75dd342d1caa1ca7683a2a680881518b276858304"
+  },
+  {
+    "path": "app/assets/tiles/白.png",
+    "bytes": 3826,
+    "sha256": "07dddd5dfa738096c2c98e1c853877dd74b105578686954c762e80f70276a95f"
+  },
+  {
+    "path": "app/assets/tiles/百点棒.png",
+    "bytes": 13190,
+    "sha256": "ef19e1823c3559e0d0f05e1b2093eb13a7dcc72a12cba29cfb4e15cb04f6bdde"
+  },
+  {
+    "path": "app/assets/tiles/西.png",
+    "bytes": 6393,
+    "sha256": "60f05f985742ec83b31b8813e6a5575dbcd8edba7547d5a690c5b81fe0cf35ad"
+  },
+  {
+    "path": "app/assets/tiles/赤五筒.png",
+    "bytes": 36813,
+    "sha256": "ce5caa6c5cccac0e5d2d6fa629023a8556e3f1d5b9c6b937eb7272f4a1e560db"
+  },
+  {
+    "path": "app/assets/tiles/赤五索.png",
+    "bytes": 7942,
+    "sha256": "14d9cdd6a1d4e761218d9773f552e858a08094af7ee5aa72e3b1150e6d880cfe"
+  },
+  {
+    "path": "app/assets/tiles/赤五萬.png",
+    "bytes": 12057,
+    "sha256": "f7b11cfa0f5ee5e969dea3108398b2fe5fc1b2f343e588da520889537f2a72c9"
+  },
+  {
+    "path": "app/firebase.json",
+    "bytes": 6985,
+    "sha256": "c14767e4aee1b3d69f84753d011f443353f28c5bd7aa48205c8000df7e3b1ac8"
+  },
+  {
+    "path": "app/firestore.indexes.json",
+    "bytes": 1315,
+    "sha256": "3e831628efbb46192c79a55d97376de117cc318edb9dff504cd988f2e994bead"
+  },
+  {
+    "path": "app/firestore.rules",
+    "bytes": 3695,
+    "sha256": "5ea817d94e764e6052406d5a1dc112a731ff0a2115e6b7fbc3df99fd28026949"
+  },
+  {
+    "path": "app/functions/.env.example",
+    "bytes": 1792,
+    "sha256": "bad68c90351e762375840c230648d11b07a479f52084f1a2a81a321dba502470"
+  },
+  {
+    "path": "app/functions/.gitignore",
+    "bytes": 118,
+    "sha256": "14708973c9aa74fc823f7314278984b8399db0b2aedd7185cc0a33e53b5d1737"
+  },
+  {
+    "path": "app/functions/API.md",
+    "bytes": 20545,
+    "sha256": "0f02345a97b383eb1ea380f9952c23efe64790700df3b365b451736f94b6a287"
+  },
+  {
+    "path": "app/functions/eslint.config.mjs",
+    "bytes": 510,
+    "sha256": "e2c95cf8735c4de5e0e3dfe55eb9ac2dcf06abe6ffcbb4bb1061e5d9ab174b9d"
+  },
+  {
+    "path": "app/functions/jest.config.js",
+    "bytes": 346,
+    "sha256": "4c75ab35c6a208b3151623a3764879a57dadf1b55e8bd103992fdfd353d3af6f"
+  },
+  {
+    "path": "app/functions/jest.e2e.config.js",
+    "bytes": 375,
+    "sha256": "35d368888a8a5642849405a3d19d8f9682b0750e19773982827b16374bc9b1e1"
+  },
+  {
+    "path": "app/functions/jest.emulator.config.js",
+    "bytes": 408,
+    "sha256": "53e3d15a0797478482e33eacdbbd37b4caba960a4a695b582e9e3ee0b4dc2fcc"
+  },
+  {
+    "path": "app/functions/package-lock.json",
+    "bytes": 519230,
+    "sha256": "4197a8344888a6f822c3a31386c7167fd21e18566c530846e95bb0e5334ec961"
+  },
+  {
+    "path": "app/functions/package.json",
+    "bytes": 1407,
+    "sha256": "9048439a44e9b11256068f2c8fa6d85b5932c942946b80e5f9ebc2d9579f1e20"
+  },
+  {
+    "path": "app/functions/src/answerProblem.ts",
+    "bytes": 3078,
+    "sha256": "98facb13fd2c1aa928b94567a50a61544d245f8d4a0e90a8cad299b3a9932da8"
+  },
+  {
+    "path": "app/functions/src/applyReferral.ts",
+    "bytes": 1965,
+    "sha256": "be2281c44bd244560c780345a045768f95b027ccfb6d691dc2a75219ad24345d"
+  },
+  {
+    "path": "app/functions/src/autoPost.ts",
+    "bytes": 1318,
+    "sha256": "e85de0087fdf9d0ba682e645135363f24f0df1082f352c7e8530fd1c586192f3"
+  },
+  {
+    "path": "app/functions/src/config.ts",
+    "bytes": 3361,
+    "sha256": "9caf7c48cb9f7a1adb83a1408bfadd71fb7b8a385edd2e5e1ec5a4dd5e9b168a"
+  },
+  {
+    "path": "app/functions/src/core/answer.ts",
+    "bytes": 3966,
+    "sha256": "af7599bc2e2de5a06d149deb7f78c277309f06ba079cd7cfaa4d49276ebc70b0"
+  },
+  {
+    "path": "app/functions/src/core/autoPost.ts",
+    "bytes": 6695,
+    "sha256": "b4b7394ee1024f09a06f8459c89178b86b6b44af187d9061eec86fbdf7f41cee"
+  },
+  {
+    "path": "app/functions/src/core/deleteMyData.ts",
+    "bytes": 2929,
+    "sha256": "1e3c2f2b8393b5eced0584e8ff6aea5e1c4aa1a33fe8794a0d88c3e72e44b478"
+  },
+  {
+    "path": "app/functions/src/core/notify.ts",
+    "bytes": 2593,
+    "sha256": "32543dfb19150a84118fc786f572ab1d265df7b3b39b89dabdc02390f719a1a3"
+  },
+  {
+    "path": "app/functions/src/core/pickDaily.ts",
+    "bytes": 3581,
+    "sha256": "5ae404410fc61f80d41acf71c5004b5481ec71bd16097c4c19f9b0629f46a9cc"
+  },
+  {
+    "path": "app/functions/src/core/privateAnswer.ts",
+    "bytes": 1415,
+    "sha256": "1d3a63d59d5649a3df9239c7261b5a7b9d5b22864d7d5689b5b475127954b538"
+  },
+  {
+    "path": "app/functions/src/core/publish.ts",
+    "bytes": 4869,
+    "sha256": "a87fbf75abcd432b51efc977884b300f59b7e9f67774bcb23b1fc285aa928f45"
+  },
+  {
+    "path": "app/functions/src/core/referral.ts",
+    "bytes": 3191,
+    "sha256": "c4068d1ab752517017f1a4d294fe16f9f2b350fd60f15798d313959e3bcc37c7"
+  },
+  {
+    "path": "app/functions/src/core/report.ts",
+    "bytes": 2962,
+    "sha256": "20cdb1046022ca9fa532c699d694592d769ead934a6633829432b7281abd8a4f"
+  },
+  {
+    "path": "app/functions/src/core/revenuecat.ts",
+    "bytes": 3976,
+    "sha256": "d3e4539741a73d6433a371e6baeb9e5afb92c32ba653f0063e38b46c458b891a"
+  },
+  {
+    "path": "app/functions/src/core/threadsToken.ts",
+    "bytes": 1623,
+    "sha256": "6bc20f986c0524dfe473758083b1817e4bbebfd299570aabe7dc5c322432be9a"
+  },
+  {
+    "path": "app/functions/src/core/types.ts",
+    "bytes": 2150,
+    "sha256": "fadab5cd11c965dbaf9bc5da18507c62e7ae8ed355c8369dfb50f8357aef22fc"
+  },
+  {
+    "path": "app/functions/src/core/users.ts",
+    "bytes": 4052,
+    "sha256": "9d76697eafa69f7de5e4296e14989c361068a173d035b5862e5273af0dfca95d"
+  },
+  {
+    "path": "app/functions/src/core/weekly.ts",
+    "bytes": 5352,
+    "sha256": "da6c90142c89e648890e0fd3f0d1927555082afa89c281e5eb3b0c48bc9284f9"
+  },
+  {
+    "path": "app/functions/src/deleteMyData.ts",
+    "bytes": 1401,
+    "sha256": "60076926587a5b3da31eb4d27c153e155db36cc544b47e28cc0ae4728916e4ed"
+  },
+  {
+    "path": "app/functions/src/ensureUser.ts",
+    "bytes": 1236,
+    "sha256": "ae420c2b9568dae68ff053204bd707d1568c0f27442ec456d3e55e86598c954a"
+  },
+  {
+    "path": "app/functions/src/globals.ts",
+    "bytes": 573,
+    "sha256": "4c4c596969f7a94b6117fcae5bd46a0fea2f8e162576ab0b5e2d9077e30d4aad"
+  },
+  {
+    "path": "app/functions/src/index.ts",
+    "bytes": 778,
+    "sha256": "1fdc1280af88e2cea18dd502bd96f4f1521c12892411f8bd58d1cede78e5dc76"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/bluesky.ts",
+    "bytes": 4959,
+    "sha256": "3204d4554045d68e3878291abeb471a477309de606bacae9d8513414fc45fd43"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/discord.ts",
+    "bytes": 1505,
+    "sha256": "eeb900ce3e7c7dfa5ae452fe01e2846a1912df361af4efb467e0199ce709fce4"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/index.ts",
+    "bytes": 2622,
+    "sha256": "f50ab3ed24651c8dc017c8353cc72ee161c59b5eb1151f94a14c25b7f4dfd8e1"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/threads.ts",
+    "bytes": 3793,
+    "sha256": "70bfa84b640fea7d084b56f4688b8cad187cfa3ed81c19e30a3fc2feb6815e87"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/types.ts",
+    "bytes": 1597,
+    "sha256": "e1a9da0ee133402ff73952496c295aa4afe5942a450a84606172d92267c4cd27"
+  },
+  {
+    "path": "app/functions/src/lib/adapters/x.ts",
+    "bytes": 3332,
+    "sha256": "bd8c40ac65f8955c55f93af94f6c4ee06538c21e376f07d88b4b0f16c4948461"
+  },
+  {
+    "path": "app/functions/src/lib/answerRequest.ts",
+    "bytes": 2349,
+    "sha256": "77c24d7cb65ad9ab532f0c37e0c5544c2938379da8f20feec83e1a051a93b7af"
+  },
+  {
+    "path": "app/functions/src/lib/contentKey.ts",
+    "bytes": 1522,
+    "sha256": "a311b408790782f2cb3d2a33190e9b4e5d31bf459d049de19800704c5f917407"
+  },
+  {
+    "path": "app/functions/src/lib/daily.ts",
+    "bytes": 5728,
+    "sha256": "b5afee24758f6db4d104f39bd667f5756f0d10a632a107e89e7464853e98b8d9"
+  },
+  {
+    "path": "app/functions/src/lib/dates.ts",
+    "bytes": 666,
+    "sha256": "f75013ea002406e6912fd8a98ef12f50559424a4034a2df822d4f841c0ae0480"
+  },
+  {
+    "path": "app/functions/src/lib/html.ts",
+    "bytes": 10328,
+    "sha256": "8586e3f48c8d7a21d80fef3045bc46aab7977d4ccb895fc9b8c67508f31b39e7"
+  },
+  {
+    "path": "app/functions/src/lib/i18n.ts",
+    "bytes": 6797,
+    "sha256": "1b285c1039a4a55fec8948c4b9f061f398fbe11fa8b8fe460858802ce5a585aa"
+  },
+  {
+    "path": "app/functions/src/lib/ngwords.ts",
+    "bytes": 3708,
+    "sha256": "8fd76b4ed2afaf2f745dd0996f4cf98ca32ef013d518b81a54a02fdab4377e66"
+  },
+  {
+    "path": "app/functions/src/lib/postText.ts",
+    "bytes": 6764,
+    "sha256": "28073d363745ed23f43c620925fabcd2c0af37c5f6196f68f83b2006e1937156"
+  },
+  {
+    "path": "app/functions/src/lib/pro.ts",
+    "bytes": 3307,
+    "sha256": "80935ddab1cfacb1d92c981941c04a80dbfd452258d6d99b236e61b10c9ae8a8"
+  },
+  {
+    "path": "app/functions/src/lib/problemId.ts",
+    "bytes": 1110,
+    "sha256": "91dc783beb016bfd52ee8fe75440947dc35dae7a70b2bb4da2d7d56b6c43f4a7"
+  },
+  {
+    "path": "app/functions/src/lib/referral.ts",
+    "bytes": 992,
+    "sha256": "0b718a5768ff955ff142fb05cbe2da7c094e7b096bde30e6f2f55bb3f0c16146"
+  },
+  {
+    "path": "app/functions/src/lib/reporters.ts",
+    "bytes": 575,
+    "sha256": "b16cff00319bdf9f4652b6b67c93fce9414146c785de4bda0cc93ece9cddd480"
+  },
+  {
+    "path": "app/functions/src/lib/revenuecat.ts",
+    "bytes": 6691,
+    "sha256": "6445872b641ca53ebbb4d458f4103511c5839ca4497b20c83d0435001b7f18fd"
+  },
+  {
+    "path": "app/functions/src/lib/stats.ts",
+    "bytes": 3370,
+    "sha256": "bb411db4ed976bd72a8ead7ff7d260fa879ee72a83f2b30813193887b2207664"
+  },
+  {
+    "path": "app/functions/src/lib/storeLinks.ts",
+    "bytes": 2611,
+    "sha256": "caa21f82751e736024b2f58ef060aea489311413842ddaec0d911e01a4d6401d"
+  },
+  {
+    "path": "app/functions/src/lib/tiles.ts",
+    "bytes": 3774,
+    "sha256": "7012abb17fcccb04cd2348ddd4f37543aa0d25d9ae157e429fc4e5efd73e79fe"
+  },
+  {
+    "path": "app/functions/src/lib/validate.ts",
+    "bytes": 10056,
+    "sha256": "80ae0c0417d079b7f975afe422bc39f37800a1a4b2933db26122f7a3aa228589"
+  },
+  {
+    "path": "app/functions/src/notifyDaily.ts",
+    "bytes": 1112,
+    "sha256": "899e68aca891a391548ad65ce7a0a9b741d7b783b1d14c20b42d267feda3a10d"
+  },
+  {
+    "path": "app/functions/src/pickDaily.ts",
+    "bytes": 697,
+    "sha256": "c2f5069b6eb3ac7e070a23592c17dd4b04e0f7b38eb30a167156152130c77baa"
+  },
+  {
+    "path": "app/functions/src/postRuntime.ts",
+    "bytes": 1177,
+    "sha256": "f7265755e5cbbf0403461090953a892777fa77ff3e69665cac7cbc83cbb754bb"
+  },
+  {
+    "path": "app/functions/src/publishProblem.ts",
+    "bytes": 1719,
+    "sha256": "6c5c4ab4c492ce2fe9a277dc0f66a17a7728e541649edd7e76215e7cf9077ddf"
+  },
+  {
+    "path": "app/functions/src/renderProblemPage.ts",
+    "bytes": 3691,
+    "sha256": "ae062c4b6638d79937dbc65aaaa341b04a315636fa4b9d40d4f69544b68f84eb"
+  },
+  {
+    "path": "app/functions/src/reportProblem.ts",
+    "bytes": 1761,
+    "sha256": "00202d768848a4194c64dd0e74276b525c6505c4e594cdaf1c8873f65ba470db"
+  },
+  {
+    "path": "app/functions/src/revenuecatWebhook.ts",
+    "bytes": 1880,
+    "sha256": "781f6bacd815189967f97d6849d67ff7f06cdecf3542cf67db382d8cb709ba90"
+  },
+  {
+    "path": "app/functions/src/storage.ts",
+    "bytes": 1155,
+    "sha256": "c4ba99696616184402542a3174de730ab27dab7a7563f23041dcd857aff21c14"
+  },
+  {
+    "path": "app/functions/src/weeklyDigest.ts",
+    "bytes": 1231,
+    "sha256": "520c94b31adf4dc779dbfba76d77d5e01f7ad119f54782c760ecd345315bc8d6"
+  },
+  {
+    "path": "app/functions/test/adapters.test.ts",
+    "bytes": 15129,
+    "sha256": "c011a066561cb8780eadc04f3c7b2d49cad84c97486136949f10c30e590719a6"
+  },
+  {
+    "path": "app/functions/test/daily.test.ts",
+    "bytes": 6178,
+    "sha256": "ea46e1f96439fdd43af3e731c024de8b4ace999635e33dead7e36ed4653c90f2"
+  },
+  {
+    "path": "app/functions/test/e2e/callables.e2e.ts",
+    "bytes": 11402,
+    "sha256": "c9bbf565a72bdbc2fef49d3eb07478e60ec8f015f7cfb9d29cf2ae21969c17ca"
+  },
+  {
+    "path": "app/functions/test/emulator/core.etest.ts",
+    "bytes": 43008,
+    "sha256": "f41fecdde7085c5a55761a2341df7ed8fd34f706379ca77f1d7e3bd308a86907"
+  },
+  {
+    "path": "app/functions/test/emulator/helpers.ts",
+    "bytes": 2831,
+    "sha256": "9abd348d5ba497168ce28c2bb05a7ebec14a452dfe4c383defb31117302a3f24"
+  },
+  {
+    "path": "app/functions/test/emulator/rules.etest.ts",
+    "bytes": 12702,
+    "sha256": "99514018c420f0ca3386789400dec9ae06e55c39c0a6cc0fd5163f68f7443670"
+  },
+  {
+    "path": "app/functions/test/fixtures.ts",
+    "bytes": 1283,
+    "sha256": "af83537d83da69669940850455848165882798c79f8b004cdf8026141462ef8f"
+  },
+  {
+    "path": "app/functions/test/html.test.ts",
+    "bytes": 13323,
+    "sha256": "0dae9bf885fcf84716492cff131c5bfb1f2410e1d4a2213264f2eeae67ada328"
+  },
+  {
+    "path": "app/functions/test/ids-and-keys.test.ts",
+    "bytes": 8949,
+    "sha256": "2e06143d1445b27148f963dd5a1dafcbce06da95e45ef19d36beda14d03bc80d"
+  },
+  {
+    "path": "app/functions/test/postText.test.ts",
+    "bytes": 6043,
+    "sha256": "f148fcc7974938f4dda6ac36f189a79b3f0670b75de504f1c2ba13e67cf71849"
+  },
+  {
+    "path": "app/functions/test/reporters.test.ts",
+    "bytes": 1457,
+    "sha256": "916a5ecd0d18448cfce42d241a4f5d6d20178588e82fad3936ddebcaaf6dccf7"
+  },
+  {
+    "path": "app/functions/test/revenuecat.test.ts",
+    "bytes": 11367,
+    "sha256": "d3b6faa7d956c3985598ec36f1171cc683a1e72c23419ddb5259c9128a9f8d7b"
+  },
+  {
+    "path": "app/functions/test/stats.test.ts",
+    "bytes": 5744,
+    "sha256": "31ac2873006b99bef568553e05e75bfa1cade1edf0274d1ee21948d61e89a488"
+  },
+  {
+    "path": "app/functions/test/tiles.test.ts",
+    "bytes": 2750,
+    "sha256": "045e9831b30158806a419476eb0e2631b624568c6af9fa8f90b0fbb2ff2675a1"
+  },
+  {
+    "path": "app/functions/test/validate.test.ts",
+    "bytes": 12821,
+    "sha256": "23c641808433ecfa0b6f083fab5e99560492b02a1ba5e8f6bd2fc986993bccdb"
+  },
+  {
+    "path": "app/functions/tsconfig.build.json",
+    "bytes": 196,
+    "sha256": "f650b84c6478335ad13608c90e52f765b43e9a81381b5e7cb6af042f35ce638f"
+  },
+  {
+    "path": "app/functions/tsconfig.json",
+    "bytes": 497,
+    "sha256": "a9212de1813ec582a3692f3bf79074acd686c7570c8edfc8f8e0fd7b6ac4c380"
+  },
+  {
+    "path": "app/hosting/public/.well-known/apple-app-site-association",
+    "bytes": 331,
+    "sha256": "7589f734e3cef6e143d77676026db83efdde0516616ac1573cdfa2825904cc5c"
+  },
+  {
+    "path": "app/hosting/public/.well-known/assetlinks.json",
+    "bytes": 350,
+    "sha256": "4bcc44d38c9b5b029eaf2eca1b47413be130a73fe3b781c3fda78c083d763edb"
+  },
+  {
+    "path": "app/hosting/public/404.html",
+    "bytes": 726,
+    "sha256": "fb9181a6769e9bb5291eee9311ae59ed1cc8235349e3146bb458d4c5a36db896"
+  },
+  {
+    "path": "app/hosting/public/assets/apple-touch-icon.png",
+    "bytes": 16948,
+    "sha256": "5210c39b64b853be61207a1436135827f66fbe730a89b147d3db24d86a6cd6f3"
+  },
+  {
+    "path": "app/hosting/public/assets/favicon-48.png",
+    "bytes": 3605,
+    "sha256": "e7e572f0cce0abe5ed51b146547e8a4b418db6dbe4de13e5fd139dd03ce5a15c"
+  },
+  {
+    "path": "app/hosting/public/assets/icon-192.png",
+    "bytes": 21691,
+    "sha256": "f87523a934239b44c9c0b054b49de3136f40d560cb07d6958c6000633784a0a9"
+  },
+  {
+    "path": "app/hosting/public/assets/icon-512.png",
+    "bytes": 73886,
+    "sha256": "41671ab7122fd737d83571653410dc2b46a1e67e55eb851d48271f07eb10ead2"
+  },
+  {
+    "path": "app/hosting/public/assets/og-default.png",
+    "bytes": 170774,
+    "sha256": "8d50dbdb4c5033e90cc9e226dd416439e41c0f129e88ad3ebd4852de1c155ec3"
+  },
+  {
+    "path": "app/hosting/public/assets/problem.js",
+    "bytes": 11013,
+    "sha256": "a0704c5284a080322961c1c726fdd2a82044aa448abb10105c59ab2cf38df339"
+  },
+  {
+    "path": "app/hosting/public/assets/referral.js",
+    "bytes": 1549,
+    "sha256": "9b8513ff0b39d48919daf34e6c8a638e43f78048241fc75626ef62e5101ab7d2"
+  },
+  {
+    "path": "app/hosting/public/assets/site.css",
+    "bytes": 9692,
+    "sha256": "f777e999c3b4e22f97c4ea2cff9e012a288d517117081e2599503a1a56facf70"
+  },
+  {
+    "path": "app/hosting/public/index.html",
+    "bytes": 4173,
+    "sha256": "7c68b885d55c5348bb848f1798b9b98eece5eda1b175d2c590cfd2f7547cea0d"
+  },
+  {
+    "path": "app/hosting/public/privacy.html",
+    "bytes": 11582,
+    "sha256": "efbfa2a635c55f2ea6af8b98f8b5285a34ab2bb336ac8f9712048e3e982eb08d"
+  },
+  {
+    "path": "app/hosting/public/r.html",
+    "bytes": 2198,
+    "sha256": "0aa69c93500d9c726fd012f5704261e30c705f8f17d9aa71219a9a73111561d8"
+  },
+  {
+    "path": "app/hosting/public/terms.html",
+    "bytes": 11948,
+    "sha256": "90509a32b13a06dfdf6a72141f5ab2927a9bff8ec263cece95b0ee9681b85591"
+  },
+  {
+    "path": "app/hosting/public/tiles/0m.png",
+    "bytes": 10969,
+    "sha256": "3ce0b64eae66a88b21bd116accec9bce62378db7b01ddab8135c9af2a5d082e4"
+  },
+  {
+    "path": "app/hosting/public/tiles/0p.png",
+    "bytes": 32091,
+    "sha256": "03a4cd54f01b00852c0a5e68c578c314013a52d44d9213a8a82350a4f26058f9"
+  },
+  {
+    "path": "app/hosting/public/tiles/0s.png",
+    "bytes": 10241,
+    "sha256": "037f1dff0e28b1dac3d812beb6e462fad879290b3036883a3ad12cfee8d8c429"
+  },
+  {
+    "path": "app/hosting/public/tiles/1m.png",
+    "bytes": 6913,
+    "sha256": "6b513cf225c9dcdea2f048ab37d6fe30bbd895381e9e01c64d3a3f4814f9c177"
+  },
+  {
+    "path": "app/hosting/public/tiles/1p.png",
+    "bytes": 27831,
+    "sha256": "f0cbe4f094e6216466ecc3ee422d588241c1f344353078dd6539b47b5d34797d"
+  },
+  {
+    "path": "app/hosting/public/tiles/1s.png",
+    "bytes": 30969,
+    "sha256": "f7286a9e89803830289b2767863f3a5dcef9cb14070b41edec3af21205b6c942"
+  },
+  {
+    "path": "app/hosting/public/tiles/1z.png",
+    "bytes": 7975,
+    "sha256": "b96a0e3e83a133c700138756514a2222795beff28d0b5e8a21876b243d3b54bc"
+  },
+  {
+    "path": "app/hosting/public/tiles/2m.png",
+    "bytes": 7341,
+    "sha256": "63a01b7d3723f5b9dfcb21576be17ca605e9102b462fc8c856f197b290458474"
+  },
+  {
+    "path": "app/hosting/public/tiles/2p.png",
+    "bytes": 21157,
+    "sha256": "a7f0e4923c050ec1c0979ca60e6041369595526fbcce2209ace4793ff77e23de"
+  },
+  {
+    "path": "app/hosting/public/tiles/2s.png",
+    "bytes": 5779,
+    "sha256": "154206493a678c17fc374285bfbf3a695d479b70b8a8ae91ed7b9f0df1878443"
+  },
+  {
+    "path": "app/hosting/public/tiles/2z.png",
+    "bytes": 7086,
+    "sha256": "534faf213ff2aa0e4c847d3924976fd32c85ba9da4a373c92870d00070495a7a"
+  },
+  {
+    "path": "app/hosting/public/tiles/3m.png",
+    "bytes": 7720,
+    "sha256": "c964c7c6674770cc65533abd6be0356caef109e5b1cff9346b71b6b95a177fcf"
+  },
+  {
+    "path": "app/hosting/public/tiles/3p.png",
+    "bytes": 22460,
+    "sha256": "45128160b1135c975803f6ef6f482f84af6dabe5650995057aba0b385f6ff3d4"
+  },
+  {
+    "path": "app/hosting/public/tiles/3s.png",
+    "bytes": 7769,
+    "sha256": "fe3bd9c8afa10464e2556c08f0e96cab09a87975c703265af5b1bf5508eb08f0"
+  },
+  {
+    "path": "app/hosting/public/tiles/3z.png",
+    "bytes": 5124,
+    "sha256": "d90e8b9f5cfd39f7c9f9752307dca82bfd5027563bafd48c081bdc890db2650b"
+  },
+  {
+    "path": "app/hosting/public/tiles/4m.png",
+    "bytes": 8813,
+    "sha256": "d8d4d040ac8b1687122f9789ff3a04629c739db97b46da07270ce206649da38d"
+  },
+  {
+    "path": "app/hosting/public/tiles/4p.png",
+    "bytes": 28305,
+    "sha256": "9a02f781844c77cc85aadffb5a16d345ec40072bccce5d2b21753540ade966d6"
+  },
+  {
+    "path": "app/hosting/public/tiles/4s.png",
+    "bytes": 8696,
+    "sha256": "a9916659a02d44712bcbc3051f1fd46c6be2f6f416f1c442b80cee424f29e07d"
+  },
+  {
+    "path": "app/hosting/public/tiles/4z.png",
+    "bytes": 5856,
+    "sha256": "1d9bca31a8fcfbc4d353c02b56abbce8bde3c39bf6f6f1aa25dc9329c186ed1c"
+  },
+  {
+    "path": "app/hosting/public/tiles/5m.png",
+    "bytes": 10773,
+    "sha256": "8ffafd4d860ec1b36075dccc8cf045d5bec0c7200459b42a877401e1f9a2c779"
+  },
+  {
+    "path": "app/hosting/public/tiles/5p.png",
+    "bytes": 34784,
+    "sha256": "e146d51f8951755ae634691088ea8c67d814a96652a230a9a833868373b8e45d"
+  },
+  {
+    "path": "app/hosting/public/tiles/5s.png",
+    "bytes": 11481,
+    "sha256": "75184bf48898bf1fa0550a76844f5996cdc0b70c4fa242bb8a3d6e6e7df10581"
+  },
+  {
+    "path": "app/hosting/public/tiles/5z.png",
+    "bytes": 1293,
+    "sha256": "cf0f9357eb909e57b6897956e66144bb7cbf2d710010d9bd5df940cba36a761f"
+  },
+  {
+    "path": "app/hosting/public/tiles/6m.png",
+    "bytes": 9667,
+    "sha256": "7e0ed694fba6fe0539fb68645a6f104972af614f31ce11309e7765d97760d4c9"
+  },
+  {
+    "path": "app/hosting/public/tiles/6p.png",
+    "bytes": 37402,
+    "sha256": "58e084846b921ee12a3534afd78b7c3ba3564cdc9c6daef61cc531a03130442d"
+  },
+  {
+    "path": "app/hosting/public/tiles/6s.png",
+    "bytes": 13145,
+    "sha256": "45705696cce70657db5a551f9382e4bfb5a92041059c67e531b6a852742f1f82"
+  },
+  {
+    "path": "app/hosting/public/tiles/6z.png",
+    "bytes": 16679,
+    "sha256": "bec5506c39eab93a38bbf5b6a7a15c1e306f44b8f1304addc558aa4f4dd2721c"
+  },
+  {
+    "path": "app/hosting/public/tiles/7m.png",
+    "bytes": 8555,
+    "sha256": "17d67f8106f2d91ea68fe807a261e54d30e2a08380a47ee257ed39fd64c86e28"
+  },
+  {
+    "path": "app/hosting/public/tiles/7p.png",
+    "bytes": 34967,
+    "sha256": "e30636958d8d22dd07982cef577d000683fcd8821530c7bdf8d30cdc4ddf4d12"
+  },
+  {
+    "path": "app/hosting/public/tiles/7s.png",
+    "bytes": 14314,
+    "sha256": "77ae073503a6f921c03a6248e077868743e8406ec543b38044255ed6a1d381d4"
+  },
+  {
+    "path": "app/hosting/public/tiles/7z.png",
+    "bytes": 3198,
+    "sha256": "0fe31b1c120bbc2d8f87f80265c2da67049d6da9d59bc93d27712bf0142a54de"
+  },
+  {
+    "path": "app/hosting/public/tiles/8m.png",
+    "bytes": 10553,
+    "sha256": "4d43b61fe3bafaeb196b5ad744500e2d0c0f6b30f31410de5dc159d97efc2b77"
+  },
+  {
+    "path": "app/hosting/public/tiles/8p.png",
+    "bytes": 38590,
+    "sha256": "b18b10102413a30ead448c667973e6f6799fff72746b6ab31ccbd10dec2f6fd0"
+  },
+  {
+    "path": "app/hosting/public/tiles/8s.png",
+    "bytes": 19352,
+    "sha256": "1607179fd73bdaf077fa42973e6c6a721c6574e49bc2c761bbfd09a0683738d3"
+  },
+  {
+    "path": "app/hosting/public/tiles/9m.png",
+    "bytes": 9558,
+    "sha256": "9781eb5330c4ce649b8d8a0d2c492902515446a44fda1b112263da672f36d0dd"
+  },
+  {
+    "path": "app/hosting/public/tiles/9p.png",
+    "bytes": 42273,
+    "sha256": "cb012576b5472bfcfe74ccfdc5750d151a0413c4a3a066a28904017af1fbbbd3"
+  },
+  {
+    "path": "app/hosting/public/tiles/9s.png",
+    "bytes": 18016,
+    "sha256": "df14416756a791e83622681f8942f021f89a4bdf91ef954af0d86b17f459fb52"
+  },
+  {
+    "path": "app/hosting/public/tokushoho.html",
+    "bytes": 5039,
+    "sha256": "497a294105688e108bf0e67bd5df9a00efd4bca86e31469932e38c74c3cbf40a"
+  },
+  {
+    "path": "app/ios/.gitignore",
+    "bytes": 569,
+    "sha256": "37380775aeb2499662b7aca80f4ac4c95ae827c3ba2bfa179aa3e9af4812c623"
+  },
+  {
+    "path": "app/ios/Flutter/AppFrameworkInfo.plist",
+    "bytes": 720,
+    "sha256": "da12038f9b2688a8a26160fea2609fa8fcb11421448c109f09c0f573efe7698d"
+  },
+  {
+    "path": "app/ios/Flutter/Debug.xcconfig",
+    "bytes": 677,
+    "sha256": "52e909ea1915ec3042a57dd3ca535595a31aafab515c8f6091b6a772ee6a559f"
+  },
+  {
+    "path": "app/ios/Flutter/Release.xcconfig",
+    "bytes": 917,
+    "sha256": "458bb3418cff03d76168a52602fb8f7cc3d7fdb1005fa5f78387149cd669e099"
+  },
+  {
+    "path": "app/ios/Podfile",
+    "bytes": 3429,
+    "sha256": "4f67dbc7579e17423770b15a6720ab9e6ec9fe2655f730971db3bf3d8e49eea5"
+  },
+  {
+    "path": "app/ios/Runner/AppDelegate.swift",
+    "bytes": 1697,
+    "sha256": "a82d836af1286d929204d397bcf44a5e99b5029deb0b1b8d65abf425cfeac1d1"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+    "bytes": 217,
+    "sha256": "6956d9733cdeaae910656d7d906fc8e66020d0df0cbc60bb0395d00db08b9846"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+    "bytes": 143318,
+    "sha256": "6871023aad49952b79513c49015961bba3c41fe7f2c930bbc20cd0e884e7fa3b"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+    "bytes": 391,
+    "sha256": "ccc7950fd5f5b82067c85f667940a9d59189151460761ece8098ca78daa19469"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png",
+    "bytes": 15602,
+    "sha256": "cc147fa8c5df835838c1a75fecc9851e4b70249b3a1593bc12a8ac31dd6a7709"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png",
+    "bytes": 34881,
+    "sha256": "90515aff2588232fd07899b16e47b6957dd4a7207c9e4d46a28b2138122d0c86"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png",
+    "bytes": 56519,
+    "sha256": "31343fad2e3c6afd61ad91926db78381e564911870b0df28bce2f212769cbe8d"
+  },
+  {
+    "path": "app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
+    "bytes": 336,
+    "sha256": "a985b626c4f7546a8ba392d135e9226c3547c8e2b46895f5f2bdf40d7b14ef9f"
+  },
+  {
+    "path": "app/ios/Runner/Base.lproj/LaunchScreen.storyboard",
+    "bytes": 2392,
+    "sha256": "be21776c501f350dd1a79ec38952a9bb466ea5c06d223885736ecce69c18ee2c"
+  },
+  {
+    "path": "app/ios/Runner/Base.lproj/Main.storyboard",
+    "bytes": 1605,
+    "sha256": "fd367b6c43006d61b730f674970dd48b9f662c8f2264e52ffc1558102a2c9f2d"
+  },
+  {
+    "path": "app/ios/Runner/Info.plist",
+    "bytes": 8225,
+    "sha256": "af2319defee8880a7fcc00b48b39e526b50f25976af9032fff7089ceb7134ef1"
+  },
+  {
+    "path": "app/ios/Runner/PrivacyInfo.xcprivacy",
+    "bytes": 6005,
+    "sha256": "783b66b2242274feca3ab9a649bcc3c2e70d82fff3c90bdf8150542b8fe68185"
+  },
+  {
+    "path": "app/ios/Runner/Runner-Bridging-Header.h",
+    "bytes": 38,
+    "sha256": "1a8d11d01d1cc92c650c9c9ed35299240052d4683a15a719a2315ef44185e074"
+  },
+  {
+    "path": "app/ios/Runner/Runner.entitlements",
+    "bytes": 1191,
+    "sha256": "5f69ccb4851d193c465efc10d4d273e765aa7cd556401fb7920469927bc42c65"
+  },
+  {
+    "path": "app/ios/Runner/SceneDelegate.swift",
+    "bytes": 76,
+    "sha256": "add68b905971dedfcc0d0b5b7118030de5925ba8c081ad9815463699e3a444ad"
+  },
+  {
+    "path": "app/ios/Runner/TFLBootstrap.swift",
+    "bytes": 2359,
+    "sha256": "674de6295742093df7903101c9b29c4086990725ee07e3ff2a3ee7a1e8dfe38f"
+  },
+  {
+    "path": "app/ios/Runner/TFLForceLink.m",
+    "bytes": 763,
+    "sha256": "6053e560c95aaff7f123d3e3b9c7ad6b2112b3fa55fb4582596552c583afe570"
+  },
+  {
+    "path": "app/ios/Runner.xcodeproj/project.pbxproj",
+    "bytes": 28229,
+    "sha256": "34b8465a6996d3abd8cba9b596aaeea56370b6dfa4e2b7367c31291ee2354f28"
+  },
+  {
+    "path": "app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+    "bytes": 135,
+    "sha256": "7f3b00b5c3fdb45242d7b87e1e5c4e25d1fa8129a16c94295ecc4e8ea2235c5f"
+  },
+  {
+    "path": "app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+    "bytes": 238,
+    "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
+  },
+  {
+    "path": "app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+    "bytes": 226,
+    "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f"
+  },
+  {
+    "path": "app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+    "bytes": 4717,
+    "sha256": "9fbce429f56243561dd437a527136c9f9ed77165e3b271b923faf236cfcd0484"
+  },
+  {
+    "path": "app/ios/Runner.xcworkspace/contents.xcworkspacedata",
+    "bytes": 152,
+    "sha256": "46c3c9702ff7c5584e11c954d943cfb6e07fb26e3fbd072ddbc0f388aa352de1"
+  },
+  {
+    "path": "app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+    "bytes": 238,
+    "sha256": "dfa0f9bb85b95ccba9c6811adadf8cb407fb5d52088e89db83ebc308ec448542"
+  },
+  {
+    "path": "app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+    "bytes": 226,
+    "sha256": "11b247bc6796892d67c9a821d18604db4dd6a880981b34f38460b9866e6b247f"
+  },
+  {
+    "path": "app/ios/RunnerTests/RunnerTests.swift",
+    "bytes": 285,
+    "sha256": "5e8f4908dacea6f29b2a790e4d38bf5fded69096063f9a27a2f21584d62b30c0"
+  },
+  {
+    "path": "app/lib/ads/ad_slots.dart",
+    "bytes": 8319,
+    "sha256": "a7cd6b3796eaf23030909f2360cc6f93de4991bad1d6f227f78e99cef68cbab9"
+  },
+  {
+    "path": "app/lib/ads/ads_initializer.dart",
+    "bytes": 5780,
+    "sha256": "39048097dee7fa11932d7c313a354b01ff5d120cc6bf98fe1a71ea9a0dbaa0c4"
+  },
+  {
+    "path": "app/lib/ads/banner_loader.dart",
+    "bytes": 2439,
+    "sha256": "dbd1b42db7b0af2f4ed1dd4ebdbb44a8e3e052b8baec1d1f18b3f42cad69a32f"
+  },
+  {
+    "path": "app/lib/ads/interstitial_controller.dart",
+    "bytes": 2445,
+    "sha256": "1e562e1c90ee0ae1d00fe1b7d6d6b6d2336f6dd0f4c3d56163ed71e8ed9add1c"
+  },
+  {
+    "path": "app/lib/ads/interstitial_pacing.dart",
+    "bytes": 1700,
+    "sha256": "96ec5a0e5c6b9c2559cb8dbfa154c3e47e0c5cea3a97d4bd94039c8691d8baef"
+  },
+  {
+    "path": "app/lib/ads/rewarded_ads.dart",
+    "bytes": 8241,
+    "sha256": "add237926eaf2cf9bd3d7006b9981b0bcf5694363290a55af993a64431a92603"
+  },
+  {
+    "path": "app/lib/analysis/analysis_controller.dart",
+    "bytes": 3423,
+    "sha256": "993dc0b8280a2a00f9731d1ba4957722388324daf85451379aa6019c6af9bd98"
+  },
+  {
+    "path": "app/lib/analysis/hand_input.dart",
+    "bytes": 17973,
+    "sha256": "671353d4cb659b35c1d90bd24a7382de254b23e580355c212b060a2814833a21"
+  },
+  {
+    "path": "app/lib/analytics/analytics_route_observer.dart",
+    "bytes": 1536,
+    "sha256": "e2ff6c2e0108427fc196533ec0f9b3a3fa70813f84e601db281eca7ffc1526bf"
+  },
+  {
+    "path": "app/lib/analytics/analytics_widgets.dart",
+    "bytes": 5000,
+    "sha256": "1c0c56dbfb3e9f69e893e03171592a546fe80160e487918a327a8524979cc2ee"
+  },
+  {
+    "path": "app/lib/analytics/app_analytics.dart",
+    "bytes": 14200,
+    "sha256": "e5af6bdf24d7af6345c9e80ab7eff4271281726ca8d6cd0b87556bf10db91a3c"
+  },
+  {
+    "path": "app/lib/app.dart",
+    "bytes": 4609,
+    "sha256": "2cdaaa553663b318338eec6fcf738380f108bcd96ce03bb9514e3efb9a0b9914"
+  },
+  {
+    "path": "app/lib/camera/camera_page.dart",
+    "bytes": 19954,
+    "sha256": "5b225f96abce32caa3630aa52b35a49d9654c982fcea822fadfb15a04a16bc32"
+  },
+  {
+    "path": "app/lib/camera/camera_session.dart",
+    "bytes": 5465,
+    "sha256": "884e52fb85e076f822bbb46bc9893c691e90a46a3c392e964d8247df82aa3023"
+  },
+  {
+    "path": "app/lib/camera/overlay_painter.dart",
+    "bytes": 4327,
+    "sha256": "0a481b8a2028adfa6a92ef35ee02d20c375f3d722028cbcfa438166a8e937179"
+  },
+  {
+    "path": "app/lib/camera/photo_quota.dart",
+    "bytes": 5770,
+    "sha256": "302a8c2c56d985c1f5faff4129188fbe04c8cc4ef258a54d6e69c2f78f920686"
+  },
+  {
+    "path": "app/lib/consent/consent_manager.dart",
+    "bytes": 6415,
+    "sha256": "b96a60d846de4f913fdef2510552d3da623e3d2e9104cbadfdcdaaeb86505f6c"
+  },
+  {
+    "path": "app/lib/core/account.dart",
+    "bytes": 14322,
+    "sha256": "0119efb52042611e1edd65f3a85c05ead35745f6f141b0a2f27d927a4d61503b"
+  },
+  {
+    "path": "app/lib/core/analytics_sink.dart",
+    "bytes": 918,
+    "sha256": "b5721f88dc6660683ea04a1a5da65b1cfc88f9c08d0938bc550c1778cb9bc750"
+  },
+  {
+    "path": "app/lib/core/app_bootstrap.dart",
+    "bytes": 2668,
+    "sha256": "a957a57956c8763eae7cf7fa6f2532d34d782b5a8307fd38b64e61e8247b8054"
+  },
+  {
+    "path": "app/lib/core/app_config.dart",
+    "bytes": 9300,
+    "sha256": "7b56e0c277b951522e7403e74e1b6e883e18f07bf4051e03fd87df5023c6d464"
+  },
+  {
+    "path": "app/lib/core/app_language.dart",
+    "bytes": 1590,
+    "sha256": "2c9cae19dcea363413aec2e3d491b5ec5bcd676e359af142b586497d33a92abc"
+  },
+  {
+    "path": "app/lib/core/app_restart.dart",
+    "bytes": 1197,
+    "sha256": "4e9cf69161e83946ca317bf5402f6c73100b263b63f6dc5603cdb321f45a2c6f"
+  },
+  {
+    "path": "app/lib/core/app_settings.dart",
+    "bytes": 7555,
+    "sha256": "c847b16d702a7532c443cb2f251ebd8c08bb740fb167226ce2924115e97cf706"
+  },
+  {
+    "path": "app/lib/core/clock.dart",
+    "bytes": 601,
+    "sha256": "61a7a9610b807c23319c3db6ec5554b12272f4fe8c17d10b1c686fd1bfc6c5ef"
+  },
+  {
+    "path": "app/lib/core/deep_links.dart",
+    "bytes": 10365,
+    "sha256": "f80d6d5155a3a4911474f7fe8ec7d85f57560f6616277f40c815d4ce66552ffe"
+  },
+  {
+    "path": "app/lib/core/di.dart",
+    "bytes": 2434,
+    "sha256": "61049e28b95aa4d130ad99d48cc34968700525fa1c637ed31a9bfd87fea5a2d3"
+  },
+  {
+    "path": "app/lib/core/entitlements.dart",
+    "bytes": 3910,
+    "sha256": "3c6bf35c8330e59b63c8a08e5bf81da14b726dcbd2ec3972434bedd3470233ad"
+  },
+  {
+    "path": "app/lib/core/firebase_bootstrap.dart",
+    "bytes": 1568,
+    "sha256": "40a3e4799d786a3ff16d130469a34d3d30febfb27cfff6768aab6e618c3d7d7e"
+  },
+  {
+    "path": "app/lib/core/online_features.dart",
+    "bytes": 783,
+    "sha256": "f4cfca04e31a1f22c301974c9b05b9836615c14f1bf8ad379b3f6b2a37043217"
+  },
+  {
+    "path": "app/lib/core/orientation_lock.dart",
+    "bytes": 2149,
+    "sha256": "911599bfbc3e1df301b603578c33928e01f7bcc9e8b4dee9a63bbaf6550da1c3"
+  },
+  {
+    "path": "app/lib/core/quota.dart",
+    "bytes": 6624,
+    "sha256": "879bc4c7ca057a4c0059dc6cecfeff917a918469a36b8c4ff6a61b77b0753e9a"
+  },
+  {
+    "path": "app/lib/core/remote_config.dart",
+    "bytes": 4751,
+    "sha256": "48bdc917f2571470facdcb1f046bebb4d7bba7597932f6e460a79667173da819"
+  },
+  {
+    "path": "app/lib/core/route_observer.dart",
+    "bytes": 187,
+    "sha256": "42fb9e182863d62b2bad3debd61de7a8f589467f3d1991ca77848c2c5e804771"
+  },
+  {
+    "path": "app/lib/core/routes.dart",
+    "bytes": 12243,
+    "sha256": "00183de8d53d2d695dbac4fbe0425c31ed542558afcd8d81c3d75209a75e07ba"
+  },
+  {
+    "path": "app/lib/core/streak.dart",
+    "bytes": 4429,
+    "sha256": "df515b0f05ce01cd54fffc6aacd8af5492e7e8e92444dd6fc4d08a54ff8dc590"
+  },
+  {
+    "path": "app/lib/core/third_party_licenses.dart",
+    "bytes": 2159,
+    "sha256": "27333f9cef35087e2f28b2ee5e6bfd5e5910bc708dc05b175ff6ac1351f0d185"
+  },
+  {
+    "path": "app/lib/core/url_opener.dart",
+    "bytes": 1865,
+    "sha256": "05003521ad2914662e6186a0f7f4876e8ad76c67411dce9fba93a768ce9cc26e"
+  },
+  {
+    "path": "app/lib/history/history_page.dart",
+    "bytes": 18041,
+    "sha256": "7ecbc79ef880b5590af3b07a7f6146f9bb27822b70c1bedf5971ccc10532d239"
+  },
+  {
+    "path": "app/lib/history/local_history.dart",
+    "bytes": 12804,
+    "sha256": "43372444c6de162ed6ade324867eb2d636381cec211bd568f971dba229247475"
+  },
+  {
+    "path": "app/lib/l10n/app_strings.dart",
+    "bytes": 1465,
+    "sha256": "8c720caa8b4f2e09ab3ed696d896e26bde6b270364fbbbb133b2abf21e669482"
+  },
+  {
+    "path": "app/lib/l10n/strings/camera_strings.dart",
+    "bytes": 4456,
+    "sha256": "d850eb0af51b5cc5d78963a352c2bde8641c3f7bd37883e2e133d99be476b4c7"
+  },
+  {
+    "path": "app/lib/l10n/strings/common_strings.dart",
+    "bytes": 2176,
+    "sha256": "71e8e687641b4ffa09e3c256211ff67db716e1ea0f6be3e63be38a8a4d2cd3fb"
+  },
+  {
+    "path": "app/lib/l10n/strings/detail_strings.dart",
+    "bytes": 1621,
+    "sha256": "b48d565c212526b403a3803595a9b7a3ad73fd6cb7d767e2f551abc8a30174f8"
+  },
+  {
+    "path": "app/lib/l10n/strings/history_strings.dart",
+    "bytes": 3524,
+    "sha256": "a1ae10be2f076ecdc6379dc27ea75c82aa8d251862c87323af7887ab224b120c"
+  },
+  {
+    "path": "app/lib/l10n/strings/home_strings.dart",
+    "bytes": 3078,
+    "sha256": "4b598122388e135e4a030accc6e7da84b8b68fd176c04c49bdd73f8ee164c7b4"
+  },
+  {
+    "path": "app/lib/l10n/strings/live_strings.dart",
+    "bytes": 14621,
+    "sha256": "8aac9274957410f066b3182e1987fc45e2c2bdce5b25175be3511368d1039f0e"
+  },
+  {
+    "path": "app/lib/l10n/strings/notifications_strings.dart",
+    "bytes": 2333,
+    "sha256": "576435ace1b5485eaccc4076f8593ecc3f97d39900767c47b73788bcbd602e70"
+  },
+  {
+    "path": "app/lib/l10n/strings/onboarding_strings.dart",
+    "bytes": 3440,
+    "sha256": "bd8bd8002ea8a60fec4485a8731b79f33ac7fca1be880455060db458e77b2a82"
+  },
+  {
+    "path": "app/lib/l10n/strings/paywall_strings.dart",
+    "bytes": 9543,
+    "sha256": "1103d5cc9a4179b6a6e60e23d1aacad7f3698a50397471015f5ce175c5700988"
+  },
+  {
+    "path": "app/lib/l10n/strings/problems_strings.dart",
+    "bytes": 10371,
+    "sha256": "dc0a2fffbda6342ecd4b4489cb8e9d5b33bdf0f7ab6eb22cf58257fffa49ec6b"
+  },
+  {
+    "path": "app/lib/l10n/strings/quiz_strings.dart",
+    "bytes": 1809,
+    "sha256": "d8f04305d8564881bdf5d5416b2ecc6e5fe1e4338a45f777f455a79b1c7636da"
+  },
+  {
+    "path": "app/lib/l10n/strings/recognition_strings.dart",
+    "bytes": 10083,
+    "sha256": "d313a93542ac58d6837ebcc3dd513685b4aeed58250b5b4b7b18facb8aca07cf"
+  },
+  {
+    "path": "app/lib/l10n/strings/result_strings.dart",
+    "bytes": 17409,
+    "sha256": "d705333c85ab1a885fe5283cc5d2061a35a4d492670c10139a925b886a779dbe"
+  },
+  {
+    "path": "app/lib/l10n/strings/settings_strings.dart",
+    "bytes": 16890,
+    "sha256": "a816fbb2ca6a6aad5df9e180d9e15465afb8e185cbeb64b2c4707f14f8280f1c"
+  },
+  {
+    "path": "app/lib/l10n/strings/share_strings.dart",
+    "bytes": 12481,
+    "sha256": "9a4764f28b2c179c6164c720458f2cbcccdddce820d58b59abb48ab4032b27fb"
+  },
+  {
+    "path": "app/lib/l10n/strings/win_strings.dart",
+    "bytes": 22052,
+    "sha256": "77cd282e443cdbaaf8a9c53c69bd6acb86d7d209e437f7222f72db5b31bb28ba"
+  },
+  {
+    "path": "app/lib/live/frame_gate.dart",
+    "bytes": 3275,
+    "sha256": "288180b248ca630913a2fd419b78fad112b65f487b2f40fbb80664eee4afbd5c"
+  },
+  {
+    "path": "app/lib/live/live_advice.dart",
+    "bytes": 7776,
+    "sha256": "6649aa0f5c841f5085dabc55e13705ab99c3dbc8fa359a9e9b70f7822be97e22"
+  },
+  {
+    "path": "app/lib/live/live_camera.dart",
+    "bytes": 10690,
+    "sha256": "0ed84be18529aecc18a0b8860865ff129b1ea2d91e8d642206de28515443d921"
+  },
+  {
+    "path": "app/lib/live/live_controller.dart",
+    "bytes": 22467,
+    "sha256": "26b1a5ead64ab788fe727e073d3e3195a98cf8d29013fda2290c709b7104c053"
+  },
+  {
+    "path": "app/lib/live/live_detector.dart",
+    "bytes": 6032,
+    "sha256": "f8774616adf65c56e72ecf89cce0994c23bdbb659f150aa1ef1002fc3dea70d9"
+  },
+  {
+    "path": "app/lib/live/live_device.dart",
+    "bytes": 5367,
+    "sha256": "03227206fe6b7168f61520a113d8afaf5710a08ebedb3860a8b8a27906ca4af4"
+  },
+  {
+    "path": "app/lib/live/live_model_tier.dart",
+    "bytes": 5232,
+    "sha256": "94bb9ee380685d7058c64d63434ca37debea8d6b2d7458f8956edd7a9b0d2635"
+  },
+  {
+    "path": "app/lib/live/live_overlay_painter.dart",
+    "bytes": 8136,
+    "sha256": "baeefbd820759e2266468f9fcc5a5f213ab3bbd53f8d89925506c0bb1110aa5e"
+  },
+  {
+    "path": "app/lib/live/live_page.dart",
+    "bytes": 20794,
+    "sha256": "805bd88b4a0e7ed8d48871ce58b08fa2c8f35e54e84da9f263426e7710c4203d"
+  },
+  {
+    "path": "app/lib/live/live_providers.dart",
+    "bytes": 5079,
+    "sha256": "2c03a508510df6984acff86f01eee47fd37994cd3745a6f19531e3ea2221a1e4"
+  },
+  {
+    "path": "app/lib/live/live_session_store.dart",
+    "bytes": 5555,
+    "sha256": "31348ba28ad06932a4182a4d82de04db47b77660997d47efa9fd368dbd2c5127"
+  },
+  {
+    "path": "app/lib/live/live_summary_page.dart",
+    "bytes": 16290,
+    "sha256": "385244fba488c34a5206aace9f99ac16cb1fd980a2040d85e7bb6bc664569132"
+  },
+  {
+    "path": "app/lib/live/live_trial.dart",
+    "bytes": 6232,
+    "sha256": "df86dfd37bf51b61c3c4f2e7120744d7f5a914c7c4c6268668f3e8e13a5e05d1"
+  },
+  {
+    "path": "app/lib/live/live_trial_extend_panel.dart",
+    "bytes": 5509,
+    "sha256": "ee34607d01957e53c01a3dc3a201fe33d609a242f78c05e9f84023d23a9a8a96"
+  },
+  {
+    "path": "app/lib/live/tile_tracker.dart",
+    "bytes": 29306,
+    "sha256": "f905cce0aa106350a0491271515ebe6f4b63186df72a87f77964ed85e9014015"
+  },
+  {
+    "path": "app/lib/live/widgets/live_advice_panel.dart",
+    "bytes": 22499,
+    "sha256": "b3ec066c3108bf56b04e140a8ec762610356efcef29f6e0456c3b07fe635f67e"
+  },
+  {
+    "path": "app/lib/live/widgets/live_overlays.dart",
+    "bytes": 12120,
+    "sha256": "d1e445d472e831b3d418be7f57881db6683eec7d661d09046d6ccddbdc3c1430"
+  },
+  {
+    "path": "app/lib/live/widgets/live_preview.dart",
+    "bytes": 5624,
+    "sha256": "f8956f9e856764c9968cb56d76230e4a2b4c51358d7f35ec84a732887751a639"
+  },
+  {
+    "path": "app/lib/live/widgets/live_sheets.dart",
+    "bytes": 8183,
+    "sha256": "2c4975c14fd0c8f07bca124e366d6831d74036c7947637a7da96810bedc3cdf9"
+  },
+  {
+    "path": "app/lib/live/widgets/live_top_bar.dart",
+    "bytes": 9605,
+    "sha256": "c7d7417441024dbf03688afa46c9bcff83370dbcdf13d953e6aec2e36397a7ff"
+  },
+  {
+    "path": "app/lib/main.dart",
+    "bytes": 1635,
+    "sha256": "e88dbdba724008b9110f18862ef2f8c3581d868c629b42c6c20f8255b7dfc21d"
+  },
+  {
+    "path": "app/lib/ml/live_frame.dart",
+    "bytes": 2768,
+    "sha256": "f9bc5c872414d5bfcf702f26d679c60a59baa545acd54571c3586c51ce834cab"
+  },
+  {
+    "path": "app/lib/ml/live_inference_worker.dart",
+    "bytes": 12566,
+    "sha256": "ab0a33138635545febfc259b17b46235a4887f3173cdd3f80bb69d3e1354eebd"
+  },
+  {
+    "path": "app/lib/ml/live_model_loader.dart",
+    "bytes": 2366,
+    "sha256": "6952e02e2607121eff7fbf3701c8b5588d2d51c5c8b8e509439a387533b59ab3"
+  },
+  {
+    "path": "app/lib/ml/live_preprocess.dart",
+    "bytes": 14090,
+    "sha256": "a5f5fe950eb13b1c91627a058ea3d58e0c1f550267e1de5339a0cfb37df84ad6"
+  },
+  {
+    "path": "app/lib/ml/live_yolo_decoder.dart",
+    "bytes": 4310,
+    "sha256": "aec4a9e4e1460839fbfed0037f38414754df8acab24f43005a5af8b81c4f01d4"
+  },
+  {
+    "path": "app/lib/ml/model_config.dart",
+    "bytes": 6328,
+    "sha256": "9c8c2a7754bcfeae4d8dd52c12108adcf9c759db3b67c180bd38ee2464474856"
+  },
+  {
+    "path": "app/lib/ml/nms.dart",
+    "bytes": 1252,
+    "sha256": "04c2b3512bcbe4bd95d5eaff8f5e07b3720a0b0ec10c8b278d8ec66a9b520754"
+  },
+  {
+    "path": "app/lib/ml/recognition_draft.dart",
+    "bytes": 6122,
+    "sha256": "cfd494386aabb04a4d96a77a16052297f83b72da4385c3c5533168c14e712398"
+  },
+  {
+    "path": "app/lib/ml/reshape.dart",
+    "bytes": 937,
+    "sha256": "1e3a9da69feb4c4e29650e62d1cd1acd9a341455bb0df68c65d282c15c6e6d9d"
+  },
+  {
+    "path": "app/lib/ml/tflite_service.dart",
+    "bytes": 58501,
+    "sha256": "67ace60d7fe4075cdcba649453cb46ac8c65969eb221b36e15dd347c1586d3d6"
+  },
+  {
+    "path": "app/lib/ml/tile_arrangement.dart",
+    "bytes": 6922,
+    "sha256": "c28222916d3088f8dd99c532dcf2d8f851bc8dd1f29ab1dfd9bb1245b3194624"
+  },
+  {
+    "path": "app/lib/ml/tile_selection.dart",
+    "bytes": 14142,
+    "sha256": "f5152f071bcac56be97017dd533de58b1d859ebabc983aaa20dfa8a45bea2923"
+  },
+  {
+    "path": "app/lib/notifications/fcm_service.dart",
+    "bytes": 9077,
+    "sha256": "10346f36fd3b6a6a15213a5368cf8707f55eca656b010e0afe5f4399b739b7ce"
+  },
+  {
+    "path": "app/lib/notifications/local_scheduler.dart",
+    "bytes": 15632,
+    "sha256": "b7c747f3f829267e011a3616c85945cee5fe6b874a8e35c09657c1806edf7313"
+  },
+  {
+    "path": "app/lib/notifications/notification_coordinator.dart",
+    "bytes": 13896,
+    "sha256": "8417e65b77b17fbb8e553788534f7277498477d3bb18186e8190261e0a260aa7"
+  },
+  {
+    "path": "app/lib/notifications/notification_routes.dart",
+    "bytes": 2483,
+    "sha256": "4b64e5619143921fd46cfa20b9502ab1c2ecfbc2f4c1c37deb1bd8689dc8273d"
+  },
+  {
+    "path": "app/lib/problems/blocked_authors.dart",
+    "bytes": 5843,
+    "sha256": "ac44f85925bfedd51ff9ceaf494c5c3c644a330af8298465082c784634d78986"
+  },
+  {
+    "path": "app/lib/problems/blocked_authors_section.dart",
+    "bytes": 2295,
+    "sha256": "6e3e0893e5de138eeb9f17419ebab604b899e0a935b45e4e74c1bebbc3471ab0"
+  },
+  {
+    "path": "app/lib/problems/daily_progress.dart",
+    "bytes": 2596,
+    "sha256": "561b6da5024b46509c3d3d8cd5271627786d7e755531df48ea72183ec8e8df98"
+  },
+  {
+    "path": "app/lib/problems/local_daily.dart",
+    "bytes": 5519,
+    "sha256": "44951b116a687eef3ddb196be2ba6d2a3cad0ce34737159e2afb9d0ddef837d1"
+  },
+  {
+    "path": "app/lib/problems/my_problems_page.dart",
+    "bytes": 7134,
+    "sha256": "40631da237010ce2d5c0aed67556d4848c3d2f9876fe5b91feefe7462828a0a8"
+  },
+  {
+    "path": "app/lib/problems/problem.dart",
+    "bytes": 12711,
+    "sha256": "331a7ec3294d1095f9ab1f864aa07538bc5dfc4cddb0b88cde9700b8c933434f"
+  },
+  {
+    "path": "app/lib/problems/problem_menu.dart",
+    "bytes": 2366,
+    "sha256": "23d959568625f9f3c10d932cb03b9081d88cd7e9820e41aae7a12b76ec3625f1"
+  },
+  {
+    "path": "app/lib/problems/problem_repository.dart",
+    "bytes": 12157,
+    "sha256": "7ddfb7fb54e02a6c507f56d486841b1bc685ba139ccc3f9c5956e30e38ec222b"
+  },
+  {
+    "path": "app/lib/problems/problem_tile.dart",
+    "bytes": 4133,
+    "sha256": "c637a12338ed0ebd5b418d3c143047bc03eb29c25ee1dd2dfe0202ae3b31c50f"
+  },
+  {
+    "path": "app/lib/problems/problems_providers.dart",
+    "bytes": 7522,
+    "sha256": "35a347359b050217def7f5c03acac3b0b21a393d8d630ca71dcf3d1dc47d3e93"
+  },
+  {
+    "path": "app/lib/problems/report_sheet.dart",
+    "bytes": 6208,
+    "sha256": "47993cead084d8daa6c09a5b4e42653b36e142df2b9856e0af15ec0cfbe07c16"
+  },
+  {
+    "path": "app/lib/problems/today_page.dart",
+    "bytes": 15562,
+    "sha256": "0d1b0a64ea5a55507cbf26ac800dbd225248abc717c76bd92732f9520440a8f1"
+  },
+  {
+    "path": "app/lib/purchase/paywall_page.dart",
+    "bytes": 24104,
+    "sha256": "2c561a2e6534a08fed605bf25daa1f98b723007cb081a2c091c4b75f79ab19d3"
+  },
+  {
+    "path": "app/lib/purchase/review_access.dart",
+    "bytes": 6977,
+    "sha256": "a13e5e2005e6bc4c96d1f0169e55ac2b24269f2be0c538518aa6120e4361a67b"
+  },
+  {
+    "path": "app/lib/purchase/review_access_page.dart",
+    "bytes": 3572,
+    "sha256": "dc6917b5dd911d47b3f6b06bd55d4e32b3ad5eccd1901c9d5b9854eda4f0e44a"
+  },
+  {
+    "path": "app/lib/purchase/store_entitlement.dart",
+    "bytes": 3507,
+    "sha256": "f224e5dead9b3fb9f2d57d75a0be5d62fb6d40884f6acbf1bb002784c5b3d3bb"
+  },
+  {
+    "path": "app/lib/purchase/subscription_backend.dart",
+    "bytes": 9537,
+    "sha256": "05056559182f43361470d895ca5153e9b020ab8f6d222aed008560b6bf8dfcaa"
+  },
+  {
+    "path": "app/lib/purchase/subscription_service.dart",
+    "bytes": 11771,
+    "sha256": "ac28f8e1e78a2919edda38655c3855a5f9ca570eaa6f04d271c72758472d88db"
+  },
+  {
+    "path": "app/lib/quiz/quiz_page.dart",
+    "bytes": 20580,
+    "sha256": "2887f96d12f6e0918a08c3c58c67879838819cad76c8948bbe8def0ee5888d8b"
+  },
+  {
+    "path": "app/lib/quiz/widgets/quiz_hand.dart",
+    "bytes": 9047,
+    "sha256": "56ae8ef5ce66decc7dc8eae0a23b9904a98838b1450c08829fea13415921580f"
+  },
+  {
+    "path": "app/lib/referral/referral_failure.dart",
+    "bytes": 509,
+    "sha256": "2b56d3e464fe3137bcdfcb349633468b792297f4e5cc3c023e113fd6389e0188"
+  },
+  {
+    "path": "app/lib/referral/referral_section.dart",
+    "bytes": 6800,
+    "sha256": "8c2fe3783a582d4c42fc66adeac97e07e13a30b4f99228f9c8c32db8da438b11"
+  },
+  {
+    "path": "app/lib/referral/referral_service.dart",
+    "bytes": 12377,
+    "sha256": "4bc19669004182afff61d8c6bdcbf603eeb3786ff958b53367d6f7ebf515f183"
+  },
+  {
+    "path": "app/lib/result/candidate_detail_page.dart",
+    "bytes": 26808,
+    "sha256": "f8b0979300234dd558ee37aabf11071f08d38786d4cc2cfedc720f8b9194b8cb"
+  },
+  {
+    "path": "app/lib/result/explanation_page.dart",
+    "bytes": 17285,
+    "sha256": "688de08a3674602454a9873ba18a7dc84e00ee620ad55fc17dac15371d023fe3"
+  },
+  {
+    "path": "app/lib/result/reason_text.dart",
+    "bytes": 10441,
+    "sha256": "9112d76abb9e38967dd9a69f83f0f13117c334ead1161eee03b8b7c8a7cc0eee"
+  },
+  {
+    "path": "app/lib/result/result_format.dart",
+    "bytes": 1783,
+    "sha256": "f0403c0d908c5889f7be9aee7756bdf727b6d502408f98aee2bfa9b025df9173"
+  },
+  {
+    "path": "app/lib/result/result_logic.dart",
+    "bytes": 7077,
+    "sha256": "493dde9137272e6619cb0453dad11b2b39a596806c194c213e943e4bb84819c7"
+  },
+  {
+    "path": "app/lib/result/result_page.dart",
+    "bytes": 34215,
+    "sha256": "4e0723d4d7d12c0f41320249cb8bb8e1020adaf684acd772fc34212386d9a276"
+  },
+  {
+    "path": "app/lib/result/result_providers.dart",
+    "bytes": 1861,
+    "sha256": "6500d1ee555fa6cde7f0b2ab9e5da4c2fd202cca2f1d512d78000c09de9a8752"
+  },
+  {
+    "path": "app/lib/result/widgets/candidate_card.dart",
+    "bytes": 12899,
+    "sha256": "45fdb34e157f6314365ec804dead97ec6f6b52de319da13d401b40c8c366ebaa"
+  },
+  {
+    "path": "app/lib/result/widgets/hand_view.dart",
+    "bytes": 9448,
+    "sha256": "7d843b85c21455e192bb624446a4e656fa89bec9610a0dce03f74fe094c58884"
+  },
+  {
+    "path": "app/lib/result/widgets/result_chips.dart",
+    "bytes": 8677,
+    "sha256": "4d6921a18f5fc90c587c95e3f29cff7094c0923075733cf6e42b9ba236f37877"
+  },
+  {
+    "path": "app/lib/result/widgets/thirteen_view.dart",
+    "bytes": 10512,
+    "sha256": "628657402bccc81f2a015ece0313994f38b8588f32aa10275bd4256c1ae0bd45"
+  },
+  {
+    "path": "app/lib/share/cards/card_frame.dart",
+    "bytes": 10204,
+    "sha256": "1c306c3022ac546c9584f835dd169e1eccabf8d05b9e8363c5d0feab6fc2934e"
+  },
+  {
+    "path": "app/lib/share/cards/hand_panel.dart",
+    "bytes": 3655,
+    "sha256": "ff99bebd0618bce50d5d167e5f2ee8119d48bfdd30ae8fb99c09251739c0ac9e"
+  },
+  {
+    "path": "app/lib/share/cards/live_milestone_card.dart",
+    "bytes": 4326,
+    "sha256": "f4178b3843516189b7fcaf830899c9400c31bd63ce42d9e5890e4a646425e111"
+  },
+  {
+    "path": "app/lib/share/cards/live_summary_card.dart",
+    "bytes": 3742,
+    "sha256": "1d752fb6c732494b98a1271a7d6c541d329c4ad2a77d3e94c074740f0ed3edfd"
+  },
+  {
+    "path": "app/lib/share/cards/problem_card.dart",
+    "bytes": 4400,
+    "sha256": "9d44fa781f455221adf88a303fa600396f1bb0ed0c7cc2e0238952d049d624ca"
+  },
+  {
+    "path": "app/lib/share/cards/result_card.dart",
+    "bytes": 9608,
+    "sha256": "ddd55dfb0f3fd37b659e663eacce4b316365e109bbc479f70e2af74e574ecd3d"
+  },
+  {
+    "path": "app/lib/share/cards/streak_card.dart",
+    "bytes": 2884,
+    "sha256": "bf596c8d2264714c882e555689679d5c7665f82eda7284e496d6e912d74a6720"
+  },
+  {
+    "path": "app/lib/share/cards/weekly_card.dart",
+    "bytes": 3888,
+    "sha256": "a638d33625ca8c534d1fc68bcb8007d2716eacd2eeeb9bf5dd41a7fff8339595"
+  },
+  {
+    "path": "app/lib/share/cards/win_score_card.dart",
+    "bytes": 9389,
+    "sha256": "4bc7a3730398c29d59f64ed46ed2c8623f2ad00b93fa84d2fc174ce0a8f42a17"
+  },
+  {
+    "path": "app/lib/share/publish_page.dart",
+    "bytes": 18060,
+    "sha256": "3ea485fbb3afa7909123380ab86e8c425cb886c4d9a8ac1c7a1abbed044c9bc2"
+  },
+  {
+    "path": "app/lib/share/publish_service.dart",
+    "bytes": 17736,
+    "sha256": "bc03486f0b7a8f9075ad9df786350578957bfecb800ababeb7f577ae14592ab2"
+  },
+  {
+    "path": "app/lib/share/share_card_model.dart",
+    "bytes": 9572,
+    "sha256": "6ef485e2af90c50409586dc8ef815889f4659f3ab2dce1c61e017378203878bd"
+  },
+  {
+    "path": "app/lib/share/share_card_page.dart",
+    "bytes": 11173,
+    "sha256": "73513295961f2dcc9bf1183ea34cca7800df53367a9fe33ce5acf3dd9dcd0a4d"
+  },
+  {
+    "path": "app/lib/share/share_data.dart",
+    "bytes": 2166,
+    "sha256": "29f42e6649090878f5883845bbf566154f8b08aa72263e458710a49cc341145e"
+  },
+  {
+    "path": "app/lib/share/share_links.dart",
+    "bytes": 3208,
+    "sha256": "b19c0e7a0d4a379b1ed6c211cda415d4b6fa3bd8e1cd02665b93065d2a5c204e"
+  },
+  {
+    "path": "app/lib/share/share_service.dart",
+    "bytes": 4345,
+    "sha256": "ac99d79b520a1bb67a52b6f5cdeb2c0e887ea739f214ec80faea4a0c367c2b23"
+  },
+  {
+    "path": "app/lib/share/share_target.dart",
+    "bytes": 1241,
+    "sha256": "3d739272a528b1f5952ec7528a2ef3fe0bf2682b4ef75e7190b20f9707e90f69"
+  },
+  {
+    "path": "app/lib/share/sharing_host.dart",
+    "bytes": 5160,
+    "sha256": "94793d3410095089248183251068bcff421b4b46817e20b40d05b5098779519b"
+  },
+  {
+    "path": "app/lib/ui/home/home_page.dart",
+    "bytes": 32755,
+    "sha256": "a969988a623fdef524a0a39a7f0d458f2e274f2968261e706d63e32cf8ec1415"
+  },
+  {
+    "path": "app/lib/ui/onboarding/onboarding_gate.dart",
+    "bytes": 1548,
+    "sha256": "9aad96466787447282a38b6910de4c8b2bdb08d77a7c4d0fb292fe585d486bb1"
+  },
+  {
+    "path": "app/lib/ui/onboarding/onboarding_page.dart",
+    "bytes": 15215,
+    "sha256": "81efacd599a290aa5d82ae1379d3ac9ce552b5171982df09664bc68ef2e7a841"
+  },
+  {
+    "path": "app/lib/ui/recognition/recognition_editor.dart",
+    "bytes": 15838,
+    "sha256": "d0a3b7c0bd16590711a5c06116b7980a94341e60c65f51f809a2f2940c54c5a3"
+  },
+  {
+    "path": "app/lib/ui/recognition/recognition_loading_page.dart",
+    "bytes": 11961,
+    "sha256": "dced0ba86aed2f76e0043cfad4172df432bfa21988228dff6750ad7321689810"
+  },
+  {
+    "path": "app/lib/ui/recognition/recognition_page.dart",
+    "bytes": 34992,
+    "sha256": "8e5d4be62d8a947b4a347a45e492599806ed3c596f3e94915cd4a5d217dab147"
+  },
+  {
+    "path": "app/lib/ui/settings/data_deletion.dart",
+    "bytes": 4198,
+    "sha256": "2f1daff4946d3d298eb6c46f7c9a7c0fb48806f900561196c71751248756a939"
+  },
+  {
+    "path": "app/lib/ui/settings/settings_page.dart",
+    "bytes": 20167,
+    "sha256": "ecdfaa8a59c1158e119feda1fc5af9d46400ce31de31dac96b270f5748f715a0"
+  },
+  {
+    "path": "app/lib/ui/settings/settings_subpages.dart",
+    "bytes": 11838,
+    "sha256": "e2260281fe54152c404a1c8b2b2ae253b3d57ddc2288fbdadf1ac02424cac0e5"
+  },
+  {
+    "path": "app/lib/ui/theme/app_colors.dart",
+    "bytes": 6573,
+    "sha256": "d5c496020d49f570708fefbaa968f2388c016d21bfcdab70fcc374e5f020cf4e"
+  },
+  {
+    "path": "app/lib/ui/theme/app_spacing.dart",
+    "bytes": 1641,
+    "sha256": "77aa75f0b3e649899b0b146b610426f0ebbf67aa6682886885aecbb4dc941a50"
+  },
+  {
+    "path": "app/lib/ui/theme/app_theme.dart",
+    "bytes": 11933,
+    "sha256": "69a04596e85610688007d6267f1f6675e03ec52e64ddabdb602318a979dd4df1"
+  },
+  {
+    "path": "app/lib/ui/widgets/app_card.dart",
+    "bytes": 3299,
+    "sha256": "cdcd8c082da732f530330d33afd5a166da75ebb173653bde18c72d8ab1ee9fe9"
+  },
+  {
+    "path": "app/lib/ui/widgets/notice_card.dart",
+    "bytes": 3402,
+    "sha256": "d59a9a66ab785d1db1ca24f0c88bf632c9168cb20a4f392c805424bcac9151e7"
+  },
+  {
+    "path": "app/lib/ui/widgets/primary_button.dart",
+    "bytes": 1888,
+    "sha256": "6dafb0b5f9a9942465a746db627ca1e5b89d698429119afb90d782e0b0ec54fd"
+  },
+  {
+    "path": "app/lib/ui/widgets/pro_badge.dart",
+    "bytes": 1061,
+    "sha256": "f1ab70ecc0ec76769e4ab47427781ffc8e118f5831bd7d3b2035d91a00566d4c"
+  },
+  {
+    "path": "app/lib/ui/widgets/section_header.dart",
+    "bytes": 1138,
+    "sha256": "5c0a937e564fe4f899ba3dacbc6a6616792ad25f0de3da41a1e2d470fa942ab3"
+  },
+  {
+    "path": "app/lib/ui/widgets/state_views.dart",
+    "bytes": 3226,
+    "sha256": "de8516620f62772f9adfc18c422d9a952e883e930e82b256a38e82e2d8e8c1a2"
+  },
+  {
+    "path": "app/lib/ui/widgets/tile_fan.dart",
+    "bytes": 3164,
+    "sha256": "6fed55964000347a90866dbd57378827449bc4cfeb36224a9721deaae22b8b45"
+  },
+  {
+    "path": "app/lib/ui/widgets/tile_image.dart",
+    "bytes": 3483,
+    "sha256": "d7b90aa1a7512399db5bed58cbe8e400abeee231548ea1193950fb5535915873"
+  },
+  {
+    "path": "app/lib/ui/widgets/tile_picker.dart",
+    "bytes": 10127,
+    "sha256": "902fe26877545e0a67c5a91f166db132f00b228c49e87198a456949510a0beee"
+  },
+  {
+    "path": "app/lib/win/widgets/win_conditions_view.dart",
+    "bytes": 14915,
+    "sha256": "ddb552a8c783ccb90261b3437bc381db4483dd3a91ce68b8ae41eee0273e14ea"
+  },
+  {
+    "path": "app/lib/win/widgets/win_hand_view.dart",
+    "bytes": 5370,
+    "sha256": "d5f5162e8dfc7fed549afd53868ebb42d143a4f4fef58d737968c4c2016d6892"
+  },
+  {
+    "path": "app/lib/win/widgets/win_result_view.dart",
+    "bytes": 11924,
+    "sha256": "e5ce757428b814df25df9644af262956b73285c459fb9708cd6e8f7a6795c621"
+  },
+  {
+    "path": "app/lib/win/widgets/win_score_entry.dart",
+    "bytes": 3174,
+    "sha256": "3e998ed5ae1c8b377db6a28fd32dc86875032d9923d9d1852023c40445e5e7e3"
+  },
+  {
+    "path": "app/lib/win/win_score_logic.dart",
+    "bytes": 14344,
+    "sha256": "faf7a6bd502f8efa39059f8df237c428d5dbb67de74c0032dc5ed41f289054a0"
+  },
+  {
+    "path": "app/lib/win/win_score_page.dart",
+    "bytes": 14028,
+    "sha256": "f96aa88779c8afb5b58d1bf58c7d0c6bb5b0314b303e2fe511681a50f7da6a2f"
+  },
+  {
+    "path": "app/pubspec.lock",
+    "bytes": 43109,
+    "sha256": "48d54b26d8eb3c099edd09327b25ba29c62b3669ad81a28865e849d9802d0087"
+  },
+  {
+    "path": "app/pubspec.yaml",
+    "bytes": 3556,
+    "sha256": "a660e150e059be00c8a9c733850b2dbb935a571da4ee49939aed1751ebbf6721"
+  },
+  {
+    "path": "app/README.md",
+    "bytes": 18791,
+    "sha256": "df0970e8340e5e7c89ddd54cf63b96c2f1f9e06d12cb4440071ce385596d9202"
+  },
+  {
+    "path": "app/storage.rules",
+    "bytes": 1918,
+    "sha256": "5dfe28e0a4f54825301a8222b7128c6c26feaef9edacb2be82bcdf8b1787e0bd"
+  },
+  {
+    "path": "app/test/ads/ad_controllers_test.dart",
+    "bytes": 17242,
+    "sha256": "0cb09e14aca33f5c6311e39441f32d39a432753fc5f01b0c01aea62612b8392f"
+  },
+  {
+    "path": "app/test/ads_initializer_test.dart",
+    "bytes": 6548,
+    "sha256": "0d36d9e275e6eccf6401f8dfa5b801dc0c08b1aa21a40bb1a151a13290ebf44c"
+  },
+  {
+    "path": "app/test/analysis/analysis_service_test.dart",
+    "bytes": 2135,
+    "sha256": "f5239dce040cf74ca56eeb568969af97d3b96d6bf40a8ced4c33257fd77aaa0c"
+  },
+  {
+    "path": "app/test/analytics_widgets_test.dart",
+    "bytes": 11511,
+    "sha256": "64005b3dcb4a7565316c83a3e9a9d2b7ca6d2d7c1087236f8ce840f37bc7c7ad"
+  },
+  {
+    "path": "app/test/app_analytics_test.dart",
+    "bytes": 14841,
+    "sha256": "b87a1a3c0aa8a28b4366c412c4491d4e0da19e6bc56b45001371cea61083acd2"
+  },
+  {
+    "path": "app/test/app_config_test.dart",
+    "bytes": 7536,
+    "sha256": "686ffc356f7d0d4042a9bfc11d0f2679746278a9f85435a6469433123b33fc69"
+  },
+  {
+    "path": "app/test/app_shell_test.dart",
+    "bytes": 11141,
+    "sha256": "77ef62c507c4587a22d1acba68f0b6d951fd5050a841f9a5ed839653f1f3cc17"
+  },
+  {
+    "path": "app/test/camera_page_test.dart",
+    "bytes": 12384,
+    "sha256": "c12c0ef9a490aed688707819902e23a835ec6f501ccb10237491d7f65bbbd021"
+  },
+  {
+    "path": "app/test/camera_session_test.dart",
+    "bytes": 7738,
+    "sha256": "228913d2cdcd5b1e3aa659c0d215d0c29b9e582647de12d65e55f865d4d730c8"
+  },
+  {
+    "path": "app/test/consent_manager_test.dart",
+    "bytes": 7039,
+    "sha256": "98f7664a8592c0ab61d098ae95818d03ef7228d0e88b3992de75c66082aa3234"
+  },
+  {
+    "path": "app/test/core/account_test.dart",
+    "bytes": 7214,
+    "sha256": "bf71a8388e965909b10b4ce968743217410e641c5299f663f7efe8e72e099fa4"
+  },
+  {
+    "path": "app/test/core/app_bootstrap_test.dart",
+    "bytes": 7851,
+    "sha256": "9b179dd35705779643465c0347ed3292ac0901c8f21dc106a643a4ebf926d975"
+  },
+  {
+    "path": "app/test/core/app_settings_test.dart",
+    "bytes": 3920,
+    "sha256": "8ae5c06f0df98fb53a8cc23e430366b9d2b6f76a176448c44b1bf30e3aced3d5"
+  },
+  {
+    "path": "app/test/core/deep_links_test.dart",
+    "bytes": 7707,
+    "sha256": "f4122c210757b4370111fb8c92d681291195ea87ed9e7ee459da90a2a139c2be"
+  },
+  {
+    "path": "app/test/core/entitlements_test.dart",
+    "bytes": 6300,
+    "sha256": "539140099061ab1e3ae4798175246166eb25c88c0d476f814ccd93f5940b52b2"
+  },
+  {
+    "path": "app/test/core/quota_test.dart",
+    "bytes": 6593,
+    "sha256": "df2ae7ea0098289f6abb63f7c9f68544d4f121609321ad03388ff78b3d89a2e1"
+  },
+  {
+    "path": "app/test/core/remote_config_test.dart",
+    "bytes": 4301,
+    "sha256": "1f497c995137c254a1769f3394bddb1c27f819fb3f212b0bf851381e6f7e065c"
+  },
+  {
+    "path": "app/test/hand_input_test.dart",
+    "bytes": 15175,
+    "sha256": "26ee2c045b0f80829e4500269b519373c9e83f19519579f558192d85b2a48a5e"
+  },
+  {
+    "path": "app/test/interstitial_pacing_test.dart",
+    "bytes": 1625,
+    "sha256": "d2a02f75ab34ab2edc628bc337234b7766164670bdfe8a00683f6c7fde140aab"
+  },
+  {
+    "path": "app/test/live/frame_gate_test.dart",
+    "bytes": 4429,
+    "sha256": "1290c2925a89efd663bcafd34255bbb683ee4755489e50a3f0a27d2651d25402"
+  },
+  {
+    "path": "app/test/live/live_advice_test.dart",
+    "bytes": 6973,
+    "sha256": "f51b672d6cfe7404e1a249fc94341f976f60c94774aaededc1300451001d1606"
+  },
+  {
+    "path": "app/test/live/live_controller_test.dart",
+    "bytes": 13870,
+    "sha256": "197ecd5daac31e03ac3f2dc6dfed969e724a804ba360b0707cba609fccde8f7e"
+  },
+  {
+    "path": "app/test/live/live_detector_test.dart",
+    "bytes": 9930,
+    "sha256": "c09a6bfd2f2356b479641243b4671fc710169a28d23f5437fd931feaee353c56"
+  },
+  {
+    "path": "app/test/live/live_model_tier_test.dart",
+    "bytes": 15012,
+    "sha256": "f04f4d414b0a8388234caf645c5a60042d51cd16034283f20a3c8b64b2a287cb"
+  },
+  {
+    "path": "app/test/live/live_page_test.dart",
+    "bytes": 22421,
+    "sha256": "560b7770d9d7b71fff4cbb98a3d145dde64ebb1e139f4add4a45312e5890f5cc"
+  },
+  {
+    "path": "app/test/live/live_preprocess_test.dart",
+    "bytes": 15071,
+    "sha256": "580b6b960d237a4f44eb34000c04cfff8171d64d58c454f387b7b439ac8fe559"
+  },
+  {
+    "path": "app/test/live/live_session_store_test.dart",
+    "bytes": 2960,
+    "sha256": "dc584704d1b3534c64a7bcddc9cd4840bd0c45b4fcd5821851a08a6e099dd5c1"
+  },
+  {
+    "path": "app/test/live/live_strings_test.dart",
+    "bytes": 942,
+    "sha256": "7b38907df8208abc34dad287da9b94b862b98322be819d2b213331b5017a01a9"
+  },
+  {
+    "path": "app/test/live/live_trial_test.dart",
+    "bytes": 7831,
+    "sha256": "b224edde0b2d5a9cda7c3986d4733717e625bb0b6dfcef80006a0303b3c66afd"
+  },
+  {
+    "path": "app/test/live/support/live_fakes.dart",
+    "bytes": 8134,
+    "sha256": "678fd5233922073e753447d8c87976d56765b5eb78d579facecde7307e7f6a92"
+  },
+  {
+    "path": "app/test/live/tile_tracker_shake_test.dart",
+    "bytes": 17435,
+    "sha256": "3e364ffb5dd109e0c8aa488743c29509c48ca6ef1bb82cd14d21034d7364b377"
+  },
+  {
+    "path": "app/test/live/tile_tracker_test.dart",
+    "bytes": 14453,
+    "sha256": "e5fbef84a6d00c72f050e369cd6405c71f3ecf46b2489fa0693b4a1558d218d9"
+  },
+  {
+    "path": "app/test/ml/live_model_loader_test.dart",
+    "bytes": 4046,
+    "sha256": "a00ca844e26022b6808ce28a8d8c9346ac66d0130a0a246e4d1399bf71ecf400"
+  },
+  {
+    "path": "app/test/ml/live_yolo_decoder_test.dart",
+    "bytes": 4480,
+    "sha256": "db930b960fdaa21f43555e8402685ef823a42a1348deb6e4a79c336492e00523"
+  },
+  {
+    "path": "app/test/ml/model_assets_test.dart",
+    "bytes": 1561,
+    "sha256": "1294286389e65ee9beb175075e6849a11f70fd8b06402ab2851dceeb139d2f3d"
+  },
+  {
+    "path": "app/test/ml/model_config_test.dart",
+    "bytes": 2825,
+    "sha256": "44d306164ce8c439db758146f0f6e4772c5386d03a6e6cd58489f4913769af3c"
+  },
+  {
+    "path": "app/test/notifications/live_summary_notification_test.dart",
+    "bytes": 14228,
+    "sha256": "5c554dafa1018bf784a2b555cc131d7a0caf7592c2a815066573f2597b5a2dda"
+  },
+  {
+    "path": "app/test/notifications/live_summary_time_test.dart",
+    "bytes": 872,
+    "sha256": "51ae76292ec90dba6c0ebc5e0c77d51a94ecbe5d7c9a299525e21501004c2aa6"
+  },
+  {
+    "path": "app/test/notifications/notifications_test.dart",
+    "bytes": 27555,
+    "sha256": "e98952618f03be5b1a808de2a3345b2e13a4aeb2dfec5603ca7e5cade7767ed8"
+  },
+  {
+    "path": "app/test/problems/block_test.dart",
+    "bytes": 18007,
+    "sha256": "9d0664b95715f7a7f299845eb156626ac7894a33740c9f3ebf9e49c25a86786c"
+  },
+  {
+    "path": "app/test/problems/blocked_authors_test.dart",
+    "bytes": 6110,
+    "sha256": "04f1428ac964e160d812ab88ba70e6a66f4bae442dd46ea13215aa68599a642d"
+  },
+  {
+    "path": "app/test/problems/fakes.dart",
+    "bytes": 11236,
+    "sha256": "8105b62ac7193ccd65d39447963ac1e47c80fd74dd2ade44c06316cede367485"
+  },
+  {
+    "path": "app/test/problems/local_daily_test.dart",
+    "bytes": 9389,
+    "sha256": "dda25b1d78a1e64f31d07abfd3794c6024008303b4e39a61cd4d8b29c840af02"
+  },
+  {
+    "path": "app/test/problems/problem_pages_test.dart",
+    "bytes": 24915,
+    "sha256": "2e52244e1d1ecf8d0ca41b101a98111b0b65fd87e53932e6a2099a7048ed7732"
+  },
+  {
+    "path": "app/test/problems/problem_repository_test.dart",
+    "bytes": 11951,
+    "sha256": "43d5a4818d3685c4cdf24ef0c595f911f0ecfc1a1295c6adae55381e031a8fc5"
+  },
+  {
+    "path": "app/test/problems/problem_test.dart",
+    "bytes": 8513,
+    "sha256": "acd16d1153f4a774bb0dab5cd4be8ca923202d8e77f2934fadd4571b559928d5"
+  },
+  {
+    "path": "app/test/purchase/paywall_page_test.dart",
+    "bytes": 26340,
+    "sha256": "ac23b9a292cc235c1e0e172d9d7e32ad2ae7eec95e142c204e07574883780746"
+  },
+  {
+    "path": "app/test/purchase/review_access_test.dart",
+    "bytes": 6491,
+    "sha256": "81ebdb6310da6afdbb52e4023bf0fe76fc88dcb3acbcaa534b5522b1ac6c9d0b"
+  },
+  {
+    "path": "app/test/purchase/subscription_service_test.dart",
+    "bytes": 15552,
+    "sha256": "970f03e5ac6121dd7ec171c33bcd50604097fbde5fccab1e1a442eb84e3109f7"
+  },
+  {
+    "path": "app/test/recognition_draft_test.dart",
+    "bytes": 6466,
+    "sha256": "1d785de658c098fb5dc4bcd0c5b9384cde8334a62ce640d126e5968f07a006a4"
+  },
+  {
+    "path": "app/test/recognition_editor_test.dart",
+    "bytes": 12253,
+    "sha256": "b2c7c78c722d61f89eb16d27a8979e2afa0fd0323984554aa008316542c2aa44"
+  },
+  {
+    "path": "app/test/recognition_geometry_test.dart",
+    "bytes": 4080,
+    "sha256": "bb6fd5e8366b24801ecaff2919b55258e82f65d2cb5113d2cd2b597f1037bac4"
+  },
+  {
+    "path": "app/test/recognition_page_test.dart",
+    "bytes": 12169,
+    "sha256": "9d4269716e39be0cb899deb73211a24ce94d5884e6a1e1789ef8ea616b1a79ad"
+  },
+  {
+    "path": "app/test/referral/referral_test.dart",
+    "bytes": 18031,
+    "sha256": "5c124e08667b4d873fdc0f4be54a713d271109e254d4eacc67a89ca0cc18f433"
+  },
+  {
+    "path": "app/test/screens/detail_explanation_test.dart",
+    "bytes": 6126,
+    "sha256": "1e4cbdd745e06cd3ef795348a588106ad1ea5597490579ad722799fdc52b9d73"
+  },
+  {
+    "path": "app/test/screens/history_test.dart",
+    "bytes": 9403,
+    "sha256": "f2383c5a6c2c5d41680cbc58b3ded14d1ed3d5f0d2b872bfd4929902cb21cde8"
+  },
+  {
+    "path": "app/test/screens/home_live_extend_test.dart",
+    "bytes": 5549,
+    "sha256": "7ceb8586f40e62da338d8c6feb4131597ee2da435edc801c65e280064a0564e8"
+  },
+  {
+    "path": "app/test/screens/home_onboarding_test.dart",
+    "bytes": 9448,
+    "sha256": "c01b57e084cb8ab40cb708c8cd9a41fed428fce67fffbfa363f10ddcd5311e1d"
+  },
+  {
+    "path": "app/test/screens/photo_quota_test.dart",
+    "bytes": 8613,
+    "sha256": "86592138f6be181f9ad9f2c992c95b58085505e182e5686bb5ce1560b9fd242b"
+  },
+  {
+    "path": "app/test/screens/quiz_hand_test.dart",
+    "bytes": 2100,
+    "sha256": "ccc731018abb3cc6b1c4601e54dd0c42f44107960977b299c9fe04513775622f"
+  },
+  {
+    "path": "app/test/screens/quiz_page_test.dart",
+    "bytes": 14958,
+    "sha256": "fa984247837864dcb38570c3340340df0d3db80f37ff376406c8e658990d2051"
+  },
+  {
+    "path": "app/test/screens/reason_text_test.dart",
+    "bytes": 7062,
+    "sha256": "fe511d0589c3137265fff1107c106dd0a7e93be4b06badba7adaa44376d54db7"
+  },
+  {
+    "path": "app/test/screens/result_page_test.dart",
+    "bytes": 23681,
+    "sha256": "13db436f856f9227c7f3f85a2a603f5bed4889d05149ce80181bc6dd21a515e1"
+  },
+  {
+    "path": "app/test/screens/screens_harness.dart",
+    "bytes": 10102,
+    "sha256": "1dee428f56237b3f28f1b7536ee2c1fd3df41706184b85ac909fe9bd94374ec8"
+  },
+  {
+    "path": "app/test/settings/settings_page_test.dart",
+    "bytes": 30116,
+    "sha256": "694cf47268bf9bbad2fab33456251f549a32fb5e93b7d8d27408a85331d35000"
+  },
+  {
+    "path": "app/test/share/publish_page_test.dart",
+    "bytes": 18702,
+    "sha256": "73b9efcd266d009f3c510e5931a6b23465435ad650b23042aca82c6d556c36fd"
+  },
+  {
+    "path": "app/test/share/publish_service_test.dart",
+    "bytes": 16882,
+    "sha256": "754b76812ce4f8eb2be0e86a57001c8f430d5ee9d4af1c0238496fb94744d748"
+  },
+  {
+    "path": "app/test/share/share_card_page_test.dart",
+    "bytes": 17179,
+    "sha256": "7096ee01b27cc923048b8255390fe5ac38fbb69ca257ba3cfc0a83798b79f0bd"
+  },
+  {
+    "path": "app/test/share/share_cards_test.dart",
+    "bytes": 23721,
+    "sha256": "2cc1da1422f068f389af07918554b8e571e0dbe0df149d81c4dde427460d4cb2"
+  },
+  {
+    "path": "app/test/share/sharing_host_test.dart",
+    "bytes": 11216,
+    "sha256": "473c709e93c030cf09b73d8b078f6a40c7e130be0c2baef2dd66046c012e56f8"
+  },
+  {
+    "path": "app/test/support/billing_fakes.dart",
+    "bytes": 4437,
+    "sha256": "8d3f81b8c6d24a01f262376c2c5c65d927cbef3e7d05fc2695fe22e62cb6eabb"
+  },
+  {
+    "path": "app/test/support/fake_camera_platform.dart",
+    "bytes": 4426,
+    "sha256": "0de319533629bb01a9a9eaa44d4fa76ad210da0eeff10a98e1e434f9b1acb46d"
+  },
+  {
+    "path": "app/test/support/notification_fakes.dart",
+    "bytes": 2584,
+    "sha256": "57d604b19d2069d8988daa8645d80e83db5d66b1452a5364100f4a01c2ad8e6b"
+  },
+  {
+    "path": "app/test/tflite_initialization_test.dart",
+    "bytes": 11056,
+    "sha256": "298446dc876fcbd2ea4821874d4e2fb8026b1ffbbda6b7ea714463b3e8e2678c"
+  },
+  {
+    "path": "app/test/tile_arrangement_test.dart",
+    "bytes": 9735,
+    "sha256": "f0f48725ee5c5e77dc0909cab61b7fcc71804f91c67c65a1b2b1fef270d5783a"
+  },
+  {
+    "path": "app/test/tile_selection_test.dart",
+    "bytes": 6630,
+    "sha256": "6600448ecdac62bafc8d2a63be0151e72f3fbf13cfe02f33f633364bedd4ef88"
+  },
+  {
+    "path": "app/test/ui/widgets_test.dart",
+    "bytes": 5884,
+    "sha256": "46d13b7d01453442266b45ee72914f20b70079d7ad67b0795483b74180729017"
+  },
+  {
+    "path": "app/test/win/win_entry_test.dart",
+    "bytes": 7315,
+    "sha256": "113c006d3734c9f6eca343bd507d6ace62543a85374da5764c1362b940791abc"
+  },
+  {
+    "path": "app/test/win/win_score_logic_test.dart",
+    "bytes": 5514,
+    "sha256": "d48a37ace1b988f0ddeeb2558f8faa25cab3348af8d77437d4a537115a38ebbd"
+  },
+  {
+    "path": "app/test/win/win_score_page_test.dart",
+    "bytes": 12953,
+    "sha256": "6e56fc43e0f7a0ffedbc70612991cf75496ff1563b7367b1b8f900f927d3d0ec"
+  },
+  {
+    "path": "app/test/win/win_share_test.dart",
+    "bytes": 7035,
+    "sha256": "9190857ea7772e8bb2419170ea1b6aa246cd123403c8c363abbe98239cc231cd"
+  },
+  {
+    "path": "app/tool/capture_paywall_preview_test.dart",
+    "bytes": 4658,
+    "sha256": "cedc3f0617249a163619e95f479c0629d08a290fdfb3fa2d584efaa3d5be3fb9"
+  },
+  {
+    "path": "app/tool/capture_screens_test.dart",
+    "bytes": 17041,
+    "sha256": "6b36a0568635c1febddf99856c8e16b98757c5b8492b2930b01b6df68e76e5a8"
+  },
+  {
+    "path": "app/tool/capture_screens_wave2_test.dart",
+    "bytes": 18936,
+    "sha256": "43c56873a1cc8a82c7120d547f000f4eb46ce27855521b06f1fb962988e84e9d"
+  },
+  {
+    "path": "app/tool/check_pbxproj.py",
+    "bytes": 8807,
+    "sha256": "bdee72ba071557060ddc2b3a8302e6f8d12ef8fac9e7a93fa3b6e98808637b48"
+  },
+  {
+    "path": "app/tool/check_privacy_manifest.py",
+    "bytes": 8549,
+    "sha256": "e26a4b122a5debb64f01b69d997f9543175283016ac67eb4fed871476f5a6dc8"
+  },
+  {
+    "path": "app/tool/make_icons.py",
+    "bytes": 27489,
+    "sha256": "b1c4c1614183100da5cdc520e547d3c9a064e2d15dc559606fc0ae4f2f6afce4"
+  },
+  {
+    "path": "app/tool/test_ads_smoke_test.dart",
+    "bytes": 1573,
+    "sha256": "afa48885b98bb2ae47b8d9a808035fca33e5ac7123a09272f3fd2861dd1a466d"
+  },
+  {
+    "path": "codemagic.yaml",
+    "bytes": 26587,
+    "sha256": "416d40bbcb7e350636508a818919e78bbdfb41084ed5fbe5349809118577a8bc"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 34523,
+    "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+  },
+  {
+    "path": "ml/bench_tflite.py",
+    "bytes": 2036,
+    "sha256": "2347d3f0f69dad3b9ff6e24538ffb0c3b9338f6a9e3c40c138c2f570b85cf7a1"
+  },
+  {
+    "path": "ml/bootstrap.sh",
+    "bytes": 2586,
+    "sha256": "936daa375d08aba8e8a720cc87a9287282a83b6b44752495c317f8e8da0144bc"
+  },
+  {
+    "path": "ml/calibration_image_sample_data_20x128x128x3_float32.npy",
+    "bytes": 3932288,
+    "sha256": "7760bb2bc187ab76c0a9249033ccfe2bf98423f075d6251d966a5deedc8a1379"
+  },
+  {
+    "path": "ml/copy_assets.py",
+    "bytes": 1236,
+    "sha256": "7894336b2802b95ed736f05cf47f80d60fc32e754b52d1dd2f06896205a06dc7"
+  },
+  {
+    "path": "ml/crosscheck_score.py",
+    "bytes": 27826,
+    "sha256": "ae96a6ebea4cb4046651a999f62ad5ec8ce796e54a2224222d0474855b2b1dc4"
+  },
+  {
+    "path": "ml/crosscheck_shanten.py",
+    "bytes": 15560,
+    "sha256": "fb0957de209572b298e78ad8f224e93ce4dbba55be02283de90d52dcb2f74af3"
+  },
+  {
+    "path": "ml/environment.yml",
+    "bytes": 261,
+    "sha256": "1f377ee45edbe600695e1609f0b7c717d11bb29e85ca5931d0f3aecaacb95ef6"
+  },
+  {
+    "path": "ml/eval_models.py",
+    "bytes": 8531,
+    "sha256": "88798d9c06f2f493044ebcabe810849ef8f1ab70c8a33cbd641a9b75424ecfcb"
+  },
+  {
+    "path": "ml/eval_tflite.py",
+    "bytes": 9856,
+    "sha256": "392f425108494a1f9de67e40e11ea6b657161c84d46ea0ece4fbb0786367ac1e"
+  },
+  {
+    "path": "ml/export_yolo11.py",
+    "bytes": 3922,
+    "sha256": "9bbc9d8cde2dfe884e40501602674e8691b79a6db7cc32fec335ba9c07c654ce"
+  },
+  {
+    "path": "ml/extract_frames.py",
+    "bytes": 9073,
+    "sha256": "612783b0476431cfc2c96eeaba7f978030378779b82f546a8a1011b302efb8f8"
+  },
+  {
+    "path": "ml/make_clean_split.py",
+    "bytes": 6120,
+    "sha256": "4b861a827ff80bfa53a639cabf7a574ba3c8416d893340ea212153e79c213447"
+  },
+  {
+    "path": "ml/Makefile",
+    "bytes": 3046,
+    "sha256": "00f7fd21c9d02d339d873c811c7a55a305457cb31d29941801c37fadb83e6451"
+  },
+  {
+    "path": "ml/README_training.md",
+    "bytes": 21111,
+    "sha256": "8d80fe85b630e3790c9be75cb1e3ef1f1f8ebe9783d02ae1814959fab090c8a3"
+  },
+  {
+    "path": "ml/requirements-engine.txt",
+    "bytes": 15,
+    "sha256": "a9502c3746cb4146deac4a1d67a81d402e4e6964d326771d411c9701baca9f78"
+  },
+  {
+    "path": "ml/sim_pipeline.py",
+    "bytes": 5449,
+    "sha256": "d6d810d4f5423bfec6ebd99099aafde6eacd3e788b19b724403bd3159517379b"
+  },
+  {
+    "path": "ml/train_all.sh",
+    "bytes": 3297,
+    "sha256": "89d3f4677413ae8c59d1e74099cc334e091f11527cd03ac4e41469f0b08c7e73"
+  },
+  {
+    "path": "ml/train_live.sh",
+    "bytes": 2317,
+    "sha256": "fc1a2a592cf7f06e91a92a6a2aedb590e5e369c981b878400515d2732b90b452"
+  },
+  {
+    "path": "ml/train_yolo11.py",
+    "bytes": 3644,
+    "sha256": "4f20c77761f999fc90d3cc4fe7687f4b58bfc7d25a9c38e64a0a7e0619531fe2"
+  },
+  {
+    "path": "ml/weights/detect3/args.yaml",
+    "bytes": 1542,
+    "sha256": "f572d3136cf2ca3d48df85e5c17062b793feac24571391ee55cc3f378550999a"
+  },
+  {
+    "path": "ml/weights/detect3/best.pt",
+    "bytes": 40575525,
+    "sha256": "74787c820a2181f0a81c28096f360fd125fd558b59382f96a7af54ea3fcdf58b"
+  },
+  {
+    "path": "ml/weights/detect3/results.csv",
+    "bytes": 6449,
+    "sha256": "749bfd584b03187294c92905c673d849e09e10ce89fe03dbff6269823ad7d6ca"
+  },
+  {
+    "path": "ml/weights/live_n/args.yaml",
+    "bytes": 1601,
+    "sha256": "085c1902760f96ddfcc70f4a3b421f0720af9960ed543b70bbaf8016510ac31d"
+  },
+  {
+    "path": "ml/weights/live_n/best.pt",
+    "bytes": 5492499,
+    "sha256": "6321f178a02126ad9d6b81a25c0957df72ba342cf446e7e7073145913d490926"
+  },
+  {
+    "path": "ml/weights/live_n/results.csv",
+    "bytes": 12511,
+    "sha256": "cfec2b0668fcdfa6d4afd3a7a721de3bd747cb23b5abb1f32baf19263685daf6"
+  },
+  {
+    "path": "ml/weights/live_n_480/args.yaml",
+    "bytes": 1609,
+    "sha256": "c8932043a74f1a8cd5d95896716ee3823d0f8548d1d2a023eb6fb7499b4294d0"
+  },
+  {
+    "path": "ml/weights/live_n_480/best.pt",
+    "bytes": 5469139,
+    "sha256": "98be683df4a2e0f5937a2676280bd197441d5e46cb200444b7159d28217ffb6f"
+  },
+  {
+    "path": "ml/weights/live_n_480/results.csv",
+    "bytes": 12518,
+    "sha256": "231a8d2460a749f4370da317bfa153e768f4f6f009668f56bbc008d7081ac5ed"
+  },
+  {
+    "path": "ml/weights/live_s/args.yaml",
+    "bytes": 1601,
+    "sha256": "58418fc18bc4d6bd487255a1a97c4a04e223945ddda1b3f05bda6f42ba9a1d04"
+  },
+  {
+    "path": "ml/weights/live_s/best.pt",
+    "bytes": 19211923,
+    "sha256": "e22cff8958d92d57e48b720b8af1931190f281142c67a75b1f4180e66b62fa66"
+  },
+  {
+    "path": "ml/weights/live_s/results.csv",
+    "bytes": 12508,
+    "sha256": "1633885bc4a7d70f5beb3a3e27ab9ca03e18225c5d56034e3302cd1512bb0b8f"
+  },
+  {
+    "path": "packages/mahjong_core/analysis_options.yaml",
+    "bytes": 177,
+    "sha256": "3303af76bfa2a054c54fefeb55b994533db434a80db067445e77ae05e0bae1da"
+  },
+  {
+    "path": "packages/mahjong_core/lib/mahjong_core.dart",
+    "bytes": 1248,
+    "sha256": "064413838e20d758043c7b36d8dd0a69fc7c66e18e3900cee73f25dfc023f92a"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/daily/daily_generator.dart",
+    "bytes": 18913,
+    "sha256": "7e44512eb8094e9bbeb4897984b83fd4cdd1fb25f24db2a2b8bea7a0925ed9f2"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/analysis_report.dart",
+    "bytes": 2374,
+    "sha256": "40058d9bf02deedc83df64165cd3e60224b6758ac4c1ee9c7d552c5713886a26"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/block.dart",
+    "bytes": 1188,
+    "sha256": "b666e4d07822a2c897f73cf7af51ba4a8957763b7f98b5049c902c2d19e0246a"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/blocks.dart",
+    "bytes": 12712,
+    "sha256": "f1c57d6aff1acf3fc1d962baecb3b19f1e7b838436ece0be2b6b4cf5f704ae9f"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/discard_ranker.dart",
+    "bytes": 14106,
+    "sha256": "26516bef101f8fd92eac041a047477f315111ef8e993219fa666877f4672b994"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/engine_version.dart",
+    "bytes": 1086,
+    "sha256": "bf917d2459e30ca208eeae28498c86b36879aef99e9d6d59d9e888fe83e93650"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/explain.dart",
+    "bytes": 12972,
+    "sha256": "c30ec978b161675afd8d006414476e03e2aab63150cae23290798cec33ec114a"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/hand_state.dart",
+    "bytes": 6108,
+    "sha256": "905d8dad6e7bd3dbb653d852167c0ed37acca5263482f2d035a1c82ffd920ede"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/nanikiru_engine.dart",
+    "bytes": 6323,
+    "sha256": "f9c6a76831a53499fb2881f4371fc53a5ea3354f6ee4e022b382b2394c24b330"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/points.dart",
+    "bytes": 2670,
+    "sha256": "f7a63a683eba25256344463dfb8fa9ca0dfa9289ad4ed0870a2fc674de41c61e"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/reason_tag.dart",
+    "bytes": 4570,
+    "sha256": "104e5f9677b5fc9082083bc1f5e7dd21e17c4469c37be98532f939d250e333dc"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/riichi_advice.dart",
+    "bytes": 4831,
+    "sha256": "8f2ca7a030b5637c96eb2be5f789681e7b710011d33260353985439052830dff"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/route_enumerator.dart",
+    "bytes": 24102,
+    "sha256": "4eaecfd9bb52788bc4aa5294b99c3b0d8261c59a69121aee5c68d2c77129fad7"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/shanten.dart",
+    "bytes": 8528,
+    "sha256": "9d2955705d1fa6b521b11af5672245994a4b3efd1531eed52742a9bc46023b0c"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/thirteen_report.dart",
+    "bytes": 6104,
+    "sha256": "7167b1fea80ae62d4dd7aafa514f9deadfe5412a18452f3fd6fc8a78af41adf2"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/two_step.dart",
+    "bytes": 7935,
+    "sha256": "823770183c9b47700f270bd50c1b60d16b74a217b7db2af435e4836a546d5844"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/ukeire.dart",
+    "bytes": 1740,
+    "sha256": "c5f9300d4e2e22fa5421c1a4664fa93e83a153f26e8f0e00cb77b6bbed56a919"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/win_ease.dart",
+    "bytes": 3128,
+    "sha256": "82ccb9864534731105b19f602df1bdab2c8a963ece54d7545cc966d203f633da"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/win_ease_table.g.dart",
+    "bytes": 67400,
+    "sha256": "1c628915417fb938605e503107c6f959fc74aa90630f73ee90968d230efa4763"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/win_evaluator.dart",
+    "bytes": 11378,
+    "sha256": "15f5ed3a64cc60472b2049fc0a06dd623bee3111e3440c3b31c99ec1332a5a1a"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/engine/yaku.dart",
+    "bytes": 7285,
+    "sha256": "e1b683a6100c32a6fe4dd7e1c077ae4a5c29864de587b8bc98974b67e7033556"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/hand_parser.dart",
+    "bytes": 8102,
+    "sha256": "9f2463167f05dce91ae411fdc82aebfd515db429eeffaf23865ba70923f2fd1b"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/models.dart",
+    "bytes": 3414,
+    "sha256": "b3a193add0f9c598e40ffacd560d95c22d545d5b45f3206aab4913d5f7d462d2"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/quick_context.dart",
+    "bytes": 4979,
+    "sha256": "7adf6f4973b331342ed322a73a847e6a60f91fb3f4dcf44eb6cf814b6833379e"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/han_yaku.dart",
+    "bytes": 5130,
+    "sha256": "7c4543bae7ab9db69a9c2604233c56ff341989f64d243db4b282032b83f30819"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/hand_analyzer.dart",
+    "bytes": 29927,
+    "sha256": "c7fd741fd9b62110d3a45e6f8dfff5b08e3d499ef46d2e0473c92499537c50c4"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/ruleset_support.dart",
+    "bytes": 7947,
+    "sha256": "43038904314dc1f14571000c0a60681db0d9d7b784c396913214703181bf3f30"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/rulesets.dart",
+    "bytes": 5026,
+    "sha256": "d2026a4ed907bb9273d473bb8738a518f869b286b2811c725acb55848e077a5d"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/scoring_engine.dart",
+    "bytes": 4505,
+    "sha256": "674178d6bb749c5490d51874166e83f4cb0a5596be5b649c6ade188775c66edb"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/win_scorer.dart",
+    "bytes": 34037,
+    "sha256": "952ddf9f3cbb7a3f1c8c27ad6e0a159d804b03dbad7d215f983d3be25428887c"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/scoring/win_types.dart",
+    "bytes": 19786,
+    "sha256": "cac69b5906f6c01a13aa0aa3371dadc8273a0e64f0ebec7a31756a7e6519709c"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/tile_utils.dart",
+    "bytes": 3200,
+    "sha256": "2ca80cd64469685475ba63dddbf34d04525a75014fde0d53f42f9848f7701c16"
+  },
+  {
+    "path": "packages/mahjong_core/lib/src/wait_type.dart",
+    "bytes": 144,
+    "sha256": "055a1d233f31e5058c9611d56b2213b8c20e7260f850477aa14cadd9d671c06a"
+  },
+  {
+    "path": "packages/mahjong_core/pubspec.lock",
+    "bytes": 11871,
+    "sha256": "1222378f80581fb51d2543f44fbddc1f22ddf18e8db3c6f2068c2b7d1c9b8757"
+  },
+  {
+    "path": "packages/mahjong_core/pubspec.yaml",
+    "bytes": 301,
+    "sha256": "2c52d00436c59964d747e0c704868d751b866a46d04523d1df36507030254a97"
+  },
+  {
+    "path": "packages/mahjong_core/test/daily/daily_generator_test.dart",
+    "bytes": 8874,
+    "sha256": "4c9c9c7eb33eb95215f8f8f4011edd435726f4a10efa01cbf64b2da4d3e33c26"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/axis_ranking_test.dart",
+    "bytes": 13533,
+    "sha256": "2c7ce1a2f2c1955eb0c39e157040924e68943192ff185048d25d798879e8f700"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/blocks_test.dart",
+    "bytes": 11752,
+    "sha256": "3b66afbcbafaef995e48bad443b6c4fa26529366e5cc80cfed842ee026a2ce7b"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/discard_ranker_test.dart",
+    "bytes": 4766,
+    "sha256": "966c1c5983ccb225f69a7adff367c49403ecc602cdc9f311adfcc6d61c2f13b4"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/engine_test_utils.dart",
+    "bytes": 2805,
+    "sha256": "34130e5589ddf57ec43ce854018a48078c17d5688d7427c74d52f8e0b5fd54a2"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/explain_golden_test.dart",
+    "bytes": 15897,
+    "sha256": "9d0991354670339eac779ab5005f77e51e1111cfd20f8cb8fb7313654ef7bcd8"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/hand_state_test.dart",
+    "bytes": 2710,
+    "sha256": "339ab832ce77e732673af8234b8b4997166b78d07c9e6ceae314a6e2aec590bc"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/nanikiru_engine_test.dart",
+    "bytes": 7714,
+    "sha256": "ffc29dffea61113d6ad0f54ae25831463d49c86098b20c061f469514e4b5d3da"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/points_test.dart",
+    "bytes": 2695,
+    "sha256": "f8d92403a6e317bcfd3c9a5670681b15c43c8cb48ab782679ae3dcd18ef38d47"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/riichi_advice_test.dart",
+    "bytes": 7519,
+    "sha256": "db5493555815ac1273b167b80333f6eae74663a68d0637c6cee959a7204740a5"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/route_golden_test.dart",
+    "bytes": 21319,
+    "sha256": "076213a26e079e61025f5a101db0280839ab6a1ce9cdbbc56e6713c433036242"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/route_test_utils.dart",
+    "bytes": 1624,
+    "sha256": "e442d9ffdcb84d5f5cecff7c35952a450571cda391095673dcae9b6472e72a4e"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/shanten_crosscheck_test.dart",
+    "bytes": 4185,
+    "sha256": "71854da59818da69a64cd9e70139004353171af2e0892a6c8a47644426e6c3e4"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/shanten_table_test.dart",
+    "bytes": 23189,
+    "sha256": "26bb247fc8ad023aa61f984ec589dc5303e3a90e4bf685bf7bea266882fad8ff"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/thirteen_report_test.dart",
+    "bytes": 4955,
+    "sha256": "594d004c71643fa32bed61ee47a6e686176a347880e243aadab1ab65d8959817"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/two_step_test.dart",
+    "bytes": 9156,
+    "sha256": "54b52155b4a3b96e6ee78d834faf1b607bc479a44464e146dc87732b38542bb4"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/ukeire_test.dart",
+    "bytes": 6833,
+    "sha256": "4fe263fa09aa36c5860eb7d0ef0352ddaf26f0c58e66e74bef87d55ed9c5b6dd"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/win_ease_test.dart",
+    "bytes": 14993,
+    "sha256": "b1b0877bd93ac332811616a5f73a0ef9e562a7a9a0adc371011a663095048e58"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/win_evaluator_test.dart",
+    "bytes": 4727,
+    "sha256": "19fb4d34b4529256e3c8f68d4cbc3887ccb45a6c7c1ea42b18937ee11e4852a9"
+  },
+  {
+    "path": "packages/mahjong_core/test/engine/yaku_test.dart",
+    "bytes": 6420,
+    "sha256": "dec583bd41a2bd439519d6846d5de2413612d8d9bef7bb9db85761b55dd94969"
+  },
+  {
+    "path": "packages/mahjong_core/test/fixtures/score_crosscheck.txt",
+    "bytes": 2258479,
+    "sha256": "42d43491aca29adc70a2869f4f5a1d9c614530eca80f52588d80b70b67d528f3"
+  },
+  {
+    "path": "packages/mahjong_core/test/fixtures/shanten_crosscheck.txt",
+    "bytes": 762040,
+    "sha256": "3ffb69065f3c7489170e37fed77da75ce50f0a88814bb6b4ccb6a87a981f8c11"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/hand_analyzer_test.dart",
+    "bytes": 8892,
+    "sha256": "442c0b2c791328f4014b167016e88160dda65fe6334c360dbd3707ae3c08d952"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/mpsz_test_utils.dart",
+    "bytes": 532,
+    "sha256": "49629afc8ed392a8ba9cd48cb9d7f449a50c8b643e94a2c1e61b2ad9a16b0aaf"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/ruleset_support_test.dart",
+    "bytes": 756,
+    "sha256": "085f6f226cc0e65d6baa508b5ca7779968dcb5130003bb78b86dbc9b99a72cee"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/score_crosscheck_test.dart",
+    "bytes": 13573,
+    "sha256": "0864036b57443c2d53444f61cdcc16890ff99249a03c722ae8f1fe82770c3256"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/scoring_engine_test.dart",
+    "bytes": 6491,
+    "sha256": "cd1f5813ee2eb6da6fa4d0928d6ee43e93964913e1f9a031c3cd37329a6a3b8f"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/scoring_fixes_test.dart",
+    "bytes": 10018,
+    "sha256": "06da9a664ae67d51f619c74e3e867da11ed112410100bc59c39ab05671966fa5"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/scoring_regression_test.dart",
+    "bytes": 5848,
+    "sha256": "b11bbcf73d7d26a6d3699a07e584aeb57922eddb46ba7f9dc0f9d884620bcb8a"
+  },
+  {
+    "path": "packages/mahjong_core/test/scoring/win_scorer_test.dart",
+    "bytes": 18333,
+    "sha256": "2f058e8e594b98dec222da9ed4fa5294bccd96937315a7bfc72f04b13e106368"
+  },
+  {
+    "path": "packages/mahjong_core/tool/bench_daily.dart",
+    "bytes": 2813,
+    "sha256": "ed9e43d57f861b49675cb252c1c3007f1f01683e9a8507b885cea0ad9c9e4c4d"
+  },
+  {
+    "path": "packages/mahjong_core/tool/bench_engine.dart",
+    "bytes": 6433,
+    "sha256": "1b824010734b901f6d1a4a15f56cc082204092f3864d860e0e3b1ab5c8d547a3"
+  },
+  {
+    "path": "packages/mahjong_core/tool/bench_shanten.dart",
+    "bytes": 3842,
+    "sha256": "2be9eb37c62ad083301c6d2d42987695bcc6fc465f4013fc0865b5c9921327aa"
+  },
+  {
+    "path": "packages/mahjong_core/tool/bench_win_scorer.dart",
+    "bytes": 3960,
+    "sha256": "e1a5d734d13bf5b78c51b571b236358ace8b9de1b9956a59df8707dda86618a6"
+  },
+  {
+    "path": "packages/mahjong_core/tool/sim_win_ease.dart",
+    "bytes": 40448,
+    "sha256": "b35c52ba4e274505be549f6ddcf16277145658707b32cea896bbb25584930f92"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3384,
+    "sha256": "07ccc2ea4e2cc45638b6872bd0c7f5e81389327dfd160966d73dc4f72d1fe894"
+  },
+  {
+    "path": "THIRD_PARTY_NOTICES.md",
+    "bytes": 3088,
+    "sha256": "d3f56908ee92b8b0d9ccbabd01d1a76d13ee88da537c82f33e54428d1e672bf8"
+  },
+  {
+    "path": "tool/check_review_access_config.py",
+    "bytes": 1115,
+    "sha256": "10f5c85237503114203f58285c10212258c1fadf37ab8ad5c37f9dbc5a9ce901"
+  },
+  {
+    "path": "tool/make_review_access.py",
+    "bytes": 1386,
+    "sha256": "17390a8418c87ceebf71ea7ad9449885f2b532e4483a740a87c5d6b1af6f6f9e"
+  },
+  {
+    "path": "tool/wsl_flutter.sh",
+    "bytes": 1815,
+    "sha256": "45c4b3a6a402903f0409e9a608d392c03d4fdbb59caf6c421e4c19be5820ffed"
+  }
+]

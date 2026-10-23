@@ -1,0 +1,87 @@
+rules_version = '2';
+
+// なにきるカム（仮）の Firestore ルール（設計書 5.2・14 章）。
+// 方針: クライアントから書けるのは「自分の端末設定（通知トークンなど）」だけ。
+// 問題の作成・回答・集計・Pro 権利・紹介・通報は、すべて Functions（Admin SDK）経由。
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // 公開問題。hidden == false のものは誰でも読める。
+    // 一覧取得は where('hidden', '==', false) を付ける必要がある（クエリの制約がルールを満たす必要がある）。
+    // 出題者は自分の問題なら hidden でも読める（where('authorUid', '==', uid) で一覧できる）。
+    match /problems/{problemId} {
+      allow get, list: if resource.data.hidden == false
+                       || (signedIn() && resource.data.authorUid == request.auth.uid);
+      allow create, update, delete: if false;
+
+      // 回答（二重回答と集計の整合のため Functions だけが読み書きする）
+      match /answers/{answerId} {
+        allow read, write: if false;
+      }
+
+      // 通報（Functions だけ）
+      match /reports/{reporterUid} {
+        allow read, write: if false;
+      }
+
+      // 正解（private/answer: 3 軸の解・受け入れ・シャンテン）。Functions だけが読み書きする。
+      // 公開ドキュメントに置かないことで、問題を直接読んでも正解が分からない。
+      // 回答後は answerProblem のレスポンスで返す。アプリは手元のエンジンで計算できる。
+      match /private/{docId} {
+        allow read, write: if false;
+      }
+    }
+
+    // 今日の問題（pickDaily が書く）。誰でも読める。
+    match /daily/{date} {
+      allow get, list: if true;
+      allow write: if false;
+    }
+
+    // ユーザー。作成は Functions（ensureUser）だけ。本人は読めて、端末設定の項目だけ更新できる。
+    // pro / referralCode / referredBy / problemCount / publishQuota / nickname は Functions だけが書く
+    // （自分で Pro にしたり、検査前のニックネームを入れたりできないようにする）。
+    match /users/{uid} {
+      allow get: if isSelf(uid);
+      allow list: if false;
+      allow create: if false;
+      allow delete: if false;   // 削除は deleteMyData（callable）
+
+      allow update: if isSelf(uid)
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['locale', 'fcmTokens', 'notify', 'streak'])
+        && (!('locale' in request.resource.data) || request.resource.data.locale in ['ja', 'en'])
+        && (!('fcmTokens' in request.resource.data)
+             || (request.resource.data.fcmTokens is list && request.resource.data.fcmTokens.size() <= 10))
+        && (!('notify' in request.resource.data) || request.resource.data.notify is map)
+        && (!('streak' in request.resource.data) || request.resource.data.streak is map);
+    }
+
+    // 紹介コード・公式問題の待ち行列・週間投稿の記録・内部用: Functions だけ
+    match /referrals/{code} {
+      allow read, write: if false;
+    }
+    match /official/{id} {
+      allow read, write: if false;
+    }
+    match /weekly/{date} {
+      allow read, write: if false;
+    }
+    match /_system/{doc} {
+      allow read, write: if false;
+    }
+
+    // それ以外はすべて拒否
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
