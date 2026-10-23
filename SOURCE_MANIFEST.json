@@ -1281,8 +1281,8 @@
   },
   {
     "path": "app/ios/Runner/PrivacyInfo.xcprivacy",
-    "bytes": 5970,
-    "sha256": "c2b6d011efcbc99126b9800b500f2e4afd4315c6499196826a1e08553f28ba12"
+    "bytes": 6053,
+    "sha256": "881d85663f641015783249fd5020e78a22f97f38d0c29da34e925721b7c3518e"
   },
   {
     "path": "app/ios/Runner/Runner-Bridging-Header.h",
@@ -2666,8 +2666,8 @@
   },
   {
     "path": "app/tool/check_privacy_manifest.py",
-    "bytes": 10883,
-    "sha256": "1b08075dd26885e76f585af82daf9f0966ed522d9f794f73aea7cd4850f1f6d0"
+    "bytes": 11264,
+    "sha256": "ba7520e2362682a594336ee7af17c7e0b77d34605f4c1e5a9c1845094267263d"
   },
   {
     "path": "app/tool/make_icons.py",
@@ -3206,8 +3206,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 4266,
-    "sha256": "13d8fbb5b0c2560619e4a3f1627c9769653de15678c6f1ccaad539d03355dc6a"
+    "bytes": 4255,
+    "sha256": "da309f8481bf5ce1a1338b0c73ad41c91034cd7b7fbd97d962c308e12d5bc261"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
@@ -3241,7 +3241,7 @@
   },
   {
     "path": "app/tool/test_check_privacy_manifest.py",
-    "bytes": 2543,
-    "sha256": "44c1399ec1f9dfabf6bc7baeeb3e3afd78a00322cab7424c32fc50f2a85c1f05"
+    "bytes": 3633,
+    "sha256": "105ee198f6fae81ab868766603747d83ad9d64d8ee0805ee91517e3f7d2d9958"
   }
 ]

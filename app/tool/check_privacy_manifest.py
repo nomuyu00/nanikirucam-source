@@ -7,7 +7,7 @@
   1. plist として読める。必須キー（NSPrivacyTracking /
      NSPrivacyCollectedDataTypes / NSPrivacyAccessedAPITypes）がある。
   2. 値が Apple の許可リストにある（Xcode は独自の値だとプライバシー レポートを正しく作れない）。
-     追跡ドメインがあれば NSPrivacyTracking=true。アプリ自身の空のドメイン欄はキーごと省略する。
+     追跡ドメインがあれば NSPrivacyTracking=true。逆に true なら非空の追跡ドメイン一覧が必要（Apple TN3182）。
   3. project.pbxproj の Runner の「Resources」に登録されている（入っていないとアプリに同梱されない）。
   4. docs/store/privacy_labels.md 2.2 の表（App Store の申告）と、収集するデータの種類・ユーザにリンク・追跡・目的が一致する。
 終了コードは問題があれば 1。
@@ -89,6 +89,8 @@ def tracking_problems(data: dict, location: str, *, app_root: bool = False) -> l
     if "NSPrivacyTracking" in data and not isinstance(data["NSPrivacyTracking"], bool):
         problems.append(f"{location}: NSPrivacyTracking は真偽値")
     if "NSPrivacyTrackingDomains" not in data:
+        if data.get("NSPrivacyTracking") is True:
+            problems.append(f"{location}: NSPrivacyTracking=true なら非空の NSPrivacyTrackingDomains が必要（Apple TN3182）")
         return problems
     domains = data["NSPrivacyTrackingDomains"]
     if not isinstance(domains, list):
@@ -98,8 +100,10 @@ def tracking_problems(data: dict, location: str, *, app_root: bool = False) -> l
             problems.append(f"{location}: 追跡ドメインは空でない文字列")
         if data.get("NSPrivacyTracking") is not True:
             problems.append(f"{location}: 追跡ドメインがあれば NSPrivacyTracking=true が必要")
+    elif data.get("NSPrivacyTracking") is True:
+        problems.append(f"{location}: NSPrivacyTracking=true なら追跡ドメインを1個以上宣言する（Apple TN3182）")
     elif app_root:
-        problems.append(f"{location}: ITMS-91064 の回避のため空の NSPrivacyTrackingDomains をキーごと削除する")
+        problems.append(f"{location}: 追跡しない場合は不要な空の NSPrivacyTrackingDomains をキーごと省略する")
     return problems
 
 
