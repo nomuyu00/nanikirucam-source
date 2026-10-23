@@ -8,6 +8,10 @@ Copyright (c) 2026 aile. Application and engine code: **AGPL-3.0-only**; see [LI
 
 The source is provided without warranty, subject to the license. Store subscriptions support the official distribution and do not restrict rights granted by the open-source licenses.
 
+## Store candidate source
+
+iOS 1.0.0 (7), submitted for review on 2026-10-23: tag [`ios-1.0.0-7`](https://github.com/nomuyu00/nanikirucam-source/tree/ios-1.0.0-7). The following Android signing fix reads CI environment variables directly and validates the existing key before compiling; it does not change the iOS build.
+
 ## Build and test
 
 Use Flutter **3.44.6** / Dart **3.12.2**. Android uses JDK 17 and the official Android SDK; iOS uses Xcode 26.6, CocoaPods and iOS 15+.

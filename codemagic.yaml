@@ -254,18 +254,8 @@ definitions:
       name: Set up Android release signing
       script: |
         set -euo pipefail
-        # android_signing で入る CM_KEYSTORE_* から key.properties を作る。無ければ止める
-        # （android/app/build.gradle.kts は key.properties が無いと debug 署名に落ちるため）。
-        for NAME in CM_KEYSTORE_PATH CM_KEYSTORE_PASSWORD CM_KEY_ALIAS CM_KEY_PASSWORD; do
-          [ -n "${!NAME:-}" ] || { echo "$NAME is empty: add the keystore 'agari_android_keystore' in Codemagic" >&2; exit 1; }
-        done
-        test -f "$CM_KEYSTORE_PATH" || { echo "Keystore file not found" >&2; exit 1; }
-        cat > android/key.properties <<EOF
-        storePassword=$CM_KEYSTORE_PASSWORD
-        keyPassword=$CM_KEY_PASSWORD
-        keyAlias=$CM_KEY_ALIAS
-        storeFile=$CM_KEYSTORE_PATH
-        EOF
+        # Gradleはワンコと同じく環境変数を直接読む。パスワードのProperties再解釈を避ける。
+        bash "$CM_BUILD_DIR/tool/check_android_signing.sh"
 
     - &android_build
       name: Build the AAB
@@ -521,18 +511,20 @@ workflows:
   android-store-candidate:
     <<: *android_release
     name: Android production candidate (Google Play internal)
-    # 継承元の最大25分・同じ署名鍵・internal配信だけを使う。
+    # 既存の署名鍵・internal配信だけを使う。再実行の承認は別途必要。
+    # 既実行40分＋今回最大21分＝61分、0.095 USD/分で合計5.795 USD以内。
+    max_build_duration: 21
     scripts:
       - *git_lfs
       - *check_assets
       - *app_version
       - *store_config
+      - *android_keystore
       - *android_firebase
       - *dart_defines
       - *check_release_config
       - *engine_tests
       - *app_tests
-      - *android_keystore
       - *android_build
       - *android_verify
 

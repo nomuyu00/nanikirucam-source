@@ -31,8 +31,8 @@
   },
   {
     "path": "app/android/app/build.gradle.kts",
-    "bytes": 3532,
-    "sha256": "f46181c35dd9fd6f68ea01149b07225455fcb309d200ce12b42e962db0ab28fd"
+    "bytes": 4617,
+    "sha256": "3cdacc5dbb0d834393c83b4af9542eb6a5015dbf21ca9edfa09dc28f22ed642c"
   },
   {
     "path": "app/android/app/proguard-rules.pro",
@@ -2681,8 +2681,8 @@
   },
   {
     "path": "codemagic.yaml",
-    "bytes": 26587,
-    "sha256": "416d40bbcb7e350636508a818919e78bbdfb41084ed5fbe5349809118577a8bc"
+    "bytes": 26162,
+    "sha256": "654ba99a81af55f45bbc8acfa82f622fe2a7ff4b1f6f68653a39559a27226172"
   },
   {
     "path": "LICENSE",
@@ -3206,8 +3206,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3384,
-    "sha256": "07ccc2ea4e2cc45638b6872bd0c7f5e81389327dfd160966d73dc4f72d1fe894"
+    "bytes": 3706,
+    "sha256": "4ff19c2bbb76735b2922faa269319c7b60517d1eb663d98e8fd483b10618cd6f"
   },
   {
     "path": "THIRD_PARTY_NOTICES.md",
@@ -3215,9 +3215,19 @@
     "sha256": "d3f56908ee92b8b0d9ccbabd01d1a76d13ee88da537c82f33e54428d1e672bf8"
   },
   {
+    "path": "tool/check_android_signing.sh",
+    "bytes": 725,
+    "sha256": "9ff7a04b6599276dd27758f10f7557f95194d7b9edf191119105aa93a2072cf1"
+  },
+  {
     "path": "tool/check_review_access_config.py",
     "bytes": 1115,
     "sha256": "10f5c85237503114203f58285c10212258c1fadf37ab8ad5c37f9dbc5a9ce901"
+  },
+  {
+    "path": "tool/CheckAndroidSigning.java",
+    "bytes": 1276,
+    "sha256": "0ae0b312d64111160df485cd3e5e018619dd7aa0d3287d66855592e4e61709d5"
   },
   {
     "path": "tool/make_review_access.py",
