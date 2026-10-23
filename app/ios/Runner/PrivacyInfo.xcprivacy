@@ -5,11 +5,9 @@
 <plist version="1.0">
 <dict>
 	<!-- ATT の許可があるとき AdMob が IDFA を広告に使う（追跡）。アプリ自身のコードは追跡ドメインに接続しない。
-	     AdMob SDK のドメインは SDK 側のマニフェストが持つので、ここは空（2.3 参照）。 -->
+	     空の NSPrivacyTrackingDomains は Apple の ITMS-91064 を避けるためキーごと省略する（2.3 参照）。 -->
 	<key>NSPrivacyTracking</key>
 	<true/>
-	<key>NSPrivacyTrackingDomains</key>
-	<array/>
 	<!-- docs/store/privacy_labels.md 2.2 の申告と同じ。Apple の説明では SDK が集めるものは SDK 側の
 	     マニフェストが担うが、申告の突き合わせのためアプリ側にも同じ内容を書く。 -->
 	<key>NSPrivacyCollectedDataTypes</key>

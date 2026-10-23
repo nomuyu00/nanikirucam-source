@@ -10,7 +10,7 @@ The source is provided without warranty, subject to the license. Store subscript
 
 ## Store candidate source
 
-iOS 1.0.0 (7), submitted for review on 2026-10-23: tag [`ios-1.0.0-7`](https://github.com/nomuyu00/nanikirucam-source/tree/ios-1.0.0-7). The following Android signing fix reads CI environment variables directly and validates the existing key before compiling; it does not change the iOS build.
+Android 1.0.0 (6), distributed to internal testers and submitted for production review on 2026-10-23: tag [`android-1.0.0-6`](https://github.com/nomuyu00/nanikirucam-source/tree/android-1.0.0-6). iOS 1.0.0 (7) corresponds to tag [`ios-1.0.0-7`](https://github.com/nomuyu00/nanikirucam-source/tree/ios-1.0.0-7). The current source removes the app manifest's unused empty tracking-domain key after Apple ITMS-91064, and adds checks of the privacy manifests inside the actual IPA. This is the metadata fix prepared for iOS build 8; app behavior and tracking disclosures remain unchanged.
 
 ## Build and test
 

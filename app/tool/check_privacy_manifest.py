@@ -4,10 +4,10 @@
     py -3.12 app/tool/check_privacy_manifest.py
 
 確かめること:
-  1. plist として読める。必須キー（NSPrivacyTracking / NSPrivacyTrackingDomains /
+  1. plist として読める。必須キー（NSPrivacyTracking /
      NSPrivacyCollectedDataTypes / NSPrivacyAccessedAPITypes）がある。
   2. 値が Apple の許可リストにある（Xcode は独自の値だとプライバシー レポートを正しく作れない）。
-     NSPrivacyTracking が true なら、ドメインの欄の型が配列であること（空でも可。理由は privacy_labels.md 2.3）。
+     追跡ドメインがあれば NSPrivacyTracking=true。アプリ自身の空のドメイン欄はキーごと省略する。
   3. project.pbxproj の Runner の「Resources」に登録されている（入っていないとアプリに同梱されない）。
   4. docs/store/privacy_labels.md 2.2 の表（App Store の申告）と、収集するデータの種類・ユーザにリンク・追跡・目的が一致する。
 終了コードは問題があれば 1。
@@ -17,6 +17,8 @@ from __future__ import annotations
 import plistlib
 import re
 import sys
+import argparse
+import zipfile
 from pathlib import Path
 
 APP = Path(__file__).resolve().parent.parent
@@ -82,20 +84,61 @@ def labels_table() -> dict[str, dict]:
     return rows
 
 
+def tracking_problems(data: dict, location: str, *, app_root: bool = False) -> list[str]:
+    problems = []
+    if "NSPrivacyTracking" in data and not isinstance(data["NSPrivacyTracking"], bool):
+        problems.append(f"{location}: NSPrivacyTracking は真偽値")
+    if "NSPrivacyTrackingDomains" not in data:
+        return problems
+    domains = data["NSPrivacyTrackingDomains"]
+    if not isinstance(domains, list):
+        problems.append(f"{location}: NSPrivacyTrackingDomains は配列")
+    elif domains:
+        if any(not isinstance(domain, str) or not domain.strip() for domain in domains):
+            problems.append(f"{location}: 追跡ドメインは空でない文字列")
+        if data.get("NSPrivacyTracking") is not True:
+            problems.append(f"{location}: 追跡ドメインがあれば NSPrivacyTracking=true が必要")
+    elif app_root:
+        problems.append(f"{location}: ITMS-91064 の回避のため空の NSPrivacyTrackingDomains をキーごと削除する")
+    return problems
+
+
+def artifact_tracking_problems(*, ipa: Path | None = None, app_bundle: Path | None = None) -> list[str]:
+    problems = []
+    if ipa is not None:
+        with zipfile.ZipFile(ipa) as archive:
+            entries = [e for e in archive.infolist() if e.filename.endswith("/PrivacyInfo.xcprivacy")]
+            roots = [e for e in entries if re.fullmatch(r"Payload/[^/]+\.app/PrivacyInfo\.xcprivacy", e.filename)]
+            if len(roots) != 1:
+                problems.append("IPA のアプリ直下にプライバシー マニフェストが1個必要")
+            for entry in entries:
+                problems.extend(tracking_problems(plistlib.loads(archive.read(entry)), entry.filename, app_root=entry in roots))
+    if app_bundle is not None:
+        if not (app_bundle / "PrivacyInfo.xcprivacy").is_file():
+            problems.append("アプリ直下のプライバシー マニフェストがない")
+        for path in app_bundle.rglob("PrivacyInfo.xcprivacy"):
+            problems.extend(tracking_problems(plistlib.loads(path.read_bytes()), str(path.relative_to(app_bundle)), app_root=path.parent == app_bundle))
+    return problems
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ipa", type=Path)
+    parser.add_argument("--app-bundle", type=Path)
+    args = parser.parse_args()
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     problems: list[str] = []
     data = plistlib.loads(MANIFEST.read_bytes())
 
-    for key in ("NSPrivacyTracking", "NSPrivacyTrackingDomains", "NSPrivacyCollectedDataTypes",
+    for key in ("NSPrivacyTracking", "NSPrivacyCollectedDataTypes",
                 "NSPrivacyAccessedAPITypes"):
         if key not in data:
             problems.append(f"必須キーがない: {key}")
     if not isinstance(data.get("NSPrivacyTracking"), bool):
         problems.append("NSPrivacyTracking は真偽値")
-    if not isinstance(data.get("NSPrivacyTrackingDomains"), list):
-        problems.append("NSPrivacyTrackingDomains は配列")
+    problems.extend(tracking_problems(data, str(MANIFEST), app_root=True))
+    problems.extend(artifact_tracking_problems(ipa=args.ipa, app_bundle=args.app_bundle))
 
     collected: dict[str, dict] = {}
     for item in data.get("NSPrivacyCollectedDataTypes", []):
